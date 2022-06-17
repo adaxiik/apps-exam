@@ -1,3 +1,11 @@
+<style>
+    h3
+    {
+        font-weight: bold;
+    }
+</style>
+
+
 <!--  ----------  -->
 # 1. Architektura počítačů
 
@@ -79,15 +87,70 @@
 - Je složená z za sebou jdoucích buňěk stejné velikosti (obvykle 8bit), jejich pořadové číslo se využívá jako jejich adresa 
 <hr>
 
-
+<!--  ----------  -->
 # 2. Jazyk symbolických instrukcí
 
 <!--  ----------  -->
 # 3. Komunikace s periferiemi
 
 ### Z jakých částí se skládá sběrnice a co je účelem jednotlivých částí?
+- Sběrnice dělíme na Adresovou, Řícicí, Datovou
+- Adresová
+    - Přenáší adresy
+    - Zdroj adresy je mikroprocesor
+    - Počet bitů (vodičů) sběrnice odpovídá počtu bitů adresy
+- Řídicí
+    - Některé signály jsou generovány mikroprocesorem, některé jinými bloky
+    - Nejčastější řídicí signály:
+        - RESET
+            - má každý mikroprocesor
+            - uvede mikroprocesor do výchozího stavu
+        - MEMORY READ (MR)
+            - zabezpečuje časování čtení z paměti (nebo jiných bloků) 
+        - MEMORY WRITE (MW)
+            - zabezpečuje časování zápisu do paměti (nebo jiných bloků)
+        - INPUT / OUTPUT READ / WRITE
+            - pro čtení nebo zápis do zařízení
+        - READY
+            - připravenost obvodu
+- Datová
+    - Slouží pro přenos veškerých dat v počítači
+    - Nedůležitější parametry jsou šířka (počet bitů) a časování
+    - Šířka ovlivňuje rychlost komunikace
+    - Lze ušetřit vodiče pomocí multiplexování
+
 ### Co to je adresní dekodér a kdy je potřeba jej použít?
+- Když je paměťový prostor obsazen více jak jednou fyzickou pamětí nebo periferním zařízením
+- Rozhoduje, které zařízení je ke komunikaci určeno
+- Jeho výstupy jsou v podstatě Chip Select signály pro jednotlivé obvody
+- Může být stavěn jako:
+    - úplné dekódování adresy
+    - neúplné dekódování adresy
+    - lineární přiřazení adresy
+    - univerzálním přiřazením adresy
+
+### Řízení komunikace 
+- 2 případy zahájení komunikace
+    - z iniciativy programu
+    - z iniciativy periferie
+        - počítač se může nacházet ve stavu, kdy nemůže s periferii komunikovat
+        - lze řešit:
+            - obvodově (bez vědomí počítače)
+            - příznakovým bitem <b>(Programové řízení)</b>
+            - přerušením .. počítač se později vrátí tam, kde byl vyrušen <b>(Systém Přerušení)</b>
+            - přímým přístupem <b>(DMA)</b>
+
+
 ### Jaký je princip komunikace s periferiemi pomocí V/V bran?
+- Vstupně / Výstupní brána (Input/Output, I/O) je obvod, kter zprostředkovává předávání dat mezi sběrnicí (počítače) a periferním zařízení (počítače)
+- Dělíme na
+    - S pamětí
+    - Bez paměti
+- Základem je záchytný registr s 3 stavovým vstupem
+
+![VV_nepodmineny](assets/VV_nepodmineny.png)
+
+
 ### K čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?
 ### Popište, jak probíhá přenos dat pomocí V/V brány s indikátorem.
 ### Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?

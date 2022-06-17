@@ -365,6 +365,12 @@ code {
           : 'default'
     });
   </script>
+<style>
+    h3
+    {
+        font-weight: bold;
+    }
+</style>
 <!--  ----------  -->
 <h1 id="1-architektura-po%C4%8D%C3%ADta%C4%8D%C5%AF">1. Architektura počítačů</h1>
 <h3 id="jak%C3%A9-jsou-z%C3%A1kladn%C3%AD-principy-fungov%C3%A1n%C3%AD-po%C4%8D%C3%ADta%C4%8De">Jaké jsou základní principy fungování počítače?</h3>
@@ -474,12 +480,111 @@ code {
 <li>Je složená z za sebou jdoucích buňěk stejné velikosti (obvykle 8bit), jejich pořadové číslo se využívá jako jejich adresa</li>
 </ul>
 <hr>
+<!--  ----------  -->
 <h1 id="2-jazyk-symbolick%C3%BDch-instrukc%C3%AD">2. Jazyk symbolických instrukcí</h1>
 <!--  ----------  -->
 <h1 id="3-komunikace-s-periferiemi">3. Komunikace s periferiemi</h1>
 <h3 id="z-jak%C3%BDch-%C4%8D%C3%A1st%C3%AD-se-skl%C3%A1d%C3%A1-sb%C4%9Brnice-a-co-je-%C3%BA%C4%8Delem-jednotliv%C3%BDch-%C4%8D%C3%A1st%C3%AD">Z jakých částí se skládá sběrnice a co je účelem jednotlivých částí?</h3>
+<ul>
+<li>Sběrnice dělíme na Adresovou, Řícicí, Datovou</li>
+<li>Adresová
+<ul>
+<li>Přenáší adresy</li>
+<li>Zdroj adresy je mikroprocesor</li>
+<li>Počet bitů (vodičů) sběrnice odpovídá počtu bitů adresy</li>
+</ul>
+</li>
+<li>Řídicí
+<ul>
+<li>Některé signály jsou generovány mikroprocesorem, některé jinými bloky</li>
+<li>Nejčastější řídicí signály:
+<ul>
+<li>RESET
+<ul>
+<li>má každý mikroprocesor</li>
+<li>uvede mikroprocesor do výchozího stavu</li>
+</ul>
+</li>
+<li>MEMORY READ (MR)
+<ul>
+<li>zabezpečuje časování čtení z paměti (nebo jiných bloků)</li>
+</ul>
+</li>
+<li>MEMORY WRITE (MW)
+<ul>
+<li>zabezpečuje časování zápisu do paměti (nebo jiných bloků)</li>
+</ul>
+</li>
+<li>INPUT / OUTPUT READ / WRITE
+<ul>
+<li>pro čtení nebo zápis do zařízení</li>
+</ul>
+</li>
+<li>READY
+<ul>
+<li>připravenost obvodu</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Datová
+<ul>
+<li>Slouží pro přenos veškerých dat v počítači</li>
+<li>Nedůležitější parametry jsou šířka (počet bitů) a časování</li>
+<li>Šířka ovlivňuje rychlost komunikace</li>
+<li>Lze ušetřit vodiče pomocí multiplexování</li>
+</ul>
+</li>
+</ul>
 <h3 id="co-to-je-adresn%C3%AD-dekod%C3%A9r-a-kdy-je-pot%C5%99eba-jej-pou%C5%BE%C3%ADt">Co to je adresní dekodér a kdy je potřeba jej použít?</h3>
+<ul>
+<li>Když je paměťový prostor obsazen více jak jednou fyzickou pamětí nebo periferním zařízením</li>
+<li>Rozhoduje, které zařízení je ke komunikaci určeno</li>
+<li>Jeho výstupy jsou v podstatě Chip Select signály pro jednotlivé obvody</li>
+<li>Může být stavěn jako:
+<ul>
+<li>úplné dekódování adresy</li>
+<li>neúplné dekódování adresy</li>
+<li>lineární přiřazení adresy</li>
+<li>univerzálním přiřazením adresy</li>
+</ul>
+</li>
+</ul>
+<h3 id="%C5%99%C3%ADzen%C3%AD-komunikace">Řízení komunikace</h3>
+<ul>
+<li>2 případy zahájení komunikace
+<ul>
+<li>z iniciativy programu</li>
+<li>z iniciativy periferie
+<ul>
+<li>počítač se může nacházet ve stavu, kdy nemůže s periferii komunikovat</li>
+<li>lze řešit:
+<ul>
+<li>obvodově (bez vědomí počítače)</li>
+<li>příznakovým bitem <b>(Programové řízení)</b></li>
+<li>přerušením .. počítač se později vrátí tam, kde byl vyrušen <b>(Systém Přerušení)</b></li>
+<li>přímým přístupem <b>(DMA)</b></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="jak%C3%BD-je-princip-komunikace-s-periferiemi-pomoc%C3%AD-vv-bran">Jaký je princip komunikace s periferiemi pomocí V/V bran?</h3>
+<ul>
+<li>Vstupně / Výstupní brána (Input/Output, I/O) je obvod, kter zprostředkovává předávání dat mezi sběrnicí (počítače) a periferním zařízení (počítače)</li>
+<li>Dělíme na
+<ul>
+<li>S pamětí</li>
+<li>Bez paměti</li>
+</ul>
+</li>
+<li>Základem je záchytný registr s 3 stavovým vstupem</li>
+</ul>
+<p><img src="assets/VV_nepodmineny.png" alt="VV_nepodmineny"></p>
 <h3 id="k-%C4%8Demu-slou%C5%BE%C3%AD-u-komunikace-vv-bran-indik%C3%A1tor-a-jak%C3%A9-p%C5%99in%C3%A1%C5%A1%C3%AD-v%C3%BDhody">K čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?</h3>
 <h3 id="popi%C5%A1te-jak-prob%C3%ADh%C3%A1-p%C5%99enos-dat-pomoc%C3%AD-vv-br%C3%A1ny-s-indik%C3%A1torem">Popište, jak probíhá přenos dat pomocí V/V brány s indikátorem.</h3>
 <h3 id="jak%C3%BD-je-rozd%C3%ADl-mezi-programov%C4%9B-%C5%99%C3%ADzenou-komunikac%C3%AD-s-perif%C3%A9riemi-a-pomoc%C3%AD-p%C5%99eru%C5%A1en%C3%AD">Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?</h3>
