@@ -369,7 +369,7 @@ code {
     h3
     {
         font-weight: bold;
-    }
+    };
 </style>
 <!--  ----------  -->
 <h1 id="1-architektura-po%C4%8D%C3%ADta%C4%8D%C5%AF">1. Architektura počítačů</h1>
@@ -538,6 +538,7 @@ code {
 </ul>
 </li>
 </ul>
+<hr>
 <h3 id="co-to-je-adresn%C3%AD-dekod%C3%A9r-a-kdy-je-pot%C5%99eba-jej-pou%C5%BE%C3%ADt">Co to je adresní dekodér a kdy je potřeba jej použít?</h3>
 <ul>
 <li>Když je paměťový prostor obsazen více jak jednou fyzickou pamětí nebo periferním zařízením</li>
@@ -552,6 +553,7 @@ code {
 </ul>
 </li>
 </ul>
+<hr>
 <h3 id="%C5%99%C3%ADzen%C3%AD-komunikace">Řízení komunikace</h3>
 <ul>
 <li>2 případy zahájení komunikace
@@ -573,6 +575,7 @@ code {
 </ul>
 </li>
 </ul>
+<hr>
 <h3 id="jak%C3%BD-je-princip-komunikace-s-periferiemi-pomoc%C3%AD-vv-bran">Jaký je princip komunikace s periferiemi pomocí V/V bran?</h3>
 <ul>
 <li>Vstupně / Výstupní brána (Input/Output, I/O) je obvod, kter zprostředkovává předávání dat mezi sběrnicí (počítače) a periferním zařízení (počítače)</li>
@@ -584,9 +587,28 @@ code {
 </li>
 <li>Základem je záchytný registr s 3 stavovým vstupem</li>
 </ul>
+<h4 id="nepodm%C3%ADn%C4%9Bn%C3%BD-vstup-a-v%C3%BDstup-dat">Nepodmíněný vstup a výstup dat:</h4>
 <p><img src="assets/VV_nepodmineny.png" alt="VV_nepodmineny"></p>
+<ul>
+<li>Při vstupu počítač vyšle signál RD, tím přikáže vstupnímu zařízení předat data do vstupní brány počítače</li>
+<li>Při vstupu počítač vyšle signál WR a výstupní zařízení převezme data</li>
+<li>Jednoduchý způsob, předpokládá, že je perif. zařízení pořád ready</li>
+</ul>
+<hr>
 <h3 id="k-%C4%8Demu-slou%C5%BE%C3%AD-u-komunikace-vv-bran-indik%C3%A1tor-a-jak%C3%A9-p%C5%99in%C3%A1%C5%A1%C3%AD-v%C3%BDhody">K čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?</h3>
+<ul>
+<li>Zajišťujě, že informace budou správně podány (další otázka)</li>
+</ul>
+<hr>
 <h3 id="popi%C5%A1te-jak-prob%C3%ADh%C3%A1-p%C5%99enos-dat-pomoc%C3%AD-vv-br%C3%A1ny-s-indik%C3%A1torem">Popište, jak probíhá přenos dat pomocí V/V brány s indikátorem.</h3>
+<h4 id="podm%C3%ADn%C4%9Bn%C3%BD-vstup-a-v%C3%BDstup-dat">Podmíněný vstup a výstup dat</h4>
+<p><img src="assets/VV_podmineny.png" alt="VV_podmineny"></p>
+<ul>
+<li>Jsou-li poskytována platná data ze vstupu, pak se za pomocí STB(strobe) impulsu nastaví Q na 1</li>
+<li>Když je Q na 1, data jsou předány počítači pomocí impulsu RD a po přenosu je indikátor vynulován</li>
+<li>V opačném případě se nastavuje Q na 1, když jsou data převzata, pomocí ACK signálu</li>
+</ul>
+<hr>
 <h3 id="jak%C3%BD-je-rozd%C3%ADl-mezi-programov%C4%9B-%C5%99%C3%ADzenou-komunikac%C3%AD-s-perif%C3%A9riemi-a-pomoc%C3%AD-p%C5%99eru%C5%A1en%C3%AD">Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?</h3>
 <h3 id="jak%C3%A9-v%C3%BDhody-p%C5%99in%C3%A1%C5%A1%C3%AD-%C5%99%C3%ADzen%C3%AD-komunikace-s-vyu%C5%BEit%C3%ADm-p%C5%99eru%C5%A1en%C3%AD">Jaké výhody přináší řízení komunikace s využitím přerušení?</h3>
 <h3 id="z-jak%C3%BDch-%C4%8D%C3%A1st%C3%AD-se-skl%C3%A1d%C3%A1-%C5%99adi%C4%8D-dma">Z jakých částí se skládá řadič DMA?</h3>

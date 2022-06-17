@@ -2,7 +2,7 @@
     h3
     {
         font-weight: bold;
-    }
+    };
 </style>
 
 
@@ -118,6 +118,7 @@
     - Nedůležitější parametry jsou šířka (počet bitů) a časování
     - Šířka ovlivňuje rychlost komunikace
     - Lze ušetřit vodiče pomocí multiplexování
+<hr>
 
 ### Co to je adresní dekodér a kdy je potřeba jej použít?
 - Když je paměťový prostor obsazen více jak jednou fyzickou pamětí nebo periferním zařízením
@@ -128,6 +129,7 @@
     - neúplné dekódování adresy
     - lineární přiřazení adresy
     - univerzálním přiřazením adresy
+<hr>
 
 ### Řízení komunikace 
 - 2 případy zahájení komunikace
@@ -139,7 +141,7 @@
             - příznakovým bitem <b>(Programové řízení)</b>
             - přerušením .. počítač se později vrátí tam, kde byl vyrušen <b>(Systém Přerušení)</b>
             - přímým přístupem <b>(DMA)</b>
-
+<hr>
 
 ### Jaký je princip komunikace s periferiemi pomocí V/V bran?
 - Vstupně / Výstupní brána (Input/Output, I/O) je obvod, kter zprostředkovává předávání dat mezi sběrnicí (počítače) a periferním zařízení (počítače)
@@ -148,11 +150,30 @@
     - Bez paměti
 - Základem je záchytný registr s 3 stavovým vstupem
 
+#### Nepodmíněný vstup a výstup dat:
+
 ![VV_nepodmineny](assets/VV_nepodmineny.png)
 
+- Při vstupu počítač vyšle signál RD, tím přikáže vstupnímu zařízení předat data do vstupní brány počítače
+- Při vstupu počítač vyšle signál WR a výstupní zařízení převezme data
+- Jednoduchý způsob, předpokládá, že je perif. zařízení pořád ready
+<hr>
 
 ### K čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?
+-  Zajišťujě, že informace budou správně podány (další otázka)
+<hr>
+
 ### Popište, jak probíhá přenos dat pomocí V/V brány s indikátorem.
+
+#### Podmíněný vstup a výstup dat
+
+![VV_podmineny](assets/VV_podmineny.png)
+
+- Jsou-li poskytována platná data ze vstupu, pak se za pomocí STB(strobe) impulsu nastaví Q na 1
+- Když je Q na 1, data jsou předány počítači pomocí impulsu RD a po přenosu je indikátor vynulován
+- V opačném případě se nastavuje Q na 1, když jsou data převzata, pomocí ACK signálu
+<hr>
+
 ### Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?
 ### Jaké výhody přináší řízení komunikace s využitím přerušení?
 ### Z jakých částí se skládá řadič DMA?
