@@ -457,7 +457,7 @@ code {
 <hr>
 <h3 id="m%C5%AF%C5%BEe-fungovat-po%C4%8D%C3%ADta%C4%8D-bez-pam%C4%9Bti-%C4%8Di-bez-periferi%C3%AD">Může fungovat počítač bez paměti či bez periferií?</h3>
 <ul>
-<li>NE</li>
+<li>NE.. jak pravil von Neumann .. je potřeba procesoru, paměti a periferii</li>
 </ul>
 <hr>
 <h3 id="k-%C4%8Demu-se-v-po%C4%8D%C3%ADta%C4%8Di-vyu%C5%BE%C3%ADv%C3%A1-dvojkov%C3%A1-soustava">K čemu se v počítači využívá dvojková soustava?</h3>
@@ -652,15 +652,328 @@ code {
 <li>Všechno nemusí dělat procesor</li>
 </ul>
 <hr>
-### I2C ???
+<h3 id="i2c">I2C ???</h3>
+<h3 id="p%C5%99%C3%ADklad-jedn%C3%A9-sb%C4%9Brnice-i2c-viz-cvi%C4%8Den%C3%AD-zapojen%C3%AD-cyklus-sb%C4%9Brnice-adresov%C3%A1n%C3%AD-p%C5%99enos-dat">Příklad jedné sběrnice: I2C, viz cvičení, zapojení, cyklus sběrnice, adresování, přenos dat.</h3>
 <h1 id="4-cisc-a-risc">4. CISC A RISC</h1>
 <h3 id="kdy-a-pro%C4%8D-se-za%C4%8Daly-procesory-d%C4%9Blit-na-risc-a-cisc">Kdy a proč se začaly procesory dělit na RISC a CISC?</h3>
+<ul>
+<li>V 70. letech, kvůli narůstající složitosti procesorů ..</li>
+</ul>
+<hr>
 <h3 id="jak%C3%A9-byly-z%C3%A1sadn%C3%AD-d%C5%AFvody-pro%C4%8D-se-za%C4%8Daly-procesory-risc-vyv%C3%ADjet">Jaké byly zásadní důvody, proč se začaly procesory RISC vyvíjet?</h3>
+<ul>
+<li>Výzkumy ukázaly, že programátoři a compilátory používají instrukce velmi nerovnoměrně  (v 50% případů se vyskytují pouze 3 instrukce)</li>
+<li>Snahy o nalezení optimálního instrukčního souboru =&gt; vznik RISC</li>
+</ul>
+<hr>
 <h3 id="jak%C3%A9-jsou-z%C3%A1kladn%C3%AD-konstruk%C4%8Dn%C3%AD-vlastnosti-procesor%C5%AF-risc">Jaké jsou základní konstrukční vlastnosti procesorů RISC?</h3>
+<ul>
+<li>Malý instrukční soubor</li>
+<li>V každém strojovém cyklu by měla být dokončena jedna instrukce</li>
+<li>Zřeťezené zpracování instrukcí</li>
+<li>Data jsou z hlavní paměti vybírána a úkládána výhradně pomocí <b>LOAD</b> a <b>STORE</b> instrukcí</li>
+<li>Instrukce mají pevnou délku a jednotný formát</li>
+<li>Je použit vyšší počet registrů</li>
+<li>Složitost se přesouvá na optimalizující kompilátory</li>
+</ul>
+<hr>
 <h3 id="jak-p%C5%99isp%C4%9Bly-jednotliv%C3%A9-charakteristick%C3%A9-vlastnosti-procesor%C5%AF-risc-ke-zv%C3%BD%C5%A1en%C3%AD-v%C3%BDpo%C4%8Detn%C3%ADho-v%C3%BDkonu">Jak přispěly jednotlivé charakteristické vlastnosti procesorů RISC ke zvýšení výpočetního výkonu?</h3>
+<ul>
+<li>Jednotná délka instrukcí =&gt; rychlejší výběr instrukcí z paměti =&gt; lepší plnění fronty instrukcí</li>
+<li>Jednotný formát =&gt; zjednodušuje dekódování</li>
+<li>Zřetězené zpracování instrukcí</li>
+</ul>
+<hr>
 <h3 id="jak%C3%BD-je-princip-z%C5%99et%C4%9Bzen%C3%A9ho-zpracov%C3%A1n%C3%AD-instrukc%C3%AD-v-risc-procesorech">Jaký je princip zřetězeného zpracování instrukcí v RISC procesorech?</h3>
+<ul>
+<li>Provedení instrukce musí vždy projít stejnými fázemi (né nutně těma co jsou na obrázku)</li>
+<li>Funguje jako &quot;výrobní linka&quot;</li>
+</ul>
+<p>CISC:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>T1</th>
+<th>T2</th>
+<th>T3</th>
+<th>T4</th>
+<th>T5</th>
+<th>T6</th>
+<th>T7</th>
+<th>T8</th>
+<th>T9</th>
+<th>T10</th>
+<th>T11</th>
+<th>T12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VI</td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DE</td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VA</td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VO</td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PI</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+<td></td>
+</tr>
+<tr>
+<td>UV</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I2</td>
+</tr>
+</tbody>
+</table>
+<p>RISC:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>T1</th>
+<th>T2</th>
+<th>T3</th>
+<th>T4</th>
+<th>T5</th>
+<th>T6</th>
+<th>T7</th>
+<th>T8</th>
+<th>T9</th>
+<th>T10</th>
+<th>T11</th>
+<th>T12</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VI</td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>DE</td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VA</td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>VO</td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>PI</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+<td></td>
+</tr>
+<tr>
+<td>UV</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>I1</td>
+<td>I2</td>
+<td>I3</td>
+<td>I4</td>
+<td>I5</td>
+<td>I6</td>
+<td>I7</td>
+</tr>
+</tbody>
+</table>
+<p>Legend:</p>
+<table>
+<thead>
+<tr>
+<th>short name</th>
+<th>full name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>VI</td>
+<td>Výběr Instrukce</td>
+</tr>
+<tr>
+<td>DE</td>
+<td>Dekodování</td>
+</tr>
+<tr>
+<td>VA</td>
+<td>Výpočet Adresy</td>
+</tr>
+<tr>
+<td>VO</td>
+<td>Výběr Operandu</td>
+</tr>
+<tr>
+<td>PI</td>
+<td>Provedení Instrukce</td>
+</tr>
+<tr>
+<td>UV</td>
+<td>Uložení Výsledku</td>
+</tr>
+</tbody>
+</table>
+<hr>
 <h3 id="jak%C3%A9ho-zrychlen%C3%AD-lze-z%C5%99et%C4%9Bzen%C3%BDm-zpracov%C3%A1n%C3%ADm-instrukc%C3%AD-dos%C3%A1hnout">Jakého zrychlení lze zřetězeným zpracováním instrukcí dosáhnout?</h3>
+<ul>
+<li>V ideáním světě, při délce zřetězení 6-ti instrukcí, udělá během 12 cyklů
+<ul>
+<li><b>CISC:</b> 2 instrukce</li>
+<li><b>RISC:</b> 7 instrukcí</li>
+</ul>
+</li>
+<li>viz. tabulky v minulé otázce</li>
+</ul>
 <h3 id="jak%C3%A9-probl%C3%A9my-p%C5%99in%C3%A1%C5%A1%C3%AD-z%C5%99et%C4%9Bzen%C3%A9-zpracov%C3%A1n%C3%AD-instrukc%C3%AD-v-procesorech-risc">Jaké problémy přináší zřetězené zpracování instrukcí v procesorech RISC?</h3>
+<ul>
+<li>Datové a strukturální hazardy
+<ul>
+<li>Datové: Když instrukce potřebuje mít k dispozici data předchozí instrukce ( a ta ještě nejsou k dispozici)</li>
+<li>Struktrální: Problém omezených prostředků procesoru (a počítače jako celku) .. např. jen jedna sběrnice</li>
+</ul>
+</li>
+<li>Problémy plněním fronty instrukcí
+<ul>
+<li>Podmíněné skoky</li>
+<li>Nepodmíněné skoky na adresu, která se musí vypočítat</li>
+</ul>
+</li>
+</ul>
 <h3 id="co-to-je-predikce-skok%C5%AF-pro%C4%8D-se-pou%C5%BE%C3%ADv%C3%A1-a-jak%C3%A9-zp%C5%AFsoby-predikce-se-vyu%C5%BE%C3%ADvaj%C3%AD">Co to je predikce skoků, proč se používá a jaké způsoby predikce se využívají?</h3>
 <h3 id="co-to-jsou-datov%C3%A9-a-struktur%C3%A1ln%C3%AD-hazardy-v-risc-procesorech-co-je-zp%C5%AFsobuje">Co to jsou datové a strukturální hazardy v RISC procesorech? Co je způsobuje?</h3>
 <h3 id="jak-funguje-dvoubitov%C3%A1-dynamick%C3%A1-predikce-skok%C5%AF-a-pro%C4%8D-se-vyu%C5%BE%C3%ADv%C3%A1">Jak funguje dvoubitová dynamická predikce skoků a proč se využívá?</h3>
