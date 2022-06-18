@@ -175,10 +175,37 @@
 <hr>
 
 ### Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?
+- Programové:
+    - Využívá instrukce pro vstup a výstup, ve spojení s instrukcemi pro testování logických proměnných a skoků
+    - Prostě testuje stavové bity ..
+- Přerušení:
+    - Periferie aktivuje přerušovací signál, procesor přeruší program, přejde do obslužného režimu, poté pokračuje v provádění hl. programu tam, kde byl přerušen 
+<hr>
+
 ### Jaké výhody přináší řízení komunikace s využitím přerušení?
+- Procesor pořád nemusí zbytečně testovat stavové bity => neztrácí výkon
+<hr>
+
 ### Z jakých částí se skládá řadič DMA?
+![blok_DMA](assets/blok_DMA.png)
+- Registr dat - Obsahuje slovo pro přesun
+- Registr adresy - Adresa hl. paměti kam bude slovo zapsány, nebo odkud bude přečteno
+- Čítač přesunu - požadovaný počet slov, které mají být ještě přesunuty
+<hr>
+
 ### Jak probíhá přenos dat s použitím DMA?
+1. Naprogramování procesorem bloku DMA
+2. blok DMA spustí periferní zařízení, a čeká než zařízení bude připraveno data příjmou nebo vyslat
+3. Procesor dokončí strojový cyklus a pak reaguje na žádost o DMA, přímý přístup se provadí během činosti procesoru.. blok DMA a procesor se střídají v používání paměti
+4. Procesor vyšle vybrané jednotce ACK a uvolní sběrnici, jednotka pak pošle obsah registru adresy na addr. sběrnici a obsah registru dat na dat. sběrnici a čeká na provedení cyklu paměti.. pak obsah registru adresy zvětší o jedničku a čítač přesunu zmenší o jedničku.. pokud není nulový, testuje zda bylo předáno nové slovo do registru dat.. když ne, dočasně se ukončí přesun dat a přestane se vysílat žádost o DMA.. řízení je předáno procesoru
+5. Procesor dále pokračuje v provádění svého programu do doby, než obrží další žádost o DMA
+6. Pokud je obsah čítače přesunu nulový, blok DMA ukončí cel přesun a uvolní sběrnici 
+<hr>
+
 ### Jaké má výhody řadič DMA proti přenosu dat s využitím CPU?
+- Všechno nemusí dělat procesor 
+
+<hr>
 ### I2C ???
 
 # 4. CISC A RISC

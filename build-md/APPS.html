@@ -610,11 +610,49 @@ code {
 </ul>
 <hr>
 <h3 id="jak%C3%BD-je-rozd%C3%ADl-mezi-programov%C4%9B-%C5%99%C3%ADzenou-komunikac%C3%AD-s-perif%C3%A9riemi-a-pomoc%C3%AD-p%C5%99eru%C5%A1en%C3%AD">Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?</h3>
+<ul>
+<li>Programové:
+<ul>
+<li>Využívá instrukce pro vstup a výstup, ve spojení s instrukcemi pro testování logických proměnných a skoků</li>
+<li>Prostě testuje stavové bity ..</li>
+</ul>
+</li>
+<li>Přerušení:
+<ul>
+<li>Periferie aktivuje přerušovací signál, procesor přeruší program, přejde do obslužného režimu, poté pokračuje v provádění hl. programu tam, kde byl přerušen</li>
+</ul>
+</li>
+</ul>
+<hr>
 <h3 id="jak%C3%A9-v%C3%BDhody-p%C5%99in%C3%A1%C5%A1%C3%AD-%C5%99%C3%ADzen%C3%AD-komunikace-s-vyu%C5%BEit%C3%ADm-p%C5%99eru%C5%A1en%C3%AD">Jaké výhody přináší řízení komunikace s využitím přerušení?</h3>
+<ul>
+<li>Procesor pořád nemusí zbytečně testovat stavové bity =&gt; neztrácí výkon</li>
+</ul>
+<hr>
 <h3 id="z-jak%C3%BDch-%C4%8D%C3%A1st%C3%AD-se-skl%C3%A1d%C3%A1-%C5%99adi%C4%8D-dma">Z jakých částí se skládá řadič DMA?</h3>
+<p><img src="assets/blok_DMA.png" alt="blok_DMA"></p>
+<ul>
+<li>Registr dat - Obsahuje slovo pro přesun</li>
+<li>Registr adresy - Adresa hl. paměti kam bude slovo zapsány, nebo odkud bude přečteno</li>
+<li>Čítač přesunu - požadovaný počet slov, které mají být ještě přesunuty</li>
+</ul>
+<hr>
 <h3 id="jak-prob%C3%ADh%C3%A1-p%C5%99enos-dat-s-pou%C5%BEit%C3%ADm-dma">Jak probíhá přenos dat s použitím DMA?</h3>
+<ol>
+<li>Naprogramování procesorem bloku DMA</li>
+<li>blok DMA spustí periferní zařízení, a čeká než zařízení bude připraveno data příjmou nebo vyslat</li>
+<li>Procesor dokončí strojový cyklus a pak reaguje na žádost o DMA, přímý přístup se provadí během činosti procesoru.. blok DMA a procesor se střídají v používání paměti</li>
+<li>Procesor vyšle vybrané jednotce ACK a uvolní sběrnici, jednotka pak pošle obsah registru adresy na addr. sběrnici a obsah registru dat na dat. sběrnici a čeká na provedení cyklu paměti.. pak obsah registru adresy zvětší o jedničku a čítač přesunu zmenší o jedničku.. pokud není nulový, testuje zda bylo předáno nové slovo do registru dat.. když ne, dočasně se ukončí přesun dat a přestane se vysílat žádost o DMA.. řízení je předáno procesoru</li>
+<li>Procesor dále pokračuje v provádění svého programu do doby, než obrží další žádost o DMA</li>
+<li>Pokud je obsah čítače přesunu nulový, blok DMA ukončí cel přesun a uvolní sběrnici</li>
+</ol>
+<hr>
 <h3 id="jak%C3%A9-m%C3%A1-v%C3%BDhody-%C5%99adi%C4%8D-dma-proti-p%C5%99enosu-dat-s-vyu%C5%BEit%C3%ADm-cpu">Jaké má výhody řadič DMA proti přenosu dat s využitím CPU?</h3>
-<h3 id="i2c">I2C ???</h3>
+<ul>
+<li>Všechno nemusí dělat procesor</li>
+</ul>
+<hr>
+### I2C ???
 <h1 id="4-cisc-a-risc">4. CISC A RISC</h1>
 <h3 id="kdy-a-pro%C4%8D-se-za%C4%8Daly-procesory-d%C4%9Blit-na-risc-a-cisc">Kdy a proč se začaly procesory dělit na RISC a CISC?</h3>
 <h3 id="jak%C3%A9-byly-z%C3%A1sadn%C3%AD-d%C5%AFvody-pro%C4%8D-se-za%C4%8Daly-procesory-risc-vyv%C3%ADjet">Jaké byly zásadní důvody, proč se začaly procesory RISC vyvíjet?</h3>
