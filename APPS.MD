@@ -11,7 +11,7 @@
 
 ### Jaké jsou základní principy fungování počítače?
 - Počítač je programován obsahem paměti
-- Instukce se vykonávají sekvenčně
+- Instrukce se vykonávají sekvenčně
 - Každý následující krok závisí na tom předchozím
 
 ![princip_pocitace](assets/princip_pocitace.png)
@@ -28,8 +28,8 @@
 - Strojové instrukce a Data jsou v jedné paměti (lze přistupovat jednotným způsobem)
 - Paměť je rozdělena do buněk stejné velikosti (Jejich pořadové číslo je jejich adresa)
 - Následující krok je závislý na tom přechozím
-- Program je sekvence instukcí, ty jsou vykonávány sekvenčně, v pořadí v jakém jsou zapsány do paměti
-- Změna pořadí instukcí je možná pomocí skoku
+- Program je sekvence instrukcí, ty jsou vykonávány sekvenčně, v pořadí v jakém jsou zapsány do paměti
+- Změna pořadí instrukcí je možná pomocí skoku
 - Pro reprezentaci čísel, adres, znaků.. se používá dvojková soustava
 
 ![von_neumann](assets/von_neumann.png)
@@ -39,7 +39,7 @@
 ### Jaké má výhody a nevýhody architektura dle von Neumanna?
 - Výhody
     - Rozdělení paměti pro kod a data určuje programátor
-    - do paměti se přistupuje stejném způsobem pro data i instukce
+    - do paměti se přistupuje stejném způsobem pro data i instrukce
     - jedna sběrnice => jednodušší výroba
 - Nevýhody
     - jedna paměť může mít při chybě za následek přepsání vlastního programu
@@ -90,7 +90,7 @@
 <hr>
 
 ### Je možné, aby procesor prováděl instrukce jinak, než sekvenčně?
-- NE instukce se provádějí sekvenčně 
+- NE instrukce se provádějí sekvenčně 
 
 <hr>
 
@@ -344,9 +344,77 @@ Legend:
 
 ![2bitpredikce](assets/2bit_predikce.png)
 
+- `A` predikuje provedení skoku, `N` říká, že skok provádět nebude
+- `a` a `n` přechody označují, zda se skok naposledy prováděl
 
+<hr>
 
 # 5. x86 Intel historie
+- <b>8080</b>
+    - Není x86
+- <b>8086</b>
+    - Prvním 16-bit
+- <b>8088</b>
+    - Sběrnice zúžená na 8bit
+    - Jinak stejné jak 8086
+- <b>80186</b>
+    - Navržen pro embedded (vestavěná) zařízení
+    - Má DMA
+    - Vyráběn 25 let
+- <b>80286</b>
+    - Lze přepnout do <b>Protected modu</b> (4 úrovně oprávnění)
+    - <b>Real mode</b> (pro zpětnou kompatibilitu, RM programy nemůžou fungovat v novém PM)
+    - má MMU (memory management unit)
+- <b>80386dx a sx</b>
+    - sx je downgrade dx
+    - První 32bit
+    - Přidán <b>Virtual Mode</b> (po přepnutí do PM, bylo možnost vykonávat RM programy)
+
+- <b>8087/287/387</b>
+    - Matematick koprocesor, pro práci s floaty, který byl zvlášt
+- <b>80486dx (později i sx verze)</b>
+    - Dvojnásobný výkon při stejné frekvenci, než 386
+    - L1 přímo v procesoru
+    - Integrace matematického koprocesoru
+- <b>Pentium</b>
+    - První procesor v řadě x86, kde jsou uplatněna technická řešení typická pro <b>RISC</b>
+    - L1 rozdělena na kod a data
+    - Predikce skoků
+- <b>Pentium Pro</b>
+    - <b>ZÁSADNÍ</b> technologický zlom
+    - Pro servery (=> velký výkon(zhruba o 50% víc než pentium) a cena)
+    - L2 přímo na procesoru
+    - Fetch/Decode jednotka dekoduje x86 instrukce na 118bit RISC instrukce (které intel pojmenoval jako mikro-operace)
+    - Instrukce jsou po dekodování uloženy do banky instrukcí (Instruction pool), vejde se tam až 40 instrukcí
+    - Dispatch/Execute jednotka si může vybírat instrukce mimo pořadí z poolu (Out of order execute)
+    - 10 úrovňové zřetězení
+    - Predikce skoků si pamatuje 512 hodnot
+
+![pentium_pro](assets/pentium_pro.png)
+
+- <b>Pentium 2</b>
+    - Vychází z Pentia Pro
+- <b>Pentium 3</b>
+    - Optimalizace z hlediska spotřeby
+    - Dobré pro přenosné počítače
+- <b>Pentium 4</b>
+    - Mikroarchitektura <b>NetBurst</b>
+    - Při stejné frekvenci jako P3 měl stejný výkon+-, ale více se zahříval
+    - 20 úrovňové zřetězení
+- <b>Pentium EM64T</b>
+    - Extended Memory 64 Technology (Později jen Intel64)
+    - První 64bit procesor
+    - 30 úrovňové zřetězení
+    - Velice se přehřívaly 
+- <b>Pentium M</b>
+    - Určeny pro přenosné počítače
+    - Výkonný procesor s nízkou spotřebou energie
+    - Obdobný výkon jako P4 při nižší frekvenci a třetinové spotřebě
+- <b>Core</b>
+- <b>Core 2</b>
+- <b>Atom</b>
+
+<hr>
 
 # 6. Paměti
 
