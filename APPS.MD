@@ -15,10 +15,12 @@
 - Každý následující krok závisí na tom předchozím
 
 ![princip_pocitace](assets/princip_pocitace.png)
+
 - Procesor si přes sběrnici vyžádá instrukci z paměti na adrese IP
 - Poté co instrukci získá ji provede
 - Zvýší IP/PC 
 - Cyklus čtení a provedení se opakuje
+
 <hr>
 
 ### Kritéria a Principy dle von Neumanna:
@@ -31,6 +33,7 @@
 - Pro reprezentaci čísel, adres, znaků.. se používá dvojková soustava
 
 ![von_neumann](assets/von_neumann.png)
+
 <hr>
 
 ### Jaké má výhody a nevýhody architektura dle von Neumanna?
@@ -41,6 +44,7 @@
 - Nevýhody
     - jedna paměť může mít při chybě za následek přepsání vlastního programu
     - jediná sběrnice je úzké místo
+
 <hr>
 
 ### Přinesla harvardská architektura nějaká vylepšení proti von Neumannově?
@@ -51,11 +55,13 @@
 - Nevýhody:
     - dvě sběrnice jsou dražší
     - nevyužitou část paměti dat nelze použít pro program.. a naopak
+
 <hr>
 
 ### Jaká je podpora paralelismu u obou architektur počítačů?
 - Žádná .. instrukce jsou vykonávány sekvenčně, následující krok je závislí na tom předchozím
 - Paralelizmy se musí simulovat až na úrovni OS
+
 <hr>
 
 ### Je lepší mít oddělené paměti pro data i program? Proč ano a proč ne?
@@ -65,26 +71,32 @@
     - Jedna sběrnice => jednodušší výroba
     - Rozdělení pro kod a data určuje programátor 
     - Lze efektivněji využít kapacitu paměti
+
 <hr>
 
 ### Může fungovat počítač bez paměti či bez periferií?
 - NE.. jak pravil von Neumann .. je potřeba procesoru, paměti a periferii
+
 <hr>
 
 ### K čemu se v počítači využívá dvojková soustava?
-- Pro reprezentaci čísel, adres, znaků.. 
+- Pro reprezentaci čísel, adres, znaků..
+
 <hr>
 
 ### Zvyšují sběrnice výkon počítače?
 - Ne přímo, ale mohou jej omezit
+
 <hr>
 
 ### Je možné, aby procesor prováděl instrukce jinak, než sekvenčně?
 - NE instukce se provádějí sekvenčně 
+
 <hr>
 
 ### Jak je v počítači organizovaná paměť?
 - Je složená z za sebou jdoucích buňěk stejné velikosti (obvykle 8bit), jejich pořadové číslo se využívá jako jejich adresa 
+
 <hr>
 
 <!--  ----------  -->
@@ -118,6 +130,7 @@
     - Nedůležitější parametry jsou šířka (počet bitů) a časování
     - Šířka ovlivňuje rychlost komunikace
     - Lze ušetřit vodiče pomocí multiplexování
+
 <hr>
 
 ### Co to je adresní dekodér a kdy je potřeba jej použít?
@@ -129,6 +142,7 @@
     - neúplné dekódování adresy
     - lineární přiřazení adresy
     - univerzálním přiřazením adresy
+
 <hr>
 
 ### Řízení komunikace 
@@ -141,6 +155,7 @@
             - příznakovým bitem <b>(Programové řízení)</b>
             - přerušením .. počítač se později vrátí tam, kde byl vyrušen <b>(Systém Přerušení)</b>
             - přímým přístupem <b>(DMA)</b>
+
 <hr>
 
 ### Jaký je princip komunikace s periferiemi pomocí V/V bran?
@@ -157,10 +172,12 @@
 - Při vstupu počítač vyšle signál RD, tím přikáže vstupnímu zařízení předat data do vstupní brány počítače
 - Při vstupu počítač vyšle signál WR a výstupní zařízení převezme data
 - Jednoduchý způsob, předpokládá, že je perif. zařízení pořád ready
+
 <hr>
 
 ### K čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?
 -  Zajišťujě, že informace budou správně podány (další otázka)
+
 <hr>
 
 ### Popište, jak probíhá přenos dat pomocí V/V brány s indikátorem.
@@ -172,6 +189,7 @@
 - Jsou-li poskytována platná data ze vstupu, pak se za pomocí STB(strobe) impulsu nastaví Q na 1
 - Když je Q na 1, data jsou předány počítači pomocí impulsu RD a po přenosu je indikátor vynulován
 - V opačném případě se nastavuje Q na 1, když jsou data převzata, pomocí ACK signálu
+
 <hr>
 
 ### Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?
@@ -180,17 +198,21 @@
     - Prostě testuje stavové bity ..
 - Přerušení:
     - Periferie aktivuje přerušovací signál, procesor přeruší program, přejde do obslužného režimu, poté pokračuje v provádění hl. programu tam, kde byl přerušen 
+
 <hr>
 
 ### Jaké výhody přináší řízení komunikace s využitím přerušení?
 - Procesor pořád nemusí zbytečně testovat stavové bity => neztrácí výkon
+
 <hr>
 
 ### Z jakých částí se skládá řadič DMA?
 ![blok_DMA](assets/blok_DMA.png)
+
 - Registr dat - Obsahuje slovo pro přesun
 - Registr adresy - Adresa hl. paměti kam bude slovo zapsány, nebo odkud bude přečteno
 - Čítač přesunu - požadovaný počet slov, které mají být ještě přesunuty
+
 <hr>
 
 ### Jak probíhá přenos dat s použitím DMA?
@@ -200,10 +222,12 @@
 4. Procesor vyšle vybrané jednotce ACK a uvolní sběrnici, jednotka pak pošle obsah registru adresy na addr. sběrnici a obsah registru dat na dat. sběrnici a čeká na provedení cyklu paměti.. pak obsah registru adresy zvětší o jedničku a čítač přesunu zmenší o jedničku.. pokud není nulový, testuje zda bylo předáno nové slovo do registru dat.. když ne, dočasně se ukončí přesun dat a přestane se vysílat žádost o DMA.. řízení je předáno procesoru
 5. Procesor dále pokračuje v provádění svého programu do doby, než obrží další žádost o DMA
 6. Pokud je obsah čítače přesunu nulový, blok DMA ukončí cel přesun a uvolní sběrnici 
+
 <hr>
 
 ### Jaké má výhody řadič DMA proti přenosu dat s využitím CPU?
 - Všechno nemusí dělat procesor 
+
 <hr>
 
 ### I2C ???
@@ -215,11 +239,13 @@
 
 ### Kdy a proč se začaly procesory dělit na RISC a CISC?
 - V 70. letech, kvůli narůstající složitosti procesorů .. 
+
 <hr>
 
 ### Jaké byly zásadní důvody, proč se začaly procesory RISC vyvíjet?
 - Výzkumy ukázaly, že programátoři a compilátory používají instrukce velmi nerovnoměrně  (v 50% případů se vyskytují pouze 3 instrukce)
 - Snahy o nalezení optimálního instrukčního souboru => vznik RISC
+
 <hr>
 
 ### Jaké jsou základní konstrukční vlastnosti procesorů RISC?
@@ -230,12 +256,14 @@
 - Instrukce mají pevnou délku a jednotný formát
 - Je použit vyšší počet registrů
 - Složitost se přesouvá na optimalizující kompilátory
+
 <hr>
 
 ### Jak přispěly jednotlivé charakteristické vlastnosti procesorů RISC ke zvýšení výpočetního výkonu?
 - Jednotná délka instrukcí => rychlejší výběr instrukcí z paměti => lepší plnění fronty instrukcí 
 - Jednotný formát => zjednodušuje dekódování
 - Zřetězené zpracování instrukcí 
+
 <hr>
 
 ### Jaký je princip zřetězeného zpracování instrukcí v RISC procesorech?
@@ -243,6 +271,7 @@
 - Funguje jako "výrobní linka" 
 
 CISC:
+
 |    | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9 | T10 | T11 | T12 |
 |----|----|----|----|----|----|----|----|----|----|-----|-----|-----|
 | VI | I1 |    |    |    |    |    | I2 |    |    |     |     |     |
@@ -253,6 +282,7 @@ CISC:
 | UV |    |    |    |    |    | I1 |    |    |    |     |     | I2  |
 
 RISC:
+
 |    | T1 | T2 | T3 | T4 | T5 | T6 | T7 | T8 | T9 | T10 | T11 | T12 |
 |----|----|----|----|----|----|----|----|----|----|-----|-----|-----|
 | VI | I1 | I2 | I3 | I4 | I5 | I6 | I7 |    |    |     |     |     |
@@ -263,6 +293,7 @@ RISC:
 | UV |    |    |    |    |    | I1 | I2 | I3 | I4 | I5  | I6  | I7  |
 
 Legend:
+
 | short name | full name           |
 |------------|---------------------|
 | VI         | Výběr Instrukce     |
@@ -279,6 +310,9 @@ Legend:
     - <b>CISC:</b> 2 instrukce
     - <b>RISC:</b> 7 instrukcí 
 - viz. tabulky v minulé otázce
+
+<hr>
+
 ### Jaké problémy přináší zřetězené zpracování instrukcí v procesorech RISC?
 - Datové a strukturální hazardy 
     - Datové: Když instrukce potřebuje mít k dispozici data předchozí instrukce ( a ta ještě nejsou k dispozici)
@@ -286,6 +320,8 @@ Legend:
 - Problémy plněním fronty instrukcí
     - Podmíněné skoky
     - Nepodmíněné skoky na adresu, která se musí vypočítat
+
+<hr>
     
 ### Co to je predikce skoků, proč se používá a jaké způsoby predikce se využívají?
 ### Co to jsou datové a strukturální hazardy v RISC procesorech? Co je způsobuje?
