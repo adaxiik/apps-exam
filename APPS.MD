@@ -324,8 +324,26 @@ Legend:
 <hr>
     
 ### Co to je predikce skoků, proč se používá a jaké způsoby predikce se využívají?
+- Statická 
+    - Do instrukce se vkládají příslušné bity již při kompilaci (nebo programátorem při psaní programu)
+- Dynamická
+    - Během běhu programu se zaznamenává, jestli se skok provedl, nebo ne
+- Může být:
+    - Jedno bitová
+    - Dvou bitová
+
+<hr>
+
 ### Co to jsou datové a strukturální hazardy v RISC procesorech? Co je způsobuje?
+- uvedeno výše..
+
+<hr>
+
 ### Jak funguje dvoubitová dynamická predikce skoků a proč se využívá?
+- Jako čtyř stavový automat
+
+![2bitpredikce](assets/2bit_predikce.png)
+
 
 
 # 5. x86 Intel historie
