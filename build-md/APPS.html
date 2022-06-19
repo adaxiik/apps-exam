@@ -1011,29 +1011,189 @@ zahříval</li>
 <h1 id="paměti">6. Paměti</h1>
 <h3 id="dle-jakých-kritérií-či-vlastností-se-dělí-paměti-počítačů">Dle
 jakých kritérií či vlastností se dělí paměti počítačů?</h3>
+<ul>
+<li>Typu přístupu
+<ul>
+<li>RAM (Random access memory) - libovolný přístup</li>
+<li>SAM (Serial acess memory) - Seriový přístup</li>
+<li>Speciální (paměť typu zásobník, fronta..)</li>
+</ul></li>
+<li>Možnosti zápisu/čtení
+<ul>
+<li>RWM (Read write memory) - pro zápis a čtení</li>
+<li>ROM (Read only memory) - pouze pro čtení</li>
+<li>Kombinované
+<ul>
+<li>NVRAM (Non volatile RAM)</li>
+<li>WOM (Write only memory)</li>
+<li>WORM (Write once - ready many times memory) - optické disky</li>
+</ul></li>
+</ul></li>
+<li>Principu elementární buňky
+<ul>
+<li>SRAM - statické paměti</li>
+<li>DRAM - dynamické paměti</li>
+<li>PROM, EPROM, EEPROM, FLASH - programovatelné paměti</li>
+</ul></li>
+<li>Uchování informace po odpojení napájení
+<ul>
+<li>Non-Volatile - Zachovají si informaci i po odpojení napájení</li>
+<li>Volatile - Ztráci informaci po odpojení napájení (DRAM a SRAM)</li>
+</ul></li>
+</ul>
+<hr>
 <h3
 id="jak-je-v-dynamických-pamětech-ukládána-informace-a-jak-je-udržována">Jak
 je v dynamických pamětech ukládána informace a jak je udržována?</h3>
+<ul>
+<li>Ve formě náboje v kondenzátoru</li>
+<li>Zapomenou svá data cca po 10ms</li>
+<li>Proto je nutné obnovovat napětí kondenzárorů - <b>Refresh</b></li>
+</ul>
+<hr>
 <h3 id="jaká-je-vnitřní-organizace-dynamických-pamětí">Jaká je vnitřní
 organizace dynamických pamětí?</h3>
+<ul>
+<li>Ve čtvercové matici v jedné, nebo více vrstvách</li>
+<li>Výběr buňky tak musí být proveden pomocí row a column dekodéru</li>
+<li><a href="https://poli.cs.vsb.cz/edu/apps/down/pameti.pdf">Organizace
+paměti, strana 5</a></li>
+</ul>
+<hr>
 <h3 id="popište-stručně-historii-vývoje-dynamických-pamětí.">Popište
 stručně historii vývoje dynamických pamětí.</h3>
+<ul>
+<li>?? :c</li>
+</ul>
+<hr>
 <h3
 id="jak-je-ve-statických-pamětech-ukládána-informace-a-jak-je-udržována">Jak
 je ve statických pamětech ukládána informace a jak je udržována?</h3>
+<ul>
+<li>Je uložená stavem klopného obvodu</li>
+<li>Lze realitovat pomocí 4 nebo 6 tranzistorů</li>
+<li>SRAM je dražší a pojme méně dat něž DRAM</li>
+</ul>
+<hr>
 <h3 id="jak-je-organizována-vnitřně-statická-paměť">Jak je organizována
 vnitřně statická paměť?</h3>
+<ul>
+<li>Jako 2D mřížka, kde jeden řádek tvoří jedno slovo</li>
+<li>SRAM paměti nevyužívají adresní multiplexing <img
+src="assets/SRAM.png" alt="SRAM" /></li>
+</ul>
+<hr>
 <h3
 id="jaké-typy-pamětí-si-udržují-svůj-obsah-i-po-odpojení-napájení">Jaké
 typy pamětí si udržují svůj obsah i po odpojení napájení?</h3>
+<ul>
+<li>(Nevolatilní)</li>
+<li>ROM (Read Only Memory)
+<ul>
+<li>Informace zapisuje výrobce (je složená z odporů, které výrobce
+přepálí.. neporušené prvky pak vedou proud a je v nich minimální
+napětí.. log. 0)</li>
+<li>Doba pamatování není ohraničená</li>
+</ul></li>
+<li>PROM
+<ul>
+<li>Programmable ROM</li>
+<li>Informace se vypalijí pomocí “programátoru”</li>
+<li>Lze zapsat jen jednou</li>
+</ul></li>
+<li>EPROM
+<ul>
+<li>Erasable PROM</li>
+<li>Uchovává informaci díky kvalitně izolovaném el. napětí</li>
+<li>K naprogramování je potřeba až 50ms trvající pulz o 5V</li>
+<li>Lze vymazat pomocí UV záření</li>
+<li>Doba pamatování 10 až 20 let</li>
+</ul></li>
+<li>EEPROM
+<ul>
+<li>Electrically Erasable PROM</li>
+<li>Zápis stějně jak EPROM</li>
+<li>Mazální pomocí el. pulzu s obrácenou polaritou</li>
+<li>Doba pamatování 10 až 20 let</li>
+</ul></li>
+<li>FLASH
+<ul>
+<li>Lze programovat rychle přímo v počítači</li>
+<li>Doba pamatování 10 až 100 let</li>
+<li>Struktura buněk je podobná EEPROM, ale pro programování a mazání
+stači pulz 10us</li>
+<li>Před 10000 programovacích a mazacích cyklů</li>
+</ul></li>
+</ul>
+<hr>
 <h3
 id="paměti-s-trvalým-obsahem-umožňují-svůj-obsah-přepsat.-jak-se-přepis-u-jednotlivých-typů-provádí">Paměti
 s trvalým obsahem umožňují svůj obsah přepsat. Jak se přepis u
 jednotlivých typů provádí?</h3>
+<ul>
+<li>EPROM - UV zářením</li>
+<li>EEPROM - Elektricky, až 50ms pulzem o 5V</li>
+<li>FLASH - Elektricky 10us pulzem</li>
+</ul>
+<hr>
 <h3 id="jaké-speciální-typy-pamětí-se-používají">Jaké speciální typy
 pamětí se používají?</h3>
+<ul>
+<li>VRAM (Video RAM)
+<ul>
+<li>Dvouportová</li>
+<li>Zvýšené přenosové pásmo</li>
+</ul></li>
+<li>WRAM (Window RAM (nemá nic společného s tím pseudo operačním
+systémem))
+<ul>
+<li>O 25% větší přenosové pásmo než VRAM</li>
+<li>Nabízí double-buffering</li>
+</ul></li>
+<li>SGRAM (Synchroní Grafická RAM)
+<ul>
+<li>Funguje jako SDRAM</li>
+<li>Ale SDRAM je optimalizována pro kapacitu a SGRAM pro přenos dat</li>
+</ul></li>
+<li>FIFO paměti (fronta)
+<ul>
+<li>Bez přesouvání obsahu</li>
+<li>S přesouváním obsahu</li>
+</ul></li>
+<li>Cache paměti
+<ul>
+<li>Malé a rychlé</li>
+<li>Rychlé komponenty čtou data z cache a nemusí čekat na komponentu
+pomalejší</li>
+<li>L1,L2,..</li>
+</ul></li>
+</ul>
+<hr>
+<h3 id="hierarchie-pamětí-v-počítači">Hierarchie pamětí v počítači</h3>
+<figure>
+<img src="assets/memory_h.png" alt="memory_h" />
+<figcaption aria-hidden="true">memory_h</figcaption>
+</figure>
+<hr>
 <h3 id="jak-se-u-pamětí-detekují-a-opravují-chyby">Jak se u pamětí
 detekují a opravují chyby?</h3>
+<ul>
+<li>SRAM je spolehlivější než DRAM</li>
+<li>Tvrdé chyby - opakující se</li>
+<li>Měkké chyby - Neopkající se .. těžší rozpoznat</li>
+<li>Kontrola Parity
+<ul>
+<li>dorovnává se na lichý počet jedniček do 9. bitu</li>
+<li>neopravuje, jen detekuje chybu (když je počet jedniček sudý)</li>
+</ul></li>
+<li>ECC - Error Correction Code
+<ul>
+<li>Detekuje více bitové chyby</li>
+<li>Schopen opravit 1 bitovou chybu</li>
+<li>Nutnost “Wait State” =&gt; zpomalení 2-3%</li>
+</ul></li>
+</ul>
+<hr>
 <h1 id="monolitické-počítače">7. Monolitické počítače</h1>
 <h3 id="jaká-je-obvyklá-organizace-pamětí-v-mikropočítačích">Jaká je
 obvyklá organizace pamětí v mikropočítačích?</h3>
