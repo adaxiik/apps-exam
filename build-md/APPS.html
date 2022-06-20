@@ -300,6 +300,9 @@ organizovaná paměť?</h3>
 <!--  ----------  -->
 <h1 id="jazyk-symbolických-instrukcí">2. Jazyk symbolických
 instrukcí</h1>
+<ul>
+<li>Jak lze adresovat ???</li>
+</ul>
 <!--  ----------  -->
 <h1 id="komunikace-s-periferiemi">3. Komunikace s periferiemi</h1>
 <h3
@@ -1372,6 +1375,7 @@ poměr kvůli přesnosti odporů)</li>
 </ul></li>
 </ul>
 <hr>
+<h3 id="nákres-ad-da">NÁKRES A/D D/A ???</h3>
 <h3 id="jaké-speciální-periferie-mikropočítačů-znáte">Jaké speciální
 periferie mikropočítačů znáte?</h3>
 <ul>
@@ -1381,26 +1385,144 @@ periferie mikropočítačů znáte?</h3>
 <li>Řadiče LCD a LED</li>
 </ul>
 <h1 id="monitory">8. Monitory</h1>
-<h3 id="co-to-znamená-u-monitoru-šířka-pásma-a-o-čem-vypovídá">Co to
-znamená u monitoru „šířka pásma“ a o čem vypovídá?</h3>
-<h3 id="na-jakých-principech-fungují-crt-monitory">Na jakých principech
-fungují CRT monitory?</h3>
+<h3 id="jak-funguje-crt">Jak funguje CRT ???</h3>
 <h3 id="na-jakých-principech-fungují-lcd-monitory">Na jakých principech
 fungují LCD monitory?</h3>
+<ul>
+<li>Liquid crystal display</li>
+<li>Každý pixel se skládá z 3 sub pixelů</li>
+<li>Jádrem LCD je TN (twisted nematic) struktura, která je z obou stran
+obklopena polarizačními vrstvami</li>
+<li>Princip (TN):
+<ul>
+<li>Světlo projde prvním filtrem a polarizuje se</li>
+<li>Projde vrstvami pootečených tekutých krystalů, které světlo otočí o
+90stupnu</li>
+<li>Světlo projde i druhým polarizačním filtrem, které je otočeno o
+90stupnu proti prvnímu</li>
+<li>(TN-LCD, které v klidovém stavu bez přivedeného napětí propouští
+světlo)</li>
+<li>Po přivedení napětí nématická struktura přestane otáčet světlo, a
+druhý polarizační filtr ho nepustí <img src="assets/lcd.png"
+alt="lcd" /> (tady světlo otáčí == pixely jsou zaplé)</li>
+</ul></li>
+<li>2 typy:
+<ul>
+<li>TN - v klidovém stavu svítí</li>
+<li>IPS - v klidovém stavu nesvítí</li>
+</ul></li>
+</ul>
+<hr>
 <h3 id="jaké-jsou-základní-výhody-a-nevýhody-lcd-monitorů">Jaké jsou
 základní výhody a nevýhody LCD monitorů?</h3>
+<ul>
+<li>Výhody:
+<ul>
+<li>Kvalita obrazu</li>
+<li>Životnost</li>
+<li>Spotřeba energie</li>
+<li>Odrazivost</li>
+<li>Bez emisí</li>
+</ul></li>
+<li>Nevýhody:
+<ul>
+<li>Citlivost na teplotu</li>
+<li>Pevné rozlišení</li>
+<li>Vadné pixely</li>
+<li>Doba odezvy</li>
+<li>Není úplně černý, kvůli podsvícení</li>
+</ul></li>
+</ul>
+<hr>
 <h3 id="jak-fungují-oled-zobrazovací-jednotky">Jak fungují OLED
 zobrazovací jednotky?</h3>
+<ul>
+<li>Organic Light Emmiting Diode</li>
+</ul>
+<figure>
+<img src="assets/oled.png" alt="OLED" />
+<figcaption aria-hidden="true">OLED</figcaption>
+</figure>
+<ul>
+<li>Při přivedení napětí, se elektrony(záporné částice) začnou hromadit
+v organické vrstvě, blíže k anodě</li>
+<li>Díry (kladné částice) se hromadí na opačné straně blíže katodě</li>
+<li>V organické vrstvě začne docházet ke srážkám a vzájemnou eliminací
+vzniká světlo</li>
+</ul>
+<hr>
 <h3 id="jaké-jsou-výhody-a-nevýhody-oled-technologie">Jaké jsou výhody a
 nevýhody OLED technologie?</h3>
+<ul>
+<li>Výhody:
+<ul>
+<li>Jsou samy o sobě zdrojem světla.. nepotřebují podsvícení</li>
+<li>Vysoký kontrast</li>
+<li>Tenké</li>
+<li>Nízka spotřeba</li>
+<li>Dobrý pozorovací úhel</li>
+<li>Možnost instalace na pružný podklad</li>
+</ul></li>
+<li>Nevýhody:
+<ul>
+<li>Vyšší cena</li>
+<li>Většinou malé displaye pro mobilní zařízení</li>
+<li>Degradace materiálu (organického)</li>
+</ul></li>
+</ul>
+<hr>
 <h3 id="jak-funguje-zobrazovací-jednotka-s-technologií-e-ink">Jak
 funguje zobrazovací jednotka s technologií E-Ink?</h3>
+<ul>
+<li>Elektřina je potřeba jen pro refresh (mal proud, 5-15V)</li>
+<li>V čiré kapalině jsou jen dvě barvy, můzou tvořit gradient, pomocí
+rozdělení elektrod</li>
+<li>Horní elektrody musí bt průsvitné</li>
+<li>Princip:
+<ul>
+<li>V průhlednch kapslích jsou obsaženy kladné a záporné částice různých
+barev (většinou černá a bílá)</li>
+<li>Po přivedení napětí se částice v čirém roztoku podle svého náboje
+přitáhnou k elektrodě opačné polarity</li>
+<li>Přes průhlednou horní elektrodu jde vidět barva</li>
+</ul></li>
+</ul>
 <h3 id="jaké-jsou-výhody-a-nevýhody-e-ink">Jaké jsou výhody a nevýhody
 E-Ink?</h3>
+<ul>
+<li>Výhody:
+<ul>
+<li>Vysoké rozlišení</li>
+<li>Dobrá čitelnost</li>
+<li>Není potřeba podsvícení</li>
+<li>Nulová spotřeba při zobrazování statické informace</li>
+<li>Nízká spotřeba při překreslení</li>
+<li>Tenké</li>
+</ul></li>
+<li>Nevýhody:
+<ul>
+<li>Dlouhý refresh (100+ms)</li>
+<li>Málo odstínu šedi</li>
+<li>Špatné barevné rozlišení</li>
+</ul></li>
+</ul>
+<hr>
 <h3 id="jak-je-u-e-ink-řešena-podpora-více-barevných-úrovní">Jak je u
 E-Ink řešena podpora více barevných úrovní?</h3>
-<h3 id="co-je-princip-multiplexu-na-zobrazovacích-zařízeních">Co je
-princip multiplexu na zobrazovacích zařízeních? ???</h3>
+<ul>
+<li>Rozdělením elektrod</li>
+<li>V případě barev:
+<ul>
+<li>Stejně jako u LCD =&gt; barevné filtry</li>
+<li>Nad každou kapslí je jeden barevný filtr z trojce RGB</li>
+<li>Špatné barvy.. barevá hloubka je 4096</li>
+</ul></li>
+</ul>
+<figure>
+<img src="assets/eink.png" alt="eink" />
+<figcaption aria-hidden="true">eink</figcaption>
+</figure>
+<hr>
 <h1 id="disky">9. Disky</h1>
 <h1 id="cuda">10. CUDA</h1>
 <h1 id="mikropočítač-a-risc-cpu">11. Mikropočítač a RISC CPU</h1>

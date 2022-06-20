@@ -101,6 +101,7 @@
 
 <!--  ----------  -->
 # 2. Jazyk symbolických instrukcí
+- Jak lze adresovat ???
 
 <!--  ----------  -->
 # 3. Komunikace s periferiemi
@@ -658,6 +659,8 @@ Legend:
 
 <hr>
 
+### NÁKRES A/D D/A ???
+
 ### Jaké speciální periferie mikropočítačů znáte?
 - Řízení dobíjení baterií
 - Vysílače a příjmače IR signálu
@@ -665,18 +668,102 @@ Legend:
 - Řadiče LCD a LED
 
 # 8. Monitory
+### Jak funguje CRT ???
 
-### Co to znamená u monitoru „šířka pásma“ a o čem vypovídá?
-### Na jakých principech fungují CRT monitory?
 ### Na jakých principech fungují LCD monitory?
-### Jaké jsou základní výhody a nevýhody LCD monitorů?
-### Jak fungují OLED zobrazovací jednotky?
-### Jaké jsou výhody a nevýhody OLED technologie?
-### Jak funguje zobrazovací jednotka s technologií E-Ink?
-### Jaké jsou výhody a nevýhody E-Ink?
-### Jak je u E-Ink řešena podpora více barevných úrovní?
-### Co je princip multiplexu na zobrazovacích zařízeních? ???
+- Liquid crystal display
+- Každý pixel se skládá z 3 sub pixelů
+- Jádrem LCD je TN (twisted nematic) struktura, která je z obou stran obklopena polarizačními vrstvami
+- Princip (TN):
+    - Světlo projde prvním filtrem a polarizuje se
+    - Projde vrstvami pootečených tekutých krystalů, které světlo otočí o 90stupnu
+    - Světlo projde i druhým polarizačním filtrem, které je otočeno o 90stupnu proti prvnímu
+    - (TN-LCD, které v klidovém stavu bez přivedeného napětí propouští světlo)
+    - Po přivedení napětí nématická struktura přestane otáčet světlo, a druhý polarizační filtr ho nepustí
+![lcd](assets/lcd.png)
+(tady světlo otáčí == pixely jsou zaplé)
+- 2 typy:
+    - TN - v klidovém stavu svítí
+    - IPS - v klidovém stavu nesvítí
 
+<hr>
+
+### Jaké jsou základní výhody a nevýhody LCD monitorů?
+- Výhody:
+    - Kvalita obrazu
+    - Životnost 
+    - Spotřeba energie
+    - Odrazivost
+    - Bez emisí
+- Nevýhody:
+    - Citlivost na teplotu
+    - Pevné rozlišení
+    - Vadné pixely
+    - Doba odezvy
+    - Není úplně černý, kvůli podsvícení
+
+<hr>
+
+### Jak fungují OLED zobrazovací jednotky?
+- Organic Light Emmiting Diode
+
+![OLED](assets/oled.png)
+
+- Při přivedení napětí, se elektrony(záporné částice) začnou hromadit v organické vrstvě, blíže k anodě
+- Díry (kladné částice) se hromadí na opačné straně blíže katodě
+- V organické vrstvě začne docházet ke srážkám a vzájemnou eliminací vzniká světlo
+
+<hr>
+
+### Jaké jsou výhody a nevýhody OLED technologie?
+- Výhody:
+    - Jsou samy o sobě zdrojem světla.. nepotřebují podsvícení
+    - Vysoký kontrast
+    - Tenké
+    - Nízka spotřeba
+    - Dobrý pozorovací úhel
+    - Možnost instalace na pružný podklad
+- Nevýhody:
+    - Vyšší cena
+    - Většinou malé displaye pro mobilní zařízení
+    - Degradace materiálu (organického)
+
+<hr>
+
+### Jak funguje zobrazovací jednotka s technologií E-Ink?
+- Elektřina je potřeba jen pro refresh (mal proud, 5-15V)
+- V čiré kapalině jsou jen dvě barvy, můzou tvořit gradient, pomocí rozdělení elektrod
+- Horní elektrody musí bt průsvitné
+- Princip:
+    - V průhlednch kapslích jsou obsaženy kladné a záporné částice různých barev (většinou černá a bílá)
+    - Po přivedení napětí se částice v čirém roztoku podle svého náboje přitáhnou k elektrodě opačné polarity
+    - Přes průhlednou horní elektrodu jde vidět barva 
+
+### Jaké jsou výhody a nevýhody E-Ink?
+- Výhody:
+    - Vysoké rozlišení
+    - Dobrá čitelnost
+    - Není potřeba podsvícení
+    - Nulová spotřeba při zobrazování statické informace
+    - Nízká spotřeba při překreslení
+    - Tenké
+- Nevýhody:
+    - Dlouhý refresh (100+ms)
+    - Málo odstínu šedi
+    - Špatné barevné rozlišení
+
+<hr>
+
+### Jak je u E-Ink řešena podpora více barevných úrovní?
+- Rozdělením elektrod 
+- V případě barev:
+    - Stejně jako u LCD => barevné filtry
+    - Nad každou kapslí je jeden barevný filtr z trojce RGB
+    - Špatné barvy.. barevá hloubka je 4096
+
+![eink](assets/eink.png)
+
+<hr>
 
 # 9. Disky
 
