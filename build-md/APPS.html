@@ -1056,6 +1056,8 @@ organizace dynamických pamětí?</h3>
 <ul>
 <li>Ve čtvercové matici v jedné, nebo více vrstvách</li>
 <li>Výběr buňky tak musí být proveden pomocí row a column dekodéru</li>
+<li>DRAM čte adresu po dvou částech (adresa řádku a sloupce) do
+adresového bufferu</li>
 <li><a href="https://poli.cs.vsb.cz/edu/apps/down/pameti.pdf">Organizace
 paměti, strana 5</a></li>
 </ul>
@@ -1195,32 +1197,189 @@ detekují a opravují chyby?</h3>
 </ul>
 <hr>
 <h1 id="monolitické-počítače">7. Monolitické počítače</h1>
+<ul>
+<li>Monolit = Procesor, Paměť, Periferie v jednom pouzdře</li>
+<li>Používá se převážně Hardvardská architektura</li>
+<li>Kvůli jednoduchosti bývají převážně RISC</li>
+</ul>
 <h3 id="jaká-je-obvyklá-organizace-pamětí-v-mikropočítačích">Jaká je
 obvyklá organizace pamětí v mikropočítačích?</h3>
+<ul>
+<li>Střádačové (pracovní registry)
+<ul>
+<li>Většinou jen jeden, nebo dva</li>
+<li>Ukládájí se do nich aktuálně zpracovávaná data</li>
+</ul></li>
+<li>Univerzální zápisníkové registry
+<ul>
+<li>Pro nejčastěji používaná data</li>
+</ul></li>
+<li>Paměť dat RWM
+<ul>
+<li>Pro rozsáhlejší a méně používaná data</li>
+</ul></li>
+<li>Speciální - např. IP</li>
+<li>Zásobník pro návratové adresy (nutnost mít stack pointer)</li>
+</ul>
 <h3
 id="jaké-zdroje-hodinového-signálu-se-mikropočítačích-používají">Jaké
 zdroje hodinového signálu se mikropočítačích používají?</h3>
+<ul>
+<li>(Zdroj synchronizace)</li>
+<li>Často je zdroj integrován přímo v počítači - nelze zajistit dobrou
+stabilitu (Vlivem teplot můžou být odchylky kmitočtu desítky %)</li>
+<li>Generátory:
+<ul>
+<li>Krystal (Dobrý pro stabilitu)</li>
+<li>Keramický rezonátor</li>
+<li>Obvod LC</li>
+<li>Obvod RC (Pro minimalizaci ceny)</li>
+<li>Externí zdroj <img src="assets/clock_gen.png"
+alt="clock_gen" /></li>
+</ul></li>
+</ul>
+<hr>
 <h3 id="jak-probíhá-reset-mikropočítače">Jak probíhá RESET
 mikropočítače?</h3>
+<ul>
+<li>Počáteční stav počítače</li>
+<li>Po provedení RESETu se u všech počítačů nastaví počáteční hodnota
+čítače instrukcí (0 nebo samé 1)</li>
+<li>Výrobce definuje jako dlouho RESET signál trvá</li>
+<li>Zdroj signálu může být vnější nebo vnitřní</li>
+</ul>
+<hr>
 <h3
 id="jakými-způsoby-se-řeší-ochrana-proti-rušení-v-mikropočítačích">Jakými
 způsoby se řeší ochrana proti rušení v mikropočítačích?</h3>
+<ul>
+<li>Mechanická ochrana - musí odolávat nárazům, nebo trvalým
+vibracím</li>
+<li>Galvanické oddělení - proti elektromagnetickým vlivům</li>
+<li>WATCHDOG - aby nám program nezabloudil</li>
+<li>Větším rozsahem pracovního napětí</li>
+</ul>
+<hr>
 <h3 id="jaké-jsou-základní-vlastnosti-vv-bran">Jaké jsou základní
 vlastnosti V/V bran?</h3>
+<ul>
+<li>Nejčastější a nejjednodušší je <code>Paralelní brána - port</code>
+<ul>
+<li>Obvykle organizovaná jako skupina 4 nebo 8 jednobit vývodů</li>
+</ul></li>
+</ul>
+<hr>
 <h3
 id="popište-obecný-princip-fungování-sériových-rozhraní-jaká-sériová-rozhraní-znáte">Popište
 obecný princip fungování sériových rozhraní? Jaká sériová rozhraní
 znáte?</h3>
+<ul>
+<li>Dovoluje efektivním způsobem přenášet data na relativně velké
+vzdálenosti při použití minimálního počtu vodičů</li>
+<li>Je to celkem pomalá komunikace</li>
+<li>Dle vzdálenosti přenosu dělíme na:
+<ul>
+<li>Mezi elektronickými zařízeními (na delší vzdálenost)
+<ul>
+<li>Synchroní nebo asynchroní přenos</li>
+<li>Typicky pomocí RS232 nebo RS485</li>
+</ul></li>
+<li>Uvnitř el. zařízení
+<ul>
+<li>Typickým standardem je I2C</li>
+</ul></li>
+</ul></li>
+<li>Princip ???</li>
+</ul>
+<figure>
+<img src="assets/seriovy_prenos.png" alt="seriovy_prenos" />
+<figcaption aria-hidden="true">seriovy_prenos</figcaption>
+</figure>
+<hr>
 <h3 id="k-čemu-slouží-v-mikropočítačích-čítače-a-časovače-jak-fungují">K
 čemu slouží v mikropočítačích čítače a časovače? Jak fungují?</h3>
+<ul>
+<li>Čítač je registr o N bitech, který nejčastěji čítá vnější události
+<ul>
+<li>Při přetečení se obvykle automaticky předává výzva do přerušovacího
+podsystému.</li>
+</ul></li>
+<li>Časovač je podobný jako čítač, ale je inkrementován vnitřním
+hodinovým signálem
+<ul>
+<li>Zajišťuje řízení událostí v realném čase</li>
+</ul></li>
+</ul>
+<hr>
 <h3
 id="popište-konstrukci-a-fungování-základních-ad-převodníků.">Popište
 konstrukci a fungování základních A/D převodníků.</h3>
+<ul>
+<li>Převádí Analogový signál na Digitální
+<ul>
+<li>Komparační A/D převodník
+<ul>
+<li>Porovnává měřené veličiny s referenční hodnotou</li>
+<li>Rychlé</li>
+<li>S počtem komparátorů roste rozlišovací schopnost</li>
+</ul></li>
+<li>A/D převodník s D/A převodem
+<ul>
+<li>pro sledování pomalu rostoucích veličin</li>
+<li>Používá se jeden komparátor a proměnný zdroj referenční hodnoty</li>
+<li>Sledovací
+<ul>
+<li>Mění vždy referenční hodnotu o krok nahoru nebo dolů</li>
+</ul></li>
+<li>Aproximační
+<ul>
+<li>Půlení intervalu</li>
+</ul></li>
+</ul></li>
+<li>Integrační A/D převodník
+<ul>
+<li>Metoda dvojité integrace</li>
+</ul></li>
+<li>Převodník s časovacím RC článkem
+<ul>
+<li>Měří se doba nabití a vybití kondenzátoru</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
 <h3
 id="popište-konstrukci-a-fungování-základních-da-převodníků.">Popište
 konstrukci a fungování základních D/A převodníků.</h3>
+<ul>
+<li>Převádí digitální signál na analogový</li>
+<li>PWM (Pulse Width Modulation)
+<ul>
+<li>Převodníky mají velké zpoždění</li>
+<li>Pro převod slouží RC článek</li>
+<li>Hodnota Analog. signálu je “zakódována” jako poměr mezi stavy
+vypnuto a zapnuto</li>
+</ul></li>
+<li>Paralelní převodníky
+<ul>
+<li>Přímý převod číselné hodnoty na stejnosměrný proud</li>
+<li>Základem je většinou odporová síť</li>
+<li>Typy:
+<ul>
+<li>Váhově řazené hodnoty odporů (1:2:4:8..64:128) (náročné dodržet
+poměr kvůli přesnosti odporů)</li>
+<li>R-2R</li>
+</ul></li>
+</ul></li>
+</ul>
+<hr>
 <h3 id="jaké-speciální-periferie-mikropočítačů-znáte">Jaké speciální
 periferie mikropočítačů znáte?</h3>
+<ul>
+<li>Řízení dobíjení baterií</li>
+<li>Vysílače a příjmače IR signálu</li>
+<li>USB rozhraní typu klient</li>
+<li>Řadiče LCD a LED</li>
+</ul>
 <h1 id="monitory">8. Monitory</h1>
 <h3 id="co-to-znamená-u-monitoru-šířka-pásma-a-o-čem-vypovídá">Co to
 znamená u monitoru „šířka pásma“ a o čem vypovídá?</h3>
