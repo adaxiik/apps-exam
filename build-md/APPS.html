@@ -297,12 +297,98 @@ organizovaná paměť?</h3>
 8bit), jejich pořadové číslo se využívá jako jejich adresa</li>
 </ul>
 <hr>
-<!--  ----------  -->
 <h1 id="jazyk-symbolických-instrukcí">2. Jazyk symbolických
 instrukcí</h1>
+<h3 id="registry-procesoru">Registry procesoru</h3>
 <ul>
-<li>Jak lze adresovat ???</li>
+<li>64bit: RAX, RBX, RCX, RDX, RSI, RDI, RBP, RSP, R8 - R15</li>
+<li>32bit: začínají E, R8D - R15D (Zápis vyresetuje horní část Rxx
+!)</li>
+<li>16bit: AX, BX … , R8W - R15W</li>
+<li>8bit: AH (high), AL (low), BH, BL .. (Jen ABCD, jsou rozděleny na
+high a low)</li>
+<li>RSP - stack pointer</li>
+<li>RIP - instruction pointer</li>
 </ul>
+<hr>
+<h3 id="adresování-spojování-jsi-a-c.">Adresování, spojování JSI a
+C.</h3>
+<ul>
+<li>Adresování:
+<ul>
+<li>[Bázový + Indexový * měřítko + Konstanta]</li>
+<li>Např: mov rax, qword [ rdi + rbx * 8 ]</li>
+</ul></li>
+<li>Datové typy:
+<ul>
+<li>BYTE, WORD, DWORD, QWORD (8, 16, 32, 64 bit)</li>
+</ul></li>
+<li>Spojování:
+<ul>
+<li>JSI: píšeme “global” před funkce a proměnné z C</li>
+</ul></li>
+</ul>
+<hr>
+<h3 id="základní-instrukce-přesunu-bitové-logické-aritmetické.">Základní
+instrukce přesunu, bitové, logické, aritmetické.</h3>
+<ul>
+<li>Přesunu:
+<ul>
+<li>mov, movzx, movsx (rozšíří i se znaménkem)</li>
+<li>CMOVcc - podmíněný přesun (cc je podmínka.. např CMOVZ )</li>
+<li>mov KAM, CO (mov CÍL, ZDROJ)</li>
+<li>nelze přesouvat z paměti do paměti (musí to jít přes registr)</li>
+</ul></li>
+<li>Logické:
+<ul>
+<li>AND cíl, zdroj</li>
+<li>TEST - stejně jako AND, ale neuloží výsledek</li>
+<li>OR, XOR, NOT</li>
+</ul></li>
+<li>Bitové:
+<ul>
+<li>SHL, SHR (bitový posun)</li>
+<li>BOR, BOL (bitová rotace)</li>
+</ul></li>
+<li>Aritmetické:
+<ul>
+<li>ADD, SUB, NEG, INC, DEC</li>
+<li>CMP - stejně jako SUB, ale neuloží výsledek</li>
+<li>MUL, IMUL, DIV, IDIV (I_ je pro znaménková čísla)</li>
+</ul></li>
+</ul>
+<hr>
+<h3
+id="skokové-instrukce-nepodmíněné-a-podmíněné.-volání-funkcí-s-parametry-návratovými-hodnotami">Skokové
+instrukce nepodmíněné a podmíněné. Volání funkcí s parametry,
+návratovými hodnotami</h3>
+<ul>
+<li>Skokové:
+<ul>
+<li>CALL - pro volání funkcí</li>
+<li>JMP</li>
+<li>Jcc:
+<ul>
+<li>pro testování bitů: JZ, JNE, JNZ..</li>
+<li>pro porovnávání čísel:
+<ol type="1">
+<li>Bezznaménkových:
+<ul>
+<li>A - above</li>
+<li>B - below</li>
+</ul></li>
+<li>Znaménkových:
+<ul>
+<li>L - less</li>
+<li>G - greater</li>
+</ul></li>
+</ol></li>
+</ul></li>
+</ul></li>
+<li>Návratová hodnota v RAX ( EAX, AX, AL)</li>
+<li>Parametry jsou v pořadí v RDI, RSI, RDX, RCX, R8, R9</li>
+</ul>
+<hr>
 <!--  ----------  -->
 <h1 id="komunikace-s-periferiemi">3. Komunikace s periferiemi</h1>
 <h3
@@ -395,7 +481,7 @@ komunikovat</li>
 <h3 id="jaký-je-princip-komunikace-s-periferiemi-pomocí-vv-bran">Jaký je
 princip komunikace s periferiemi pomocí V/V bran?</h3>
 <ul>
-<li>Vstupně / Výstupní brána (Input/Output, I/O) je obvod, kter
+<li>Vstupně / Výstupní brána (Input/Output, I/O) je obvod, který
 zprostředkovává předávání dat mezi sběrnicí (počítače) a periferním
 zařízení (počítače)</li>
 <li>Dělíme na
@@ -522,12 +608,12 @@ má výhody řadič DMA proti přenosu dat s využitím CPU?</h3>
 </ul></li>
 <li>Rozděluje připojená zařízení na:
 <ul>
-<li>Řídicí - Master
+<li>Řídicí - <b>Master</b>
 <ul>
 <li>Zahajuje a ukončuje komunikaci</li>
 <li>Generuje hodinový signál (SCL)</li>
 </ul></li>
-<li>Řízené - Slave
+<li>Řízené - <b>Slave</b>
 <ul>
 <li>Adresované Masterem</li>
 </ul></li>
@@ -564,10 +650,6 @@ Read nebo Write z pohledu mastera
 </ul></li>
 </ul>
 <hr>
-<h3
-id="příklad-jedné-sběrnice-i2c-viz-cvičení-zapojení-cyklus-sběrnice-adresování-přenos-dat.">Příklad
-jedné sběrnice: I2C, viz cvičení, zapojení, cyklus sběrnice, adresování,
-přenos dat.</h3>
 <h1 id="cisc-a-risc">4. CISC A RISC</h1>
 <h3 id="kdy-a-proč-se-začaly-procesory-dělit-na-risc-a-cisc">Kdy a proč
 se začaly procesory dělit na RISC a CISC?</h3>
@@ -1119,7 +1201,7 @@ paměti, strana 5</a></li>
 <h3 id="popište-stručně-historii-vývoje-dynamických-pamětí.">Popište
 stručně historii vývoje dynamických pamětí.</h3>
 <ul>
-<li>?? :c</li>
+<li>??? :c</li>
 </ul>
 <hr>
 <h3
@@ -1670,7 +1752,10 @@ rozptýlí se s posunutou peridodou</li>
 <p>Warpy a jejich velikost ??? Mřížka ???</p>
 <ul>
 <li>Rozšírení jazyka C/C++</li>
-<li>Funguje jen na Nvidia kartách ### Výhody GPU/cudy?</li>
+<li>Funguje jen na Nvidia kartách</li>
+</ul>
+<h3 id="výhody-gpucudy">Výhody GPU/cudy?</h3>
+<ul>
 <li><b>Masivní</b> Paralelizace</li>
 <li>Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce
 threadu)</li>
