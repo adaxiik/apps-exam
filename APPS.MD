@@ -931,7 +931,7 @@ Následovník, obrázek ???
 
 ### Čím se musí řídit programátor při práci s CUDA ?
 - Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
-- Musí určit správnou velikost warpu
+- Musí určit správný počet bloků a vláken 
 - Nepoužívat IFy (a cykly)
 - TODOOOO: Unified Memory ???
 
