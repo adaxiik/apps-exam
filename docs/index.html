@@ -1756,21 +1756,40 @@ rozptýlí se s posunutou peridodou</li>
 <li>Warp je skupina jader
 <ul>
 <li>Každý warp má svůj dekoder instrukcí a scheduler</li>
-<li>Každé jádro má FP unit a INT unit ### Výhody GPU/cudy?</li>
+<li>Každé jádro má FP unit a INT unit</li>
 </ul></li>
+</ul>
+<h3 id="výhody-gpucudy">Výhody GPU/cudy?</h3>
+<ul>
 <li><b>Masivní</b> Paralelizace</li>
 <li>Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce
 threadu)</li>
 <li>GPU je navržena pro zpracování výpočetně náročný kod s omezeným
 počtem podmíněných skoků (Nejlépe bez IFů)</li>
 </ul>
+<p>TODOOOOO cuda</p>
 <h1 id="rp2040-a-arm-cortex-a77">11. RP2040 a ARM Cortex-A77</h1>
 <h3 id="rp2040">RP2040</h3>
-<p><img src="assets/RP2040.png" alt="rp2040" /> - Levný mikrokontroler
-(kolem 50kč), používaný v R Picu - 2 jádra ARM Cortex M0+ až 133MHz -
-264kB SRAM (rozdělena do 6 banek) - 16MB flash paměti - DMA controller -
-Periferie: - 2x UART controller - 2x SPI controller - 2x I2C controller
-- PWM conroller - Watchdog - RTC</p>
+<figure>
+<img src="assets/RP2040.png" alt="rp2040" />
+<figcaption aria-hidden="true">rp2040</figcaption>
+</figure>
+<ul>
+<li>Levný mikrokontroler (kolem 50kč), používaný v R Picu</li>
+<li>2 jádra ARM Cortex M0+ až 133MHz</li>
+<li>264kB SRAM (rozdělena do 6 banek)</li>
+<li>16MB flash paměti</li>
+<li>DMA controller</li>
+<li>Periferie:
+<ul>
+<li>2x UART controller</li>
+<li>2x SPI controller</li>
+<li>2x I2C controller</li>
+<li>PWM conroller</li>
+<li>Watchdog</li>
+<li>RTC</li>
+</ul></li>
+</ul>
 <hr>
 <h3 id="arm-cortex-a-77">ARM Cortex A-77</h3>
 </body>
