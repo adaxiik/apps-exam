@@ -760,7 +760,7 @@ Následovník, obrázek ???
 - Jádrem LCD je TN (twisted nematic) struktura, která je z obou stran obklopena polarizačními vrstvami
 - Princip (TN):
     - Světlo projde prvním filtrem a polarizuje se
-    - Projde vrstvami pootečených tekutých krystalů, které světlo otočí o 90stupnu
+    - Projde vrstvami pootočených tekutých krystalů, které světlo otočí o 90stupnu
     - Světlo projde i druhým polarizačním filtrem, které je otočeno o 90stupnu proti prvnímu
     - (TN-LCD, které v klidovém stavu bez přivedeného napětí propouští světlo)
     - Po přivedení napětí nématická struktura přestane otáčet světlo, a druhý polarizační filtr ho nepustí
@@ -768,6 +768,7 @@ Následovník, obrázek ???
 ![lcd](assets/lcd.png)
 
 (tady světlo otáčí == pixely jsou zaplé)
+
 - 2 typy:
     - TN - v klidovém stavu svítí
     - IPS - v klidovém stavu nesvítí
@@ -866,7 +867,9 @@ Následovník, obrázek ???
 ### Jaký je princip ukládání dat u magnetických pamětí
 - Záznamové médium má tvar kruhové desky (disk,disketa), nebo dlouhé pásky
 - Je pokryto magnetockou vrstvou a pohybuje se konstantní rychlostí
-- V bodu dotyku s povrchem je štěrbina manetického obvodu (Kousek na povrchem)
+- V bodu dotyku s povrchem je štěrbina magnetického obvodu (Kousek na povrchem)
+- <i>Magnetický obvod je tvořen jádrem a cívkou navinutou na jádře</i>
+- <i>Pokud manetickým obvodem prochází proud, vzniká magnetický tok, který se díky štěrbině dostává do okolí a ovlivňuje magnetickou vrstvu </i>
 
 ![zapis_na_disk](assets/zapis_na_disk.png)
 
@@ -915,20 +918,69 @@ Následovník, obrázek ???
 <hr>
 
 # 10. CUDA
-Mřížka ???
-
 - Rozšírení jazyka C/C++
 - Funguje jen na Nvidia kartách
-- Warp je skupina jader
+- Warp je skupina jader, která je 
     - Každý warp má svůj dekoder instrukcí a scheduler
     - Každé jádro má FP unit a INT unit
 
 ### Výhody GPU/cudy?
 - <b>Masivní</b> Paralelizace
-- Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
 - GPU je navržena pro zpracování výpočetně náročný kod s omezeným počtem podmíněných skoků (Nejlépe bez IFů)
 
-TODOOOOO cuda
+<hr>
+
+### Čím se musí řídit programátor při práci s CUDA ?
+- Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
+- Musí určit správnou velikost warpu
+- Nepoužívat IFy (a cykly)
+- TODOOOO: Unified Memory ???
+
+<hr>
+
+### Organizace mřížky ?
+
+![cuda_grid](assets/cuda_grid.png)
+
+- Kód kernelu musí bt přizpůsoben mřížce
+- Pro určení pozice threadu v mřížce lze použít předdefinované proměnné (blockIdx, ..)
+    - `x = blockIdx.x * blockDim.x + threadIdx.x;`
+    - `y = blockIdx.y * blockDim.y + threadIdx.y;`
+
+<hr>
+
+### Jaký je postup ?
+- (alokuje se místo na GPU)
+- překopírují se data z hostu do device
+- zapnou se thready v GPU multiprocesoru
+- vykonají se thready v GPU multiprocesoru
+- překopírují se data z GPU zpátky do host
+
+<hr>
+
+### Rozšíření jazyka C/C++ ?
+- Modifikátory funkcí:
+    - `__device__` - Pouze GPU (Vykonána na GPU, zavolána z GPU)
+    - `__global__` - Pro oboje (Vykonána na grafické kartě, ale zavolána z procesoru)
+    - `__host__` - Pouze pro procesor
+- Kvantifikátory (qualifier) proměnných (nikdy jsme je irl nepoužili):
+    - `__device__`
+    - `__constant__`
+    - `__shared__`
+- Datové typy s předponou 1,2,3,4 .. např `int3`
+    - char
+    - uchar
+    - int
+    - uint
+    - short
+    - ushort
+    - long
+    - ulong
+    - float
+    - double    (off-topic fact.. float a double unsigned neexistují)
+- dim3 je uint3
+
+<hr>
 
 # 11. RP2040 a ARM Cortex-A77
 ### RP2040
