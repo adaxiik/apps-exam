@@ -5,7 +5,6 @@
     };
 </style>
 
-
 <!--  ----------  -->
 # 1. Architektura počítačů
 
@@ -231,7 +230,36 @@
 
 <hr>
 
-### I2C ???
+### I2C 
+- Inter-Integrated Circuit
+- Dvou-vodičová Sběrnice
+    - <b>SDC</b> => Synchronous Clock
+    - <b>SDA</b> => Synchronous Data
+- Rozděluje připojená zařízení na:
+    - Řídicí - Master
+        - Zahajuje a ukončuje komunikaci
+        - Generuje hodinový signál (SCL)
+    - Řízené - Slave
+        - Adresované Masterem
+- Adresa zařízení:
+    - Skládá se ze 7 bitů (horní 4 určuje výrobce, dolní 3 jdou nastavit libovolně)
+- Komunikace:
+    - V klidovém stavu je SCL a SDA na 1
+    - Start:
+        - SCL = Sestupná Hrana
+        - SDA = Sestupná Hrana
+    - Konec:
+        - SCL = Náběžná Hrana
+        - SDA = Náběžná Hrana
+    - Po startu následuje 7bit adresa cílového zařízení (Slave) a 1 bit Read nebo Write z pohledu mastera
+        - 0bAAAAAAAM (A je bit adresy a M je Read/Write)
+    - Dále slave vygeneruje ACK
+        - Když je ACK 0, vše je Ok
+        - Když je ACK 1, slave nereaguje
+    - Na konci přenosu se posílá NACK
+
+<hr>
+
 ### Příklad jedné sběrnice: I2C, viz cvičení, zapojení, cyklus sběrnice, adresování, přenos dat.
 
 
@@ -471,6 +499,7 @@ Legend:
 ### Jak je organizována vnitřně statická paměť?
 - Jako 2D mřížka, kde jeden řádek tvoří jedno slovo
 - SRAM paměti nevyužívají adresní multiplexing
+
 ![SRAM](assets/SRAM.png)
 
 <hr>
@@ -575,6 +604,7 @@ Legend:
     - Obvod LC
     - Obvod RC (Pro minimalizaci ceny)
     - Externí zdroj
+
 ![clock_gen](assets/clock_gen.png)
 
 <hr>
@@ -680,7 +710,9 @@ Legend:
     - Světlo projde i druhým polarizačním filtrem, které je otočeno o 90stupnu proti prvnímu
     - (TN-LCD, které v klidovém stavu bez přivedeného napětí propouští světlo)
     - Po přivedení napětí nématická struktura přestane otáčet světlo, a druhý polarizační filtr ho nepustí
+
 ![lcd](assets/lcd.png)
+
 (tady světlo otáčí == pixely jsou zaplé)
 - 2 typy:
     - TN - v klidovém stavu svítí
@@ -829,9 +861,19 @@ Legend:
 <hr>
 
 # 10. CUDA
-### Proč 
+Warpy a jejich velikost ???
+Mřížka ???
 
-# 11. Mikropočítač a RISC CPU
+
+- Rozšírení jazyka C/C++
+- Funguje jen na Nvidia kartách
+### Výhody GPU/cudy?
+- <b>Masivní</b> Paralelizace
+- Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
+- GPU je navržena pro zpracování výpočetně náročný kod s omezeným počtem podmíněných skoků (Nejlépe bez IFů)
+
+
+# 11. RP2040 a ARM Cortex-A77
 
 
 

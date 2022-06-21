@@ -512,7 +512,58 @@ má výhody řadič DMA proti přenosu dat s využitím CPU?</h3>
 <li>Všechno nemusí dělat procesor</li>
 </ul>
 <hr>
-<h3 id="i2c">I2C ???</h3>
+<h3 id="i2c">I2C</h3>
+<ul>
+<li>Inter-Integrated Circuit</li>
+<li>Dvou-vodičová Sběrnice
+<ul>
+<li><b>SDC</b> =&gt; Synchronous Clock</li>
+<li><b>SDA</b> =&gt; Synchronous Data</li>
+</ul></li>
+<li>Rozděluje připojená zařízení na:
+<ul>
+<li>Řídicí - Master
+<ul>
+<li>Zahajuje a ukončuje komunikaci</li>
+<li>Generuje hodinový signál (SCL)</li>
+</ul></li>
+<li>Řízené - Slave
+<ul>
+<li>Adresované Masterem</li>
+</ul></li>
+</ul></li>
+<li>Adresa zařízení:
+<ul>
+<li>Skládá se ze 7 bitů (horní 4 určuje výrobce, dolní 3 jdou nastavit
+libovolně)</li>
+</ul></li>
+<li>Komunikace:
+<ul>
+<li>V klidovém stavu je SCL a SDA na 1</li>
+<li>Start:
+<ul>
+<li>SCL = Sestupná Hrana</li>
+<li>SDA = Sestupná Hrana</li>
+</ul></li>
+<li>Konec:
+<ul>
+<li>SCL = Náběžná Hrana</li>
+<li>SDA = Náběžná Hrana</li>
+</ul></li>
+<li>Po startu následuje 7bit adresa cílového zařízení (Slave) a 1 bit
+Read nebo Write z pohledu mastera
+<ul>
+<li>0bAAAAAAAM (A je bit adresy a M je Read/Write)</li>
+</ul></li>
+<li>Dále slave vygeneruje ACK
+<ul>
+<li>Když je ACK 0, vše je Ok</li>
+<li>Když je ACK 1, slave nereaguje</li>
+</ul></li>
+<li>Na konci přenosu se posílá NACK</li>
+</ul></li>
+</ul>
+<hr>
 <h3
 id="příklad-jedné-sběrnice-i2c-viz-cvičení-zapojení-cyklus-sběrnice-adresování-přenos-dat.">Příklad
 jedné sběrnice: I2C, viz cvičení, zapojení, cyklus sběrnice, adresování,
@@ -1084,9 +1135,12 @@ je ve statických pamětech ukládána informace a jak je udržována?</h3>
 vnitřně statická paměť?</h3>
 <ul>
 <li>Jako 2D mřížka, kde jeden řádek tvoří jedno slovo</li>
-<li>SRAM paměti nevyužívají adresní multiplexing <img
-src="assets/SRAM.png" alt="SRAM" /></li>
+<li>SRAM paměti nevyužívají adresní multiplexing</li>
 </ul>
+<figure>
+<img src="assets/SRAM.png" alt="SRAM" />
+<figcaption aria-hidden="true">SRAM</figcaption>
+</figure>
 <hr>
 <h3
 id="jaké-typy-pamětí-si-udržují-svůj-obsah-i-po-odpojení-napájení">Jaké
@@ -1237,10 +1291,13 @@ stabilitu (Vlivem teplot můžou být odchylky kmitočtu desítky %)</li>
 <li>Keramický rezonátor</li>
 <li>Obvod LC</li>
 <li>Obvod RC (Pro minimalizaci ceny)</li>
-<li>Externí zdroj <img src="assets/clock_gen.png"
-alt="clock_gen" /></li>
+<li>Externí zdroj</li>
 </ul></li>
 </ul>
+<figure>
+<img src="assets/clock_gen.png" alt="clock_gen" />
+<figcaption aria-hidden="true">clock_gen</figcaption>
+</figure>
 <hr>
 <h3 id="jak-probíhá-reset-mikropočítače">Jak probíhá RESET
 mikropočítače?</h3>
@@ -1403,15 +1460,15 @@ obklopena polarizačními vrstvami</li>
 <li>(TN-LCD, které v klidovém stavu bez přivedeného napětí propouští
 světlo)</li>
 <li>Po přivedení napětí nématická struktura přestane otáčet světlo, a
-druhý polarizační filtr ho nepustí <img src="assets/lcd.png"
-alt="lcd" /> (tady světlo otáčí == pixely jsou zaplé)</li>
-</ul></li>
-<li>2 typy:
-<ul>
-<li>TN - v klidovém stavu svítí</li>
-<li>IPS - v klidovém stavu nesvítí</li>
+druhý polarizační filtr ho nepustí</li>
 </ul></li>
 </ul>
+<figure>
+<img src="assets/lcd.png" alt="lcd" />
+<figcaption aria-hidden="true">lcd</figcaption>
+</figure>
+<p>(tady světlo otáčí == pixely jsou zaplé) - 2 typy: - TN - v klidovém
+stavu svítí - IPS - v klidovém stavu nesvítí</p>
 <hr>
 <h3 id="jaké-jsou-základní-výhody-a-nevýhody-lcd-monitorů">Jaké jsou
 základní výhody a nevýhody LCD monitorů?</h3>
@@ -1610,7 +1667,16 @@ rozptýlí se s posunutou peridodou</li>
 </ul>
 <hr>
 <h1 id="cuda">10. CUDA</h1>
-<h3 id="proč">Proč</h3>
-<h1 id="mikropočítač-a-risc-cpu">11. Mikropočítač a RISC CPU</h1>
+<p>Warpy a jejich velikost ??? Mřížka ???</p>
+<ul>
+<li>Rozšírení jazyka C/C++</li>
+<li>Funguje jen na Nvidia kartách ### Výhody GPU/cudy?</li>
+<li><b>Masivní</b> Paralelizace</li>
+<li>Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce
+threadu)</li>
+<li>GPU je navržena pro zpracování výpočetně náročný kod s omezeným
+počtem podmíněných skoků (Nejlépe bez IFů)</li>
+</ul>
+<h1 id="rp2040-a-arm-cortex-a77">11. RP2040 a ARM Cortex-A77</h1>
 </body>
 </html>
