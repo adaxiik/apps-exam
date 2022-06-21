@@ -1535,7 +1535,7 @@ obklopena polarizačními vrstvami</li>
 <li>Princip (TN):
 <ul>
 <li>Světlo projde prvním filtrem a polarizuje se</li>
-<li>Projde vrstvami pootečených tekutých krystalů, které světlo otočí o
+<li>Projde vrstvami pootočených tekutých krystalů, které světlo otočí o
 90stupnu</li>
 <li>Světlo projde i druhým polarizačním filtrem, které je otočeno o
 90stupnu proti prvnímu</li>
@@ -1549,8 +1549,14 @@ druhý polarizační filtr ho nepustí</li>
 <img src="assets/lcd.png" alt="lcd" />
 <figcaption aria-hidden="true">lcd</figcaption>
 </figure>
-<p>(tady světlo otáčí == pixely jsou zaplé) - 2 typy: - TN - v klidovém
-stavu svítí - IPS - v klidovém stavu nesvítí</p>
+<p>(tady světlo otáčí == pixely jsou zaplé)</p>
+<ul>
+<li>2 typy:
+<ul>
+<li>TN - v klidovém stavu svítí</li>
+<li>IPS - v klidovém stavu nesvítí</li>
+</ul></li>
+</ul>
 <hr>
 <h3 id="jaké-jsou-základní-výhody-a-nevýhody-lcd-monitorů">Jaké jsou
 základní výhody a nevýhody LCD monitorů?</h3>
@@ -1685,8 +1691,13 @@ princip ukládání dat u magnetických pamětí</h3>
 pásky</li>
 <li>Je pokryto magnetockou vrstvou a pohybuje se konstantní
 rychlostí</li>
-<li>V bodu dotyku s povrchem je štěrbina manetického obvodu (Kousek na
+<li>V bodu dotyku s povrchem je štěrbina magnetického obvodu (Kousek na
 povrchem)</li>
+<li><i>Magnetický obvod je tvořen jádrem a cívkou navinutou na
+jádře</i></li>
+<li><i>Pokud manetickým obvodem prochází proud, vzniká magnetický tok,
+který se díky štěrbině dostává do okolí a ovlivňuje magnetickou vrstvu
+</i></li>
 </ul>
 <figure>
 <img src="assets/zapis_na_disk.png" alt="zapis_na_disk" />
@@ -1749,11 +1760,10 @@ rozptýlí se s posunutou peridodou</li>
 </ul>
 <hr>
 <h1 id="cuda">10. CUDA</h1>
-<p>Mřížka ???</p>
 <ul>
 <li>Rozšírení jazyka C/C++</li>
 <li>Funguje jen na Nvidia kartách</li>
-<li>Warp je skupina jader
+<li>Warp je skupina jader, která je
 <ul>
 <li>Každý warp má svůj dekoder instrukcí a scheduler</li>
 <li>Každé jádro má FP unit a INT unit</li>
@@ -1762,12 +1772,76 @@ rozptýlí se s posunutou peridodou</li>
 <h3 id="výhody-gpucudy">Výhody GPU/cudy?</h3>
 <ul>
 <li><b>Masivní</b> Paralelizace</li>
-<li>Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce
-threadu)</li>
 <li>GPU je navržena pro zpracování výpočetně náročný kod s omezeným
 počtem podmíněných skoků (Nejlépe bez IFů)</li>
 </ul>
-<p>TODOOOOO cuda</p>
+<hr>
+<h3 id="čím-se-musí-řídit-programátor-při-práci-s-cuda">Čím se musí
+řídit programátor při práci s CUDA ?</h3>
+<ul>
+<li>Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce
+threadu)</li>
+<li>Musí určit správnou velikost warpu</li>
+<li>Nepoužívat IFy (a cykly)</li>
+<li>TODOOOO: Unified Memory ???</li>
+</ul>
+<hr>
+<h3 id="organizace-mřížky">Organizace mřížky ?</h3>
+<figure>
+<img src="assets/cuda_grid.png" alt="cuda_grid" />
+<figcaption aria-hidden="true">cuda_grid</figcaption>
+</figure>
+<ul>
+<li>Kód kernelu musí bt přizpůsoben mřížce</li>
+<li>Pro určení pozice threadu v mřížce lze použít předdefinované
+proměnné (blockIdx, ..)
+<ul>
+<li><code>x = blockIdx.x * blockDim.x + threadIdx.x;</code></li>
+<li><code>y = blockIdx.y * blockDim.y + threadIdx.y;</code></li>
+</ul></li>
+</ul>
+<hr>
+<h3 id="jaký-je-postup">Jaký je postup ?</h3>
+<ul>
+<li>(alokuje se místo na GPU)</li>
+<li>překopírují se data z hostu do device</li>
+<li>zapnou se thready v GPU multiprocesoru</li>
+<li>vykonají se thready v GPU multiprocesoru</li>
+<li>překopírují se data z GPU zpátky do host</li>
+</ul>
+<hr>
+<h3 id="rozšíření-jazyka-cc">Rozšíření jazyka C/C++ ?</h3>
+<ul>
+<li>Modifikátory funkcí:
+<ul>
+<li><code>__device__</code> - Pouze GPU (Vykonána na GPU, zavolána z
+GPU)</li>
+<li><code>__global__</code> - Pro oboje (Vykonána na grafické kartě, ale
+zavolána z procesoru)</li>
+<li><code>__host__</code> - Pouze pro procesor</li>
+</ul></li>
+<li>Kvantifikátory (qualifier) proměnných (nikdy jsme je irl nepoužili):
+<ul>
+<li><code>__device__</code></li>
+<li><code>__constant__</code></li>
+<li><code>__shared__</code></li>
+</ul></li>
+<li>Datové typy s předponou 1,2,3,4 .. např <code>int3</code>
+<ul>
+<li>char</li>
+<li>uchar</li>
+<li>int</li>
+<li>uint</li>
+<li>short</li>
+<li>ushort</li>
+<li>long</li>
+<li>ulong</li>
+<li>float</li>
+<li>double (off-topic fact.. float a double unsigned neexistují)</li>
+</ul></li>
+<li>dim3 je uint3</li>
+</ul>
+<hr>
 <h1 id="rp2040-a-arm-cortex-a77">11. RP2040 a ARM Cortex-A77</h1>
 <h3 id="rp2040">RP2040</h3>
 <figure>
