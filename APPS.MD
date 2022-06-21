@@ -289,7 +289,7 @@
 ### I2C 
 - Inter-Integrated Circuit
 - Dvou-vodičová Sběrnice
-    - <b>SDC</b> => Synchronous Clock
+    - <b>SCL</b> => Synchronous Clock
     - <b>SDA</b> => Synchronous Data
 - Rozděluje připojená zařízení na:
     - Řídicí - <b>Master</b>
