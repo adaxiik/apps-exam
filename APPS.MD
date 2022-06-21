@@ -397,7 +397,7 @@ Legend:
 ### Jaké problémy přináší zřetězené zpracování instrukcí v procesorech RISC?
 - Datové a strukturální hazardy 
     - Datové: Když instrukce potřebuje mít k dispozici data předchozí instrukce ( a ta ještě nejsou k dispozici)
-    - Struktrální: Problém omezených prostředků procesoru (a počítače jako celku) .. např. jen jedna sběrnice
+    - Strukturální: Problém omezených prostředků procesoru (a počítače jako celku) .. např. jen jedna sběrnice
 - Problémy plněním fronty instrukcí
     - Podmíněné skoky
     - Nepodmíněné skoky na adresu, která se musí vypočítat
