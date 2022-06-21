@@ -860,16 +860,15 @@ Následovník, obrázek ???
 - Optické Paměti
     - CD
     - DVD
-- Magnetooprické paměti
+- Magnetooptické paměti
 
 <hr>
 
-### Jaký je princip ukládání dat u magnetických pamětí
+### Jaký je princip ukládání dat u magnetických pamětí ?
 - Záznamové médium má tvar kruhové desky (disk,disketa), nebo dlouhé pásky
 - Je pokryto magnetockou vrstvou a pohybuje se konstantní rychlostí
-- V bodu dotyku s povrchem je štěrbina magnetického obvodu (Kousek na povrchem)
-- <i>Magnetický obvod je tvořen jádrem a cívkou navinutou na jádře</i>
-- <i>Pokud manetickým obvodem prochází proud, vzniká magnetický tok, který se díky štěrbině dostává do okolí a ovlivňuje magnetickou vrstvu </i>
+- V bodu dotyku s povrchem je štěrbina magnetického obvodu (štěrbina je díra v té hlavě(Magnetickém obvodu)).. štěrbina + mag. obvod tvoří jádro
+- <i>Pokud manetickým obvodem prochází proud, vzniká magnetický tok, který se díky štěrbině dostává do okolí, a ovlivňuje magnetickou vrstvu </i>
 
 ![zapis_na_disk](assets/zapis_na_disk.png)
 
@@ -881,7 +880,7 @@ Následovník, obrázek ???
 
 <hr>
 
-### Jak funguje pevný disk?
+### Jak funguje pevný disk ?
 ![disk](assets/disk.png)
 
 - Proud je převeden na indukci
