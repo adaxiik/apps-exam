@@ -935,7 +935,7 @@ TODOOOOO cuda
 
 ![rp2040](assets/RP2040.png)
 
-- Levný mikrokontroler (kolem 50kč), používaný v R Picu 
+- Levný mikrokontroler (kolem 50kč), používaný v R Picu, vydán v lednu 2021
 - 2 jádra ARM Cortex M0+ až 133MHz
 - 264kB SRAM (rozdělena do 6 banek)
 - 16MB flash paměti
@@ -951,3 +951,15 @@ TODOOOOO cuda
 <hr>
 
 ### ARM Cortex A-77
+- nad 3GHz
+- ARMv8-A architektura (instrukční sada) - Harvard
+- 64bit
+- Vydán v roce 2019
+- 13-ti úrovňové zřetězení
+- L1, L2 a L3 cache
+- FPU
+- Out of Order Zpracování instrukcí
+- Primárně v mobilech s androidem => nízká spotřeba
+- [TODO: přečíst](https://www.cnews.cz/arm-cortex-a77cpu-jadro-architektura-velky-narust-vykonu-ipc/)
+
+![a77](assets/cortex-a77.png)
