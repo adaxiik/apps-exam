@@ -919,13 +919,13 @@ Následovník, obrázek ???
 # 10. CUDA
 - Rozšírení jazyka C/C++
 - Funguje jen na Nvidia kartách
-- Warp je skupina jader, která je 
+- Warp je skupina jader, která je ovládána schedulerem
     - Každý warp má svůj dekoder instrukcí a scheduler
     - Každé jádro má FP unit a INT unit
 
 ### Výhody GPU/cudy?
 - <b>Masivní</b> Paralelizace
-- GPU je navržena pro zpracování výpočetně náročný kod s omezeným počtem podmíněných skoků (Nejlépe bez IFů)
+- GPU je navržena pro zpracování výpočetně náročného kódu s omezeným počtem podmíněných skoků (Nejlépe bez IFů)
 
 <hr>
 
