@@ -966,7 +966,7 @@ Následovník, obrázek ???
     - `__device__`
     - `__constant__`
     - `__shared__`
-- Datové typy s předponou 1,2,3,4 .. např `int3`
+- Datové typy s příponou 1,2,3,4 .. např `int3`
     - char
     - uchar
     - int
