@@ -917,7 +917,6 @@ Následovník, obrázek ???
 # 10. CUDA
 Mřížka ???
 
-
 - Rozšírení jazyka C/C++
 - Funguje jen na Nvidia kartách
 - Warp je skupina jader
@@ -928,9 +927,25 @@ Mřížka ???
 - Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
 - GPU je navržena pro zpracování výpočetně náročný kod s omezeným počtem podmíněných skoků (Nejlépe bez IFů)
 
+TODOOOOO cuda
 
 # 11. RP2040 a ARM Cortex-A77
+### RP2040
 
+![rp2040](assets/RP2040.png)
+- Levný mikrokontroler (kolem 50kč), používaný v R Picu 
+- 2 jádra ARM Cortex M0+ až 133MHz
+- 264kB SRAM (rozdělena do 6 banek)
+- 16MB flash paměti
+- DMA controller
+- Periferie:
+    - 2x UART controller
+    - 2x SPI controller
+    - 2x I2C controller
+    - PWM conroller
+    - Watchdog
+    - RTC
 
+<hr>
 
-
+### ARM Cortex A-77
