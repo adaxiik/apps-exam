@@ -818,11 +818,11 @@ Následovník, obrázek ???
 <hr>
 
 ### Jak funguje zobrazovací jednotka s technologií E-Ink?
-- Elektřina je potřeba jen pro refresh (mal proud, 5-15V)
+- Elektřina je potřeba jen pro refresh (malý proud, 5-15V)
 - V čiré kapalině jsou jen dvě barvy, můzou tvořit gradient, pomocí rozdělení elektrod
-- Horní elektrody musí bt průsvitné
+- Horní elektrody musí být průsvitné
 - Princip:
-    - V průhlednch kapslích jsou obsaženy kladné a záporné částice různých barev (většinou černá a bílá)
+    - V průhledných kapslích jsou obsaženy kladné a záporné částice různých barev (většinou černá a bílá)
     - Po přivedení napětí se částice v čirém roztoku podle svého náboje přitáhnou k elektrodě opačné polarity
     - Přes průhlednou horní elektrodu jde vidět barva 
 
@@ -979,6 +979,9 @@ Následovník, obrázek ???
     - float
     - double    (off-topic fact.. float a double unsigned neexistují)
 - dim3 je uint3
+- ```jmeno_funkce<<<pocet_bloku, pocet_vlaken>>>(parametry)```
+
+![fermi](assets/fermi.png)
 
 <hr>
 
