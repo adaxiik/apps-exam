@@ -173,6 +173,7 @@
         - RESET
             - má každý mikroprocesor
             - uvede mikroprocesor do výchozího stavu
+            - Aktivování uživatelem, nebo přídavným obvodem
         - MEMORY READ (MR)
             - zabezpečuje časování čtení z paměti (nebo jiných bloků) 
         - MEMORY WRITE (MW)
@@ -182,10 +183,15 @@
         - READY
             - připravenost obvodu
 - Datová
-    - Slouží pro přenos veškerých dat v počítači
+    - Slouží pro přenos veškerých dat v počítači (vždy meti dvěma)
     - Nedůležitější parametry jsou šířka (počet bitů) a časování
     - Šířka ovlivňuje rychlost komunikace
     - Lze ušetřit vodiče pomocí multiplexování
+    - <b>V jednom okamžiku může být aktivní pouze jeden vysílač</b>
+    - Dělí se na:
+        - Vnitřní sběrnice mikroprocesoru
+        - Vnitřní sběrnice počítače
+        - Vnější sběrnice počítačem
 
 <hr>
 
