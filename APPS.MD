@@ -582,7 +582,7 @@ Následovník, obrázek ???
     - Lze programovat rychle přímo v počítači
     - Doba pamatování 10 až 100 let
     - Struktura buněk je podobná EEPROM, ale pro programování a mazání stači pulz 10us
-    - Před 10000 programovacích a mazacích cyklů
+    - Přes 10000 programovacích a mazacích cyklů
 
 <hr>
 
