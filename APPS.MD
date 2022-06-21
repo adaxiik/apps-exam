@@ -976,7 +976,7 @@ Následovník, obrázek ???
     - long
     - ulong
     - float
-    - double    (off-topic fact.. float a double unsigned neexistují)
+    - double (double1, double2)   (off-topic fact.. float a double unsigned neexistují)
 - dim3 je uint3
 - ```jmeno_funkce<<<pocet_bloku, pocet_vlaken>>>(parametry)```
 
