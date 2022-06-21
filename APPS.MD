@@ -5,7 +5,6 @@
     };
 </style>
 
-<!--  ----------  -->
 # 1. Architektura počítačů
 
 ### Jaké jsou základní principy fungování počítače?
@@ -496,6 +495,8 @@ Legend:
 - <b>Core 2</b>
 - <b>Atom</b>
 
+Následovník, obrázek ???
+
 <hr>
 
 # 6. Paměti
@@ -914,13 +915,14 @@ Legend:
 <hr>
 
 # 10. CUDA
-Warpy a jejich velikost ???
 Mřížka ???
 
 
 - Rozšírení jazyka C/C++
 - Funguje jen na Nvidia kartách
-
+- Warp je skupina jader
+    - Každý warp má svůj dekoder instrukcí a scheduler
+    - Každé jádro má FP unit a INT unit
 ### Výhody GPU/cudy?
 - <b>Masivní</b> Paralelizace
 - Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
