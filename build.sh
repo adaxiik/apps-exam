@@ -9,7 +9,7 @@ else
 fi
 
 cp -r assets docs
-pandoc APPS.MD -f markdown -t html -s -o docs/APPS.html
+pandoc APPS.MD -f markdown -t html -s -o docs/index.html
 pandoc APPS.MD -f markdown -t pdf -s -o docs/APPS.pdf
 pandoc APPS.MD -f markdown -t docx -s -o docs/APPS.docx
 
