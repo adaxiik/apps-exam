@@ -922,6 +922,7 @@ Mřížka ???
 - Warp je skupina jader
     - Každý warp má svůj dekoder instrukcí a scheduler
     - Každé jádro má FP unit a INT unit
+
 ### Výhody GPU/cudy?
 - <b>Masivní</b> Paralelizace
 - Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
@@ -933,6 +934,7 @@ TODOOOOO cuda
 ### RP2040
 
 ![rp2040](assets/RP2040.png)
+
 - Levný mikrokontroler (kolem 50kč), používaný v R Picu 
 - 2 jádra ARM Cortex M0+ až 133MHz
 - 264kB SRAM (rozdělena do 6 banek)
