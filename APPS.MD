@@ -769,6 +769,8 @@ Stavba DRAM buňky:
 
 ![pwm_prevodnik](assets/pwm_prevodnik.png)
 
+<hr>
+
 ### Jaké speciální periferie mikropočítačů znáte?
 - Řízení dobíjení baterií
 - Vysílače a příjmače IR signálu
