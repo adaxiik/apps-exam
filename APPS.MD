@@ -59,7 +59,7 @@
 <hr>
 
 ### Jaká je podpora paralelismu u obou architektur počítačů?
-- Žádná .. instrukce jsou vykonávány sekvenčně, následující krok je závislí na tom předchozím
+- Žádná .. instrukce jsou vykonávány sekvenčně, následující krok je závislý na tom předchozím
 - Paralelizmy se musí simulovat až na úrovni OS
 
 <hr>
@@ -253,6 +253,12 @@
 - Jsou-li poskytována platná data ze vstupu, pak se za pomocí STB(strobe) impulsu nastaví Q na 1
 - Když je Q na 1, data jsou předány počítači pomocí impulsu RD a po přenosu je indikátor vynulován
 - V opačném případě se nastavuje Q na 1, když jsou data převzata, pomocí ACK signálu
+
+<hr>
+
+### S vyrovnávací pamětí:
+
+![VV_vyrovnavaci](assets/VV_vyrovnavaci.png)
 
 <hr>
 
