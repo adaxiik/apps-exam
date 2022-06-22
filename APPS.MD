@@ -545,6 +545,10 @@ Následovník, obrázek ???
 - DRAM čte adresu po dvou částech (adresa řádku a sloupce) do adresového bufferu
 - [Organizace paměti, strana 5](https://poli.cs.vsb.cz/edu/apps/down/pameti.pdf)
 
+Stavba DRAM buňky: 
+
+![dram_bunka](assets/dram_bunka.png)
+
 <hr>
 
 ### Popište stručně historii vývoje dynamických pamětí.
