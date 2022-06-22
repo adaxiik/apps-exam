@@ -54,6 +54,8 @@
     - dvě sběrnice jsou dražší
     - nevyužitou část paměti dat nelze použít pro program.. a naopak
 
+![harvard](assets/harvard.png)
+
 <hr>
 
 ### Jaká je podpora paralelismu u obou architektur počítačů?
