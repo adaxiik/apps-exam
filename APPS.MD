@@ -733,6 +733,9 @@ Stavba DRAM buňky:
         - Porovnává měřené veličiny s referenční hodnotou
         - Rychlé
         - S počtem komparátorů roste rozlišovací schopnost
+
+        ![komparacni_prevodnik](assets/komparacni_prevodnik.png)
+
     - A/D převodník s D/A převodem
         - pro sledování pomalu rostoucích veličin
         - Používá se jeden komparátor a proměnný zdroj referenční hodnoty
@@ -762,7 +765,9 @@ Stavba DRAM buňky:
 
 <hr>
 
-### NÁKRES A/D D/A ???
+### NÁKRES D/A ?
+
+![pwm_prevodnik](assets/pwm_prevodnik.png)
 
 ### Jaké speciální periferie mikropočítačů znáte?
 - Řízení dobíjení baterií
