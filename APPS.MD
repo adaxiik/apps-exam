@@ -1036,3 +1036,14 @@ Stavba DRAM buňky:
 - [TODO: přečíst](https://www.cnews.cz/arm-cortex-a77cpu-jadro-architektura-velky-narust-vykonu-ipc/)
 
 ![a77](assets/cortex-a77.png)
+
+
+<hr>
+
+### Následovník Pentia Pro ?
+
+![pentium_2](assets/pentium_2.png)
+
+Ano.. vypadá stejně jak Pentium Pro.. ale má navíc MMX jednotku (SIMD instrukce), větší frekvenci a o polovinu menší frekvenci L2 cache
+
+[Strana 21](https://www.lpthe.jussieu.fr/~talon/pentiumII.pdf)
