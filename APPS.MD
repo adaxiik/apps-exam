@@ -1036,6 +1036,7 @@ Stavba DRAM buňky:
 - 64bit
 - Vydán v roce 2019
 - 13-ti úrovňové zřetězení
+- 8 Jader
 - L1, L2 a L3 cache
 - FPU
 - Out of Order Zpracování instrukcí
@@ -1044,6 +1045,11 @@ Stavba DRAM buňky:
 
 ![a77](assets/cortex-a77.png)
 
+![a77_full](assets/cortex-a77_full.png)
+
+![a77_simple](assets/a77_simple.png)
+
+https://en.wikichip.org/wiki/arm_holdings/microarchitectures/cortex-a77
 
 <hr>
 
