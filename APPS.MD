@@ -252,7 +252,7 @@
 
 - Jsou-li poskytována platná data ze vstupu, pak se za pomocí STB(strobe) impulsu nastaví Q na 1
 - Když je Q na 1, data jsou předány počítači pomocí impulsu RD a po přenosu je indikátor vynulován
-- V opačném případě se nastavuje Q na 1, když jsou data převzata, pomocí ACK signálu
+- V opačném případě se nastavuje Q na 0, když jsou data převzata, pomocí ACK signálu
 
 <hr>
 
