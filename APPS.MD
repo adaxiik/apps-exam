@@ -185,8 +185,8 @@
         - READY
             - připravenost obvodu
 - Datová
-    - Slouží pro přenos veškerých dat v počítači (vždy meti dvěma)
-    - Nedůležitější parametry jsou šířka (počet bitů) a časování
+    - Slouží pro přenos veškerých dat v počítači (vždy mezi dvěma)
+    - Nejdůležitějšími parametry jsou šířka (počet bitů) a časování
     - Šířka ovlivňuje rychlost komunikace
     - Lze ušetřit vodiče pomocí multiplexování
     - <b>V jednom okamžiku může být aktivní pouze jeden vysílač</b>
@@ -339,7 +339,7 @@ Obsluha???
 <hr>
 
 ### Jaké byly zásadní důvody, proč se začaly procesory RISC vyvíjet?
-- Výzkumy ukázaly, že programátoři a compilátory používají instrukce velmi nerovnoměrně  (v 50% případů se vyskytují pouze 3 instrukce)
+- Výzkumy ukázaly, že programátoři a compilátory používají instrukce velmi nerovnoměrně  (v 50 % případů se vyskytují pouze 3 instrukce)
 - Snahy o nalezení optimálního instrukčního souboru => vznik RISC
 
 <hr>
@@ -347,8 +347,8 @@ Obsluha???
 ### Jaké jsou základní konstrukční vlastnosti procesorů RISC?
 - Malý instrukční soubor
 - V každém strojovém cyklu by měla být dokončena jedna instrukce
-- Zřeťezené zpracování instrukcí 
-- Data jsou z hlavní paměti vybírána a úkládána výhradně pomocí <b>LOAD</b> a <b>STORE</b> instrukcí
+- Zřetězené zpracování instrukcí 
+- Data jsou z hlavní paměti vybírána a ukládána výhradně pomocí <b>LOAD</b> a <b>STORE</b> instrukcí
 - Instrukce mají pevnou délku a jednotný formát
 - Je použit vyšší počet registrů
 - Složitost se přesouvá na optimalizující kompilátory
@@ -363,8 +363,8 @@ Obsluha???
 <hr>
 
 ### Jaký je princip zřetězeného zpracování instrukcí v RISC procesorech?
-- Provedení instrukce musí vždy projít stejnými fázemi (né nutně těma co jsou na obrázku)
-- Funguje jako "výrobní linka" 
+- Provedení instrukce musí vždy projít stejnými fázemi (ne nutně těmi, co jsou na obrázku)
+- Funguje jako „výrobní linka“ 
 
 CISC:
 
@@ -402,7 +402,7 @@ Legend:
 <hr>
 
 ### Jakého zrychlení lze zřetězeným zpracováním instrukcí dosáhnout?
-- V ideáním světě, při délce zřetězení 6-ti instrukcí, udělá během 12 cyklů
+- V ideáním světě, při délce zřetězení 6 instrukcí, udělá během 12 cyklů
     - <b>CISC:</b> 2 instrukce
     - <b>RISC:</b> 7 instrukcí 
 - viz. tabulky v minulé otázce
@@ -411,7 +411,7 @@ Legend:
 
 ### Jaké problémy přináší zřetězené zpracování instrukcí v procesorech RISC?
 - Datové a strukturální hazardy 
-    - Datové: Když instrukce potřebuje mít k dispozici data předchozí instrukce ( a ta ještě nejsou k dispozici)
+    - Datové: Když instrukce potřebuje mít k dispozici data předchozí instrukce (a ta ještě nejsou k dispozici)
     - Strukturální: Problém omezených prostředků procesoru (a počítače jako celku) .. např. jen jedna sběrnice
 - Problémy plněním fronty instrukcí
     - Podmíněné skoky
@@ -440,7 +440,7 @@ Legend:
 
 ![2bitpredikce](assets/2bit_predikce.png)
 
-- `A` predikuje provedení skoku, `N` říká, že skok provádět nebude
+- `A` predikuje provedení skoku, `N` říká, že se skok provádět nebude
 - `a` a `n` přechody označují, zda se skok naposledy prováděl
 
 <hr>
@@ -584,11 +584,11 @@ Stavba DRAM buňky:
     - Doba pamatování není ohraničená
 - PROM
     - Programmable ROM
-    - Informace se vypalijí pomocí "programátoru"
+    - Informace se vypalují pomocí „programátoru“
     - Lze zapsat jen jednou
 - EPROM
     - Erasable PROM
-    - Uchovává informaci díky kvalitně izolovaném el. napětí
+    - Uchovává informaci díky kvalitně izolovanému el. napětí
     - K naprogramování je potřeba až 50ms trvající pulz o 5V
     - Lze vymazat pomocí UV záření
     - Doba pamatování 10 až 20 let
@@ -600,7 +600,7 @@ Stavba DRAM buňky:
 - FLASH
     - Lze programovat rychle přímo v počítači
     - Doba pamatování 10 až 100 let
-    - Struktura buněk je podobná EEPROM, ale pro programování a mazání stači pulz 10us
+    - Struktura buněk je podobná EEPROM, ale pro programování a mazání stačí pulz 10us
     - Přes 10000 programovacích a mazacích cyklů
 
 <hr>
@@ -619,7 +619,7 @@ Stavba DRAM buňky:
 - WRAM (Window RAM (nemá nic společného s tím pseudo operačním systémem))
     - O 25% větší přenosové pásmo než VRAM
     - Nabízí double-buffering
-- SGRAM (Synchroní Grafická RAM)
+- SGRAM (Synchronní Grafická RAM)
     - Funguje jako SDRAM
     - Ale SDRAM je optimalizována pro kapacitu a SGRAM pro přenos dat
 - FIFO paměti (fronta)
@@ -641,14 +641,14 @@ Stavba DRAM buňky:
 ### Jak se u pamětí detekují a opravují chyby?
 - SRAM je spolehlivější než DRAM
 - Tvrdé chyby - opakující se 
-- Měkké chyby - Neopkající se .. těžší rozpoznat
+- Měkké chyby - Neopakující se .. těžší rozpoznat
 - Kontrola Parity
     - dorovnává se na lichý počet jedniček do 9. bitu
     - neopravuje, jen detekuje chybu (když je počet jedniček sudý)
 - ECC - Error Correction Code
-    - Detekuje více bitové chyby
+    - Detekuje vícebitové chyby
     - Schopen opravit 1 bitovou chybu
-    - Nutnost "Wait State" => zpomalení 2-3%
+    - Nutnost „Wait State“ => zpomalení 2-3%
 
 <hr>
 
@@ -704,12 +704,12 @@ Stavba DRAM buňky:
 
 <hr>
 
-### Popište obecný princip fungování sériových rozhraní? Jaká sériová rozhraní znáte?
+### Popište obecný princip fungování sériových rozhraní. Jaká sériová rozhraní znáte?
 - Dovoluje efektivním způsobem přenášet data na relativně velké vzdálenosti při použití minimálního počtu vodičů
 - Je to celkem pomalá komunikace
 - Dle vzdálenosti přenosu dělíme na:
     - Mezi elektronickými zařízeními (na delší vzdálenost)
-        - Synchroní nebo asynchroní přenos
+        - Synchronní nebo asynchronní přenos
         - Typicky pomocí RS232 nebo RS485
     - Uvnitř el. zařízení
         - Typickým standardem je I2C 
@@ -755,7 +755,7 @@ Stavba DRAM buňky:
 - PWM (Pulse Width Modulation)
     - Převodníky mají velké zpoždění
     - Pro převod slouží RC článek
-    - Hodnota Analog. signálu je "zakódována" jako poměr mezi stavy vypnuto a zapnuto
+    - Hodnota analog. signálu je „zakódována“ jako poměr mezi stavy vypnuto a zapnuto
 - Paralelní převodníky
     - Přímý převod číselné hodnoty na stejnosměrný proud
     - Základem je většinou odporová síť
@@ -781,8 +781,8 @@ Stavba DRAM buňky:
 ### Jak funguje CRT ???
 
 ### Na jakých principech fungují LCD monitory?
-- Liquid crystal display
-- Každý pixel se skládá z 3 sub pixelů
+- zkratka LCD znamená Liquid crystal display
+- Každý pixel se skládá ze 3 subpixelů
 - Jádrem LCD je TN (twisted nematic) struktura, která je z obou stran obklopena polarizačními vrstvami
 - Princip (TN):
     - Světlo projde prvním filtrem a polarizuje se
@@ -822,7 +822,7 @@ Stavba DRAM buňky:
 
 ![OLED](assets/oled.png)
 
-- Při přivedení napětí, se elektrony(záporné částice) začnou hromadit v organické vrstvě, blíže k anodě
+- Při přivedení napětí se elektrony (záporné částice) začnou hromadit v organické vrstvě, blíže k anodě
 - Díry (kladné částice) se hromadí na opačné straně blíže katodě
 - V organické vrstvě začne docházet ke srážkám a vzájemnou eliminací vzniká světlo
 
@@ -844,8 +844,8 @@ Stavba DRAM buňky:
 <hr>
 
 ### Jak funguje zobrazovací jednotka s technologií E-Ink?
-- Elektřina je potřeba jen pro refresh (malý proud, 5-15V)
-- V čiré kapalině jsou jen dvě barvy, můzou tvořit gradient, pomocí rozdělení elektrod
+- Elektřina je potřeba jen pro refresh (malý proud, 5-15 V)
+- V čiré kapalině jsou jen dvě barvy, můžou tvořit gradient pomocí rozdělení elektrod
 - Horní elektrody musí být průsvitné
 - Princip:
     - V průhledných kapslích jsou obsaženy kladné a záporné částice různých barev (většinou černá a bílá)
@@ -871,7 +871,7 @@ Stavba DRAM buňky:
 - Rozdělením elektrod 
 - V případě barev:
     - Stejně jako u LCD => barevné filtry
-    - Nad každou kapslí je jeden barevný filtr z trojce RGB
+    - Nad každou kapslí je jeden barevný filtr z trojice RGB
     - Špatné barvy.. barevá hloubka je 4096
 
 ![eink](assets/eink.png)
@@ -891,10 +891,10 @@ Stavba DRAM buňky:
 <hr>
 
 ### Jaký je princip ukládání dat u magnetických pamětí ?
-- Záznamové médium má tvar kruhové desky (disk,disketa), nebo dlouhé pásky
-- Je pokryto magnetockou vrstvou a pohybuje se konstantní rychlostí
-- V bodu dotyku s povrchem je štěrbina magnetického obvodu (štěrbina je díra v té hlavě(Magnetickém obvodu)).. štěrbina + mag. obvod tvoří jádro
-- <i>Pokud manetickým obvodem prochází proud, vzniká magnetický tok, který se díky štěrbině dostává do okolí, a ovlivňuje magnetickou vrstvu </i>
+- Záznamové médium má tvar kruhové desky (disk, disketa), nebo dlouhé pásky
+- Je pokryto magnetickou vrstvou a pohybuje se konstantní rychlostí
+- V bodu dotyku s povrchem je štěrbina magnetického obvodu (štěrbina je díra v té hlavě (Magnetickém obvodu)).. štěrbina + mag. obvod tvoří jádro
+- <i>Pokud magnetickým obvodem prochází proud, vzniká magnetický tok, který se díky štěrbině dostává do okolí, a ovlivňuje magnetickou vrstvu </i>
 
 ![zapis_na_disk](assets/zapis_na_disk.png)
 
@@ -943,20 +943,20 @@ Stavba DRAM buňky:
 <hr>
 
 # 10. CUDA
-- Rozšírení jazyka C/C++
+- Rozšíření jazyka C/C++
 - Funguje jen na Nvidia kartách
 - Warp je skupina jader, která je ovládána schedulerem
-    - Každý warp má svůj dekoder instrukcí a scheduler
+    - Každý warp má svůj dekodér instrukcí a scheduler
     - Každé jádro má FP unit a INT unit
 
-### Výhody GPU/cudy?
+### Výhody GPU/CUDY?
 - <b>Masivní</b> Paralelizace
-- GPU je navržena pro zpracování výpočetně náročného kódu s omezeným počtem podmíněných skoků (Nejlépe bez IFů)
+- GPU je navržena pro zpracování výpočetně náročného kódu s omezeným počtem podmíněných skoků (nejlépe bez IFů)
 
 <hr>
 
 ### Čím se musí řídit programátor při práci s CUDA ?
-- Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
+- Jádra musí být na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
 - Musí určit správný počet bloků a vláken 
 - Nepoužívat IFy (a cykly)
 - TODOOOO: Unified Memory ???
@@ -985,8 +985,8 @@ Stavba DRAM buňky:
 
 ### Rozšíření jazyka C/C++ ?
 - Modifikátory funkcí:
-    - `__device__` - Pouze GPU (Vykonána na GPU, zavolána z GPU)
-    - `__global__` - Pro oboje (Vykonána na grafické kartě, ale zavolána z procesoru)
+    - `__device__` - Pouze GPU (vykonání i zavolání na GPU)
+    - `__global__` - Pro oboje (vykonána na grafické kartě, ale zavolána z procesoru)
     - `__host__` - Pouze pro procesor
 - Kvantifikátory (qualifier) proměnných (nikdy jsme je irl nepoužili):
     - `__device__`
@@ -1015,7 +1015,7 @@ Stavba DRAM buňky:
 
 ![rp2040](assets/RP2040.png)
 
-- Levný mikrokontroler (kolem 50kč), používaný v R Picu, vydán v lednu 2021
+- Levný mikrokontrolér (kolem 50 Kč), používaný v R Picu, vydán v lednu 2021
 - 2 jádra ARM Cortex M0+ až 133MHz
 - 264kB SRAM (rozdělena do 6 banek)
 - 16MB flash paměti
@@ -1024,7 +1024,7 @@ Stavba DRAM buňky:
     - 2x UART controller
     - 2x SPI controller
     - 2x I2C controller
-    - PWM conroller
+    - PWM controller
     - Watchdog
     - RTC
 
@@ -1035,7 +1035,7 @@ Stavba DRAM buňky:
 - ARMv8-A architektura (instrukční sada) - Harvard
 - 64bit
 - Vydán v roce 2019
-- 13-ti úrovňové zřetězení
+- 13 úrovňové zřetězení
 - 8 Jader
 - L1, L2 a L3 cache
 - FPU
