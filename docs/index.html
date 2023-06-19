@@ -6,157 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>APPS</title>
   <style>
-    html {
-      line-height: 1.5;
-      font-family: Georgia, serif;
-      font-size: 20px;
-      color: #1a1a1a;
-      background-color: #fdfdfd;
-    }
-    body {
-      margin: 0 auto;
-      max-width: 36em;
-      padding-left: 50px;
-      padding-right: 50px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-      hyphens: auto;
-      overflow-wrap: break-word;
-      text-rendering: optimizeLegibility;
-      font-kerning: normal;
-    }
-    @media (max-width: 600px) {
-      body {
-        font-size: 0.9em;
-        padding: 1em;
-      }
-      h1 {
-        font-size: 1.8em;
-      }
-    }
-    @media print {
-      body {
-        background-color: transparent;
-        color: black;
-        font-size: 12pt;
-      }
-      p, h2, h3 {
-        orphans: 3;
-        widows: 3;
-      }
-      h2, h3, h4 {
-        page-break-after: avoid;
-      }
-    }
-    p {
-      margin: 1em 0;
-    }
-    a {
-      color: #1a1a1a;
-    }
-    a:visited {
-      color: #1a1a1a;
-    }
-    img {
-      max-width: 100%;
-    }
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 1.4em;
-    }
-    h5, h6 {
-      font-size: 1em;
-      font-style: italic;
-    }
-    h6 {
-      font-weight: normal;
-    }
-    ol, ul {
-      padding-left: 1.7em;
-      margin-top: 1em;
-    }
-    li > ol, li > ul {
-      margin-top: 0;
-    }
-    blockquote {
-      margin: 1em 0 1em 1.7em;
-      padding-left: 1em;
-      border-left: 2px solid #e6e6e6;
-      color: #606060;
-    }
-    code {
-      font-family: Menlo, Monaco, 'Lucida Console', Consolas, monospace;
-      font-size: 85%;
-      margin: 0;
-    }
-    pre {
-      margin: 1em 0;
-      overflow: auto;
-    }
-    pre code {
-      padding: 0;
-      overflow: visible;
-      overflow-wrap: normal;
-    }
-    .sourceCode {
-     background-color: transparent;
-     overflow: visible;
-    }
-    hr {
-      background-color: #1a1a1a;
-      border: none;
-      height: 1px;
-      margin: 1em 0;
-    }
-    table {
-      margin: 1em 0;
-      border-collapse: collapse;
-      width: 100%;
-      overflow-x: auto;
-      display: block;
-      font-variant-numeric: lining-nums tabular-nums;
-    }
-    table caption {
-      margin-bottom: 0.75em;
-    }
-    tbody {
-      margin-top: 0.5em;
-      border-top: 1px solid #1a1a1a;
-      border-bottom: 1px solid #1a1a1a;
-    }
-    th {
-      border-top: 1px solid #1a1a1a;
-      padding: 0.25em 0.5em 0.25em 0.5em;
-    }
-    td {
-      padding: 0.125em 0.5em 0.25em 0.5em;
-    }
-    header {
-      margin-bottom: 4em;
-      text-align: center;
-    }
-    #TOC li {
-      list-style: none;
-    }
-    #TOC ul {
-      padding-left: 1.3em;
-    }
-    #TOC > ul {
-      padding-left: 0;
-    }
-    #TOC a:not(:hover) {
-      text-decoration: none;
-    }
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
     span.underline{text-decoration: underline;}
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
-  <!--[if lt IE 9]>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
-  <![endif]-->
 </head>
 <body>
 <style>
@@ -166,48 +22,37 @@
     };
 </style>
 <h1 id="architektura-počítačů">1. Architektura počítačů</h1>
-<h3 id="jaké-jsou-základní-principy-fungování-počítače">Jaké jsou
-základní principy fungování počítače?</h3>
+<h3 id="jaké-jsou-základní-principy-fungování-počítače">Jaké jsou základní principy fungování počítače?</h3>
 <ul>
 <li>Počítač je programován obsahem paměti</li>
 <li>Instrukce se vykonávají sekvenčně</li>
 <li>Každý následující krok závisí na tom předchozím</li>
 </ul>
 <figure>
-<img src="assets/princip_pocitace.png" alt="princip_pocitace" />
-<figcaption aria-hidden="true">princip_pocitace</figcaption>
+<img src="assets/princip_pocitace.png" alt="" /><figcaption>princip_pocitace</figcaption>
 </figure>
 <ul>
-<li>Procesor si přes sběrnici vyžádá instrukci z paměti na adrese
-IP</li>
+<li>Procesor si přes sběrnici vyžádá instrukci z paměti na adrese IP</li>
 <li>Poté co instrukci získá ji provede</li>
 <li>Zvýší IP/PC</li>
 <li>Cyklus čtení a provedení se opakuje</li>
 </ul>
 <hr>
-<h3 id="kritéria-a-principy-dle-von-neumanna">Kritéria a Principy dle
-von Neumanna:</h3>
+<h3 id="kritéria-a-principy-dle-von-neumanna">Kritéria a Principy dle von Neumanna:</h3>
 <ul>
-<li>Počítač je řízen obsahem paměti (struktura počítače je nezávislá na
-typu úlohy)</li>
-<li>Strojové instrukce a Data jsou v jedné paměti (lze přistupovat
-jednotným způsobem)</li>
-<li>Paměť je rozdělena do buněk stejné velikosti (Jejich pořadové číslo
-je jejich adresa)</li>
+<li>Počítač je řízen obsahem paměti (struktura počítače je nezávislá na typu úlohy)</li>
+<li>Strojové instrukce a Data jsou v jedné paměti (lze přistupovat jednotným způsobem)</li>
+<li>Paměť je rozdělena do buněk stejné velikosti (Jejich pořadové číslo je jejich adresa)</li>
 <li>Následující krok je závislý na tom přechozím</li>
-<li>Program je sekvence instrukcí, ty jsou vykonávány sekvenčně, v
-pořadí v jakém jsou zapsány do paměti</li>
+<li>Program je sekvence instrukcí, ty jsou vykonávány sekvenčně, v pořadí v jakém jsou zapsány do paměti</li>
 <li>Změna pořadí instrukcí je možná pomocí skoku</li>
-<li>Pro reprezentaci čísel, adres, znaků.. se používá dvojková
-soustava</li>
+<li>Pro reprezentaci čísel, adres, znaků.. se používá dvojková soustava</li>
 </ul>
 <figure>
-<img src="assets/von_neumann.png" alt="von_neumann" />
-<figcaption aria-hidden="true">von_neumann</figcaption>
+<img src="assets/von_neumann.png" alt="" /><figcaption>von_neumann</figcaption>
 </figure>
 <hr>
-<h3 id="jaké-má-výhody-a-nevýhody-architektura-dle-von-neumanna">Jaké má
-výhody a nevýhody architektura dle von Neumanna?</h3>
+<h3 id="jaké-má-výhody-a-nevýhody-architektura-dle-von-neumanna">Jaké má výhody a nevýhody architektura dle von Neumanna?</h3>
 <ul>
 <li>Výhody
 <ul>
@@ -217,15 +62,12 @@ výhody a nevýhody architektura dle von Neumanna?</h3>
 </ul></li>
 <li>Nevýhody
 <ul>
-<li>jedna paměť může mít při chybě za následek přepsání vlastního
-programu</li>
+<li>jedna paměť může mít při chybě za následek přepsání vlastního programu</li>
 <li>jediná sběrnice je úzké místo</li>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="přinesla-harvardská-architektura-nějaká-vylepšení-proti-von-neumannově">Přinesla
-harvardská architektura nějaká vylepšení proti von Neumannově?</h3>
+<h3 id="přinesla-harvardská-architektura-nějaká-vylepšení-proti-von-neumannově">Přinesla harvardská architektura nějaká vylepšení proti von Neumannově?</h3>
 <ul>
 <li>Oddělení paměti dat a programu
 <ul>
@@ -240,21 +82,16 @@ harvardská architektura nějaká vylepšení proti von Neumannově?</h3>
 </ul></li>
 </ul>
 <figure>
-<img src="assets/harvard.png" alt="harvard" />
-<figcaption aria-hidden="true">harvard</figcaption>
+<img src="assets/harvard.png" alt="" /><figcaption>harvard</figcaption>
 </figure>
 <hr>
-<h3 id="jaká-je-podpora-paralelismu-u-obou-architektur-počítačů">Jaká je
-podpora paralelismu u obou architektur počítačů?</h3>
+<h3 id="jaká-je-podpora-paralelismu-u-obou-architektur-počítačů">Jaká je podpora paralelismu u obou architektur počítačů?</h3>
 <ul>
-<li>Žádná .. instrukce jsou vykonávány sekvenčně, následující krok je
-závislý na tom předchozím</li>
+<li>Žádná .. instrukce jsou vykonávány sekvenčně, následující krok je závislý na tom předchozím</li>
 <li>Paralelizmy se musí simulovat až na úrovni OS</li>
 </ul>
 <hr>
-<h3
-id="je-lepší-mít-oddělené-paměti-pro-data-i-program-proč-ano-a-proč-ne">Je
-lepší mít oddělené paměti pro data i program? Proč ano a proč ne?</h3>
+<h3 id="je-lepší-mít-oddělené-paměti-pro-data-i-program-proč-ano-a-proč-ne">Je lepší mít oddělené paměti pro data i program? Proč ano a proč ne?</h3>
 <ul>
 <li>Ano
 <ul>
@@ -268,54 +105,43 @@ lepší mít oddělené paměti pro data i program? Proč ano a proč ne?</h3>
 </ul></li>
 </ul>
 <hr>
-<h3 id="může-fungovat-počítač-bez-paměti-či-bez-periferií">Může fungovat
-počítač bez paměti či bez periferií?</h3>
+<h3 id="může-fungovat-počítač-bez-paměti-či-bez-periferií">Může fungovat počítač bez paměti či bez periferií?</h3>
 <ul>
-<li>NE.. jak pravil von Neumann .. je potřeba procesoru, paměti a
-periferii</li>
+<li>NE.. jak pravil von Neumann .. je potřeba procesoru, paměti a periferii</li>
 </ul>
 <hr>
-<h3 id="k-čemu-se-v-počítači-využívá-dvojková-soustava">K čemu se v
-počítači využívá dvojková soustava?</h3>
+<h3 id="k-čemu-se-v-počítači-využívá-dvojková-soustava">K čemu se v počítači využívá dvojková soustava?</h3>
 <ul>
 <li>Pro reprezentaci čísel, adres, znaků..</li>
 </ul>
 <hr>
-<h3 id="zvyšují-sběrnice-výkon-počítače">Zvyšují sběrnice výkon
-počítače?</h3>
+<h3 id="zvyšují-sběrnice-výkon-počítače">Zvyšují sběrnice výkon počítače?</h3>
 <ul>
 <li>Ne přímo, ale mohou jej omezit</li>
 </ul>
 <hr>
-<h3 id="je-možné-aby-procesor-prováděl-instrukce-jinak-než-sekvenčně">Je
-možné, aby procesor prováděl instrukce jinak, než sekvenčně?</h3>
+<h3 id="je-možné-aby-procesor-prováděl-instrukce-jinak-než-sekvenčně">Je možné, aby procesor prováděl instrukce jinak, než sekvenčně?</h3>
 <ul>
 <li>NE instrukce se provádějí sekvenčně</li>
 </ul>
 <hr>
-<h3 id="jak-je-v-počítači-organizovaná-paměť">Jak je v počítači
-organizovaná paměť?</h3>
+<h3 id="jak-je-v-počítači-organizovaná-paměť">Jak je v počítači organizovaná paměť?</h3>
 <ul>
-<li>Je složená z za sebou jdoucích buňěk stejné velikosti (obvykle
-8bit), jejich pořadové číslo se využívá jako jejich adresa</li>
+<li>Je složená z za sebou jdoucích buňěk stejné velikosti (obvykle 8bit), jejich pořadové číslo se využívá jako jejich adresa</li>
 </ul>
 <hr>
-<h1 id="jazyk-symbolických-instrukcí">2. Jazyk symbolických
-instrukcí</h1>
+<h1 id="jazyk-symbolických-instrukcí">2. Jazyk symbolických instrukcí</h1>
 <h3 id="registry-procesoru">Registry procesoru</h3>
 <ul>
 <li>64bit: RAX, RBX, RCX, RDX, RSI, RDI, RBP, RSP, R8 - R15</li>
-<li>32bit: začínají E, R8D - R15D (Zápis vyresetuje horní část Rxx
-!)</li>
+<li>32bit: začínají E, R8D - R15D (Zápis vyresetuje horní část Rxx !)</li>
 <li>16bit: AX, BX … , R8W - R15W</li>
-<li>8bit: AH (high), AL (low), BH, BL .. (Jen ABCD, jsou rozděleny na
-high a low)</li>
+<li>8bit: AH (high), AL (low), BH, BL .. (Jen ABCD, jsou rozděleny na high a low)</li>
 <li>RSP - stack pointer</li>
 <li>RIP - instruction pointer</li>
 </ul>
 <hr>
-<h3 id="adresování-spojování-jsi-a-c.">Adresování, spojování JSI a
-C.</h3>
+<h3 id="adresování-spojování-jsi-a-c.">Adresování, spojování JSI a C.</h3>
 <ul>
 <li>Adresování:
 <ul>
@@ -332,8 +158,7 @@ C.</h3>
 </ul></li>
 </ul>
 <hr>
-<h3 id="základní-instrukce-přesunu-bitové-logické-aritmetické.">Základní
-instrukce přesunu, bitové, logické, aritmetické.</h3>
+<h3 id="základní-instrukce-přesunu-bitové-logické-aritmetické.">Základní instrukce přesunu, bitové, logické, aritmetické.</h3>
 <ul>
 <li>Přesunu:
 <ul>
@@ -361,10 +186,7 @@ instrukce přesunu, bitové, logické, aritmetické.</h3>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="skokové-instrukce-nepodmíněné-a-podmíněné.-volání-funkcí-s-parametry-návratovými-hodnotami">Skokové
-instrukce nepodmíněné a podmíněné. Volání funkcí s parametry,
-návratovými hodnotami</h3>
+<h3 id="skokové-instrukce-nepodmíněné-a-podmíněné.-volání-funkcí-s-parametry-návratovými-hodnotami">Skokové instrukce nepodmíněné a podmíněné. Volání funkcí s parametry, návratovými hodnotami</h3>
 <ul>
 <li>Skokové:
 <ul>
@@ -394,9 +216,7 @@ návratovými hodnotami</h3>
 <hr>
 <!--  ----------  -->
 <h1 id="komunikace-s-periferiemi">3. Komunikace s periferiemi</h1>
-<h3
-id="z-jakých-částí-se-skládá-sběrnice-a-co-je-účelem-jednotlivých-částí">Z
-jakých částí se skládá sběrnice a co je účelem jednotlivých částí?</h3>
+<h3 id="z-jakých-částí-se-skládá-sběrnice-a-co-je-účelem-jednotlivých-částí">Z jakých částí se skládá sběrnice a co je účelem jednotlivých částí?</h3>
 <ul>
 <li>Sběrnice dělíme na Adresovou, Řícicí, Datovou</li>
 <li>Adresová
@@ -407,8 +227,7 @@ jakých částí se skládá sběrnice a co je účelem jednotlivých částí?<
 </ul></li>
 <li>Řídicí
 <ul>
-<li>Některé signály jsou generovány mikroprocesorem, některé jinými
-bloky</li>
+<li>Některé signály jsou generovány mikroprocesorem, některé jinými bloky</li>
 <li>Nejčastější řídicí signály:
 <ul>
 <li>RESET
@@ -437,8 +256,8 @@ bloky</li>
 </ul></li>
 <li>Datová
 <ul>
-<li>Slouží pro přenos veškerých dat v počítači (vždy meti dvěma)</li>
-<li>Nedůležitější parametry jsou šířka (počet bitů) a časování</li>
+<li>Slouží pro přenos veškerých dat v počítači (vždy mezi dvěma)</li>
+<li>Nejdůležitějšími parametry jsou šířka (počet bitů) a časování</li>
 <li>Šířka ovlivňuje rychlost komunikace</li>
 <li>Lze ušetřit vodiče pomocí multiplexování</li>
 <li><b>V jednom okamžiku může být aktivní pouze jeden vysílač</b></li>
@@ -451,14 +270,11 @@ bloky</li>
 </ul></li>
 </ul>
 <hr>
-<h3 id="co-to-je-adresní-dekodér-a-kdy-je-potřeba-jej-použít">Co to je
-adresní dekodér a kdy je potřeba jej použít?</h3>
+<h3 id="co-to-je-adresní-dekodér-a-kdy-je-potřeba-jej-použít">Co to je adresní dekodér a kdy je potřeba jej použít?</h3>
 <ul>
-<li>Když je paměťový prostor obsazen více jak jednou fyzickou pamětí
-nebo periferním zařízením</li>
+<li>Když je paměťový prostor obsazen více jak jednou fyzickou pamětí nebo periferním zařízením</li>
 <li>Rozhoduje, které zařízení je ke komunikaci určeno</li>
-<li>Jeho výstupy jsou v podstatě Chip Select signály pro jednotlivé
-obvody</li>
+<li>Jeho výstupy jsou v podstatě Chip Select signály pro jednotlivé obvody</li>
 <li>Může být stavěn jako:
 <ul>
 <li>úplné dekódování adresy</li>
@@ -475,26 +291,21 @@ obvody</li>
 <li>z iniciativy programu</li>
 <li>z iniciativy periferie
 <ul>
-<li>počítač se může nacházet ve stavu, kdy nemůže s periferii
-komunikovat</li>
+<li>počítač se může nacházet ve stavu, kdy nemůže s periferii komunikovat</li>
 <li>lze řešit:
 <ul>
 <li>obvodově (bez vědomí počítače)</li>
 <li>příznakovým bitem <b>(Programové řízení)</b></li>
-<li>přerušením .. počítač se později vrátí tam, kde byl vyrušen
-<b>(Systém Přerušení)</b></li>
+<li>přerušením .. počítač se později vrátí tam, kde byl vyrušen <b>(Systém Přerušení)</b></li>
 <li>přímým přístupem <b>(DMA)</b></li>
 </ul></li>
 </ul></li>
 </ul></li>
 </ul>
 <hr>
-<h3 id="jaký-je-princip-komunikace-s-periferiemi-pomocí-vv-bran">Jaký je
-princip komunikace s periferiemi pomocí V/V bran?</h3>
+<h3 id="jaký-je-princip-komunikace-s-periferiemi-pomocí-vv-bran">Jaký je princip komunikace s periferiemi pomocí V/V bran?</h3>
 <ul>
-<li>Vstupně / Výstupní brána (Input/Output, I/O) je obvod, který
-zprostředkovává předávání dat mezi sběrnicí (počítače) a periferním
-zařízení (počítače)</li>
+<li>Vstupně / Výstupní brána (Input/Output, I/O) je obvod, který zprostředkovává předávání dat mezi sběrnicí (počítače) a periferním zařízení (počítače)</li>
 <li>Dělíme na
 <ul>
 <li>S pamětí</li>
@@ -502,116 +313,78 @@ zařízení (počítače)</li>
 </ul></li>
 <li>Základem je záchytný registr s 3 stavovým vstupem</li>
 </ul>
-<h4 id="nepodmíněný-vstup-a-výstup-dat">Nepodmíněný vstup a výstup
-dat:</h4>
+<h4 id="nepodmíněný-vstup-a-výstup-dat">Nepodmíněný vstup a výstup dat:</h4>
 <figure>
-<img src="assets/VV_nepodmineny.png" alt="VV_nepodmineny" />
-<figcaption aria-hidden="true">VV_nepodmineny</figcaption>
+<img src="assets/VV_nepodmineny.png" alt="" /><figcaption>VV_nepodmineny</figcaption>
 </figure>
 <ul>
-<li>Při vstupu počítač vyšle signál RD, tím přikáže vstupnímu zařízení
-předat data do vstupní brány počítače</li>
-<li>Při vstupu počítač vyšle signál WR a výstupní zařízení převezme
-data</li>
-<li>Jednoduchý způsob, předpokládá, že je perif. zařízení pořád
-ready</li>
+<li>Při vstupu počítač vyšle signál RD, tím přikáže vstupnímu zařízení předat data do vstupní brány počítače</li>
+<li>Při vstupu počítač vyšle signál WR a výstupní zařízení převezme data</li>
+<li>Jednoduchý způsob, předpokládá, že je perif. zařízení pořád ready</li>
 </ul>
 <hr>
-<h3
-id="k-čemu-slouží-u-komunikace-vv-bran-indikátor-a-jaké-přináší-výhody">K
-čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?</h3>
+<h3 id="k-čemu-slouží-u-komunikace-vv-bran-indikátor-a-jaké-přináší-výhody">K čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?</h3>
 <ul>
 <li>Zajišťujě, že informace budou správně podány (další otázka)</li>
 </ul>
 <hr>
-<h3
-id="popište-jak-probíhá-přenos-dat-pomocí-vv-brány-s-indikátorem.">Popište,
-jak probíhá přenos dat pomocí V/V brány s indikátorem.</h3>
+<h3 id="popište-jak-probíhá-přenos-dat-pomocí-vv-brány-s-indikátorem.">Popište, jak probíhá přenos dat pomocí V/V brány s indikátorem.</h3>
 <h4 id="podmíněný-vstup-a-výstup-dat">Podmíněný vstup a výstup dat</h4>
 <figure>
-<img src="assets/VV_podmineny.png" alt="VV_podmineny" />
-<figcaption aria-hidden="true">VV_podmineny</figcaption>
+<img src="assets/VV_podmineny.png" alt="" /><figcaption>VV_podmineny</figcaption>
 </figure>
 <ul>
-<li>Jsou-li poskytována platná data ze vstupu, pak se za pomocí
-STB(strobe) impulsu nastaví Q na 1</li>
-<li>Když je Q na 1, data jsou předány počítači pomocí impulsu RD a po
-přenosu je indikátor vynulován</li>
-<li>V opačném případě se nastavuje Q na 0, když jsou data převzata,
-pomocí ACK signálu</li>
+<li>Jsou-li poskytována platná data ze vstupu, pak se za pomocí STB(strobe) impulsu nastaví Q na 1</li>
+<li>Když je Q na 1, data jsou předány počítači pomocí impulsu RD a po přenosu je indikátor vynulován</li>
+<li>V opačném případě se nastavuje Q na 0, když jsou data převzata, pomocí ACK signálu</li>
 </ul>
 <hr>
 <h3 id="s-vyrovnávací-pamětí">S vyrovnávací pamětí:</h3>
 <figure>
-<img src="assets/VV_vyrovnavaci.png" alt="VV_vyrovnavaci" />
-<figcaption aria-hidden="true">VV_vyrovnavaci</figcaption>
+<img src="assets/VV_vyrovnavaci.png" alt="" /><figcaption>VV_vyrovnavaci</figcaption>
 </figure>
 <hr>
-<h3
-id="jaký-je-rozdíl-mezi-programově-řízenou-komunikací-s-perifériemi-a-pomocí-přerušení">Jaký
-je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí
-přerušení?</h3>
+<h3 id="jaký-je-rozdíl-mezi-programově-řízenou-komunikací-s-perifériemi-a-pomocí-přerušení">Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?</h3>
 <ul>
 <li>Programové:
 <ul>
-<li>Využívá instrukce pro vstup a výstup, ve spojení s instrukcemi pro
-testování logických proměnných a skoků</li>
+<li>Využívá instrukce pro vstup a výstup, ve spojení s instrukcemi pro testování logických proměnných a skoků</li>
 <li>Prostě testuje stavové bity ..</li>
 </ul></li>
 <li>Přerušení:
 <ul>
-<li>Periferie aktivuje přerušovací signál, procesor přeruší program,
-přejde do obslužného režimu, poté pokračuje v provádění hl. programu
-tam, kde byl přerušen</li>
+<li>Periferie aktivuje přerušovací signál, procesor přeruší program, přejde do obslužného režimu, poté pokračuje v provádění hl. programu tam, kde byl přerušen</li>
 </ul></li>
 </ul>
 Obsluha???<br />
+
 <hr>
-<h3 id="jaké-výhody-přináší-řízení-komunikace-s-využitím-přerušení">Jaké
-výhody přináší řízení komunikace s využitím přerušení?</h3>
+<h3 id="jaké-výhody-přináší-řízení-komunikace-s-využitím-přerušení">Jaké výhody přináší řízení komunikace s využitím přerušení?</h3>
 <ul>
-<li>Procesor pořád nemusí zbytečně testovat stavové bity =&gt; neztrácí
-výkon</li>
+<li>Procesor pořád nemusí zbytečně testovat stavové bity =&gt; neztrácí výkon</li>
 </ul>
 <hr>
-<h3 id="z-jakých-částí-se-skládá-řadič-dma">Z jakých částí se skládá
-řadič DMA?</h3>
+<h3 id="z-jakých-částí-se-skládá-řadič-dma">Z jakých částí se skládá řadič DMA?</h3>
 <figure>
-<img src="assets/blok_DMA.png" alt="blok_DMA" />
-<figcaption aria-hidden="true">blok_DMA</figcaption>
+<img src="assets/blok_DMA.png" alt="" /><figcaption>blok_DMA</figcaption>
 </figure>
 <ul>
 <li>Registr dat - Obsahuje slovo pro přesun</li>
-<li>Registr adresy - Adresa hl. paměti kam bude slovo zapsány, nebo
-odkud bude přečteno</li>
-<li>Čítač přesunu - požadovaný počet slov, které mají být ještě
-přesunuty</li>
+<li>Registr adresy - Adresa hl. paměti kam bude slovo zapsány, nebo odkud bude přečteno</li>
+<li>Čítač přesunu - požadovaný počet slov, které mají být ještě přesunuty</li>
 </ul>
 <hr>
-<h3 id="jak-probíhá-přenos-dat-s-použitím-dma">Jak probíhá přenos dat s
-použitím DMA?</h3>
+<h3 id="jak-probíhá-přenos-dat-s-použitím-dma">Jak probíhá přenos dat s použitím DMA?</h3>
 <ol type="1">
 <li>Naprogramování procesorem bloku DMA</li>
-<li>blok DMA spustí periferní zařízení, a čeká než zařízení bude
-připraveno data příjmou nebo vyslat</li>
-<li>Procesor dokončí strojový cyklus a pak reaguje na žádost o DMA,
-přímý přístup se provadí během činosti procesoru.. blok DMA a procesor
-se střídají v používání paměti</li>
-<li>Procesor vyšle vybrané jednotce ACK a uvolní sběrnici, jednotka pak
-pošle obsah registru adresy na addr. sběrnici a obsah registru dat na
-dat. sběrnici a čeká na provedení cyklu paměti.. pak obsah registru
-adresy zvětší o jedničku a čítač přesunu zmenší o jedničku.. pokud není
-nulový, testuje zda bylo předáno nové slovo do registru dat.. když ne,
-dočasně se ukončí přesun dat a přestane se vysílat žádost o DMA.. řízení
-je předáno procesoru</li>
-<li>Procesor dále pokračuje v provádění svého programu do doby, než
-obrží další žádost o DMA</li>
-<li>Pokud je obsah čítače přesunu nulový, blok DMA ukončí celý přesun a
-uvolní sběrnici</li>
+<li>blok DMA spustí periferní zařízení, a čeká než zařízení bude připraveno data příjmou nebo vyslat</li>
+<li>Procesor dokončí strojový cyklus a pak reaguje na žádost o DMA, přímý přístup se provadí během činosti procesoru.. blok DMA a procesor se střídají v používání paměti</li>
+<li>Procesor vyšle vybrané jednotce ACK a uvolní sběrnici, jednotka pak pošle obsah registru adresy na addr. sběrnici a obsah registru dat na dat. sběrnici a čeká na provedení cyklu paměti.. pak obsah registru adresy zvětší o jedničku a čítač přesunu zmenší o jedničku.. pokud není nulový, testuje zda bylo předáno nové slovo do registru dat.. když ne, dočasně se ukončí přesun dat a přestane se vysílat žádost o DMA.. řízení je předáno procesoru</li>
+<li>Procesor dále pokračuje v provádění svého programu do doby, než obrží další žádost o DMA</li>
+<li>Pokud je obsah čítače přesunu nulový, blok DMA ukončí celý přesun a uvolní sběrnici</li>
 </ol>
 <hr>
-<h3 id="jaké-má-výhody-řadič-dma-proti-přenosu-dat-s-využitím-cpu">Jaké
-má výhody řadič DMA proti přenosu dat s využitím CPU?</h3>
+<h3 id="jaké-má-výhody-řadič-dma-proti-přenosu-dat-s-využitím-cpu">Jaké má výhody řadič DMA proti přenosu dat s využitím CPU?</h3>
 <ul>
 <li>Všechno nemusí dělat procesor</li>
 </ul>
@@ -638,8 +411,7 @@ má výhody řadič DMA proti přenosu dat s využitím CPU?</h3>
 </ul></li>
 <li>Adresa zařízení:
 <ul>
-<li>Skládá se ze 7 bitů (horní 4 určuje výrobce, dolní 3 jdou nastavit
-libovolně)</li>
+<li>Skládá se ze 7 bitů (horní 4 určuje výrobce, dolní 3 jdou nastavit libovolně)</li>
 </ul></li>
 <li>Komunikace:
 <ul>
@@ -654,8 +426,7 @@ libovolně)</li>
 <li>SCL = Náběžná Hrana</li>
 <li>SDA = Náběžná Hrana</li>
 </ul></li>
-<li>Po startu následuje 7bit adresa cílového zařízení (Slave) a 1 bit
-Read nebo Write z pohledu mastera
+<li>Po startu následuje 7bit adresa cílového zařízení (Slave) a 1 bit Read nebo Write z pohledu mastera
 <ul>
 <li>0bAAAAAAAM (A je bit adresy a M je Read/Write)</li>
 </ul></li>
@@ -669,53 +440,39 @@ Read nebo Write z pohledu mastera
 </ul>
 <hr>
 <h1 id="cisc-a-risc">4. CISC A RISC</h1>
-<h3 id="kdy-a-proč-se-začaly-procesory-dělit-na-risc-a-cisc">Kdy a proč
-se začaly procesory dělit na RISC a CISC?</h3>
+<h3 id="kdy-a-proč-se-začaly-procesory-dělit-na-risc-a-cisc">Kdy a proč se začaly procesory dělit na RISC a CISC?</h3>
 <ul>
 <li>V 70. letech, kvůli narůstající složitosti procesorů ..</li>
 </ul>
 <hr>
-<h3
-id="jaké-byly-zásadní-důvody-proč-se-začaly-procesory-risc-vyvíjet">Jaké
-byly zásadní důvody, proč se začaly procesory RISC vyvíjet?</h3>
+<h3 id="jaké-byly-zásadní-důvody-proč-se-začaly-procesory-risc-vyvíjet">Jaké byly zásadní důvody, proč se začaly procesory RISC vyvíjet?</h3>
 <ul>
-<li>Výzkumy ukázaly, že programátoři a compilátory používají instrukce
-velmi nerovnoměrně (v 50% případů se vyskytují pouze 3 instrukce)</li>
-<li>Snahy o nalezení optimálního instrukčního souboru =&gt; vznik
-RISC</li>
+<li>Výzkumy ukázaly, že programátoři a compilátory používají instrukce velmi nerovnoměrně (v 50 % případů se vyskytují pouze 3 instrukce)</li>
+<li>Snahy o nalezení optimálního instrukčního souboru =&gt; vznik RISC</li>
 </ul>
 <hr>
-<h3 id="jaké-jsou-základní-konstrukční-vlastnosti-procesorů-risc">Jaké
-jsou základní konstrukční vlastnosti procesorů RISC?</h3>
+<h3 id="jaké-jsou-základní-konstrukční-vlastnosti-procesorů-risc">Jaké jsou základní konstrukční vlastnosti procesorů RISC?</h3>
 <ul>
 <li>Malý instrukční soubor</li>
 <li>V každém strojovém cyklu by měla být dokončena jedna instrukce</li>
-<li>Zřeťezené zpracování instrukcí</li>
-<li>Data jsou z hlavní paměti vybírána a úkládána výhradně pomocí
-<b>LOAD</b> a <b>STORE</b> instrukcí</li>
+<li>Zřetězené zpracování instrukcí</li>
+<li>Data jsou z hlavní paměti vybírána a ukládána výhradně pomocí <b>LOAD</b> a <b>STORE</b> instrukcí</li>
 <li>Instrukce mají pevnou délku a jednotný formát</li>
 <li>Je použit vyšší počet registrů</li>
 <li>Složitost se přesouvá na optimalizující kompilátory</li>
 </ul>
 <hr>
-<h3
-id="jak-přispěly-jednotlivé-charakteristické-vlastnosti-procesorů-risc-ke-zvýšení-výpočetního-výkonu">Jak
-přispěly jednotlivé charakteristické vlastnosti procesorů RISC ke
-zvýšení výpočetního výkonu?</h3>
+<h3 id="jak-přispěly-jednotlivé-charakteristické-vlastnosti-procesorů-risc-ke-zvýšení-výpočetního-výkonu">Jak přispěly jednotlivé charakteristické vlastnosti procesorů RISC ke zvýšení výpočetního výkonu?</h3>
 <ul>
-<li>Jednotná délka instrukcí =&gt; rychlejší výběr instrukcí z paměti
-=&gt; lepší plnění fronty instrukcí</li>
+<li>Jednotná délka instrukcí =&gt; rychlejší výběr instrukcí z paměti =&gt; lepší plnění fronty instrukcí</li>
 <li>Jednotný formát =&gt; zjednodušuje dekódování</li>
 <li>Zřetězené zpracování instrukcí</li>
 </ul>
 <hr>
-<h3
-id="jaký-je-princip-zřetězeného-zpracování-instrukcí-v-risc-procesorech">Jaký
-je princip zřetězeného zpracování instrukcí v RISC procesorech?</h3>
+<h3 id="jaký-je-princip-zřetězeného-zpracování-instrukcí-v-risc-procesorech">Jaký je princip zřetězeného zpracování instrukcí v RISC procesorech?</h3>
 <ul>
-<li>Provedení instrukce musí vždy projít stejnými fázemi (né nutně těma
-co jsou na obrázku)</li>
-<li>Funguje jako “výrobní linka”</li>
+<li>Provedení instrukce musí vždy projít stejnými fázemi (ne nutně těmi, co jsou na obrázku)</li>
+<li>Funguje jako „výrobní linka“</li>
 </ul>
 <p>CISC:</p>
 <table>
@@ -977,12 +734,9 @@ co jsou na obrázku)</li>
 </tbody>
 </table>
 <hr>
-<h3
-id="jakého-zrychlení-lze-zřetězeným-zpracováním-instrukcí-dosáhnout">Jakého
-zrychlení lze zřetězeným zpracováním instrukcí dosáhnout?</h3>
+<h3 id="jakého-zrychlení-lze-zřetězeným-zpracováním-instrukcí-dosáhnout">Jakého zrychlení lze zřetězeným zpracováním instrukcí dosáhnout?</h3>
 <ul>
-<li>V ideáním světě, při délce zřetězení 6-ti instrukcí, udělá během 12
-cyklů
+<li>V ideáním světě, při délce zřetězení 6 instrukcí, udělá během 12 cyklů
 <ul>
 <li><b>CISC:</b> 2 instrukce</li>
 <li><b>RISC:</b> 7 instrukcí</li>
@@ -990,16 +744,12 @@ cyklů
 <li>viz. tabulky v minulé otázce</li>
 </ul>
 <hr>
-<h3
-id="jaké-problémy-přináší-zřetězené-zpracování-instrukcí-v-procesorech-risc">Jaké
-problémy přináší zřetězené zpracování instrukcí v procesorech RISC?</h3>
+<h3 id="jaké-problémy-přináší-zřetězené-zpracování-instrukcí-v-procesorech-risc">Jaké problémy přináší zřetězené zpracování instrukcí v procesorech RISC?</h3>
 <ul>
 <li>Datové a strukturální hazardy
 <ul>
-<li>Datové: Když instrukce potřebuje mít k dispozici data předchozí
-instrukce ( a ta ještě nejsou k dispozici)</li>
-<li>Strukturální: Problém omezených prostředků procesoru (a počítače
-jako celku) .. např. jen jedna sběrnice</li>
+<li>Datové: Když instrukce potřebuje mít k dispozici data předchozí instrukce (a ta ještě nejsou k dispozici)</li>
+<li>Strukturální: Problém omezených prostředků procesoru (a počítače jako celku) .. např. jen jedna sběrnice</li>
 </ul></li>
 <li>Problémy plněním fronty instrukcí
 <ul>
@@ -1008,20 +758,15 @@ jako celku) .. např. jen jedna sběrnice</li>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="co-to-je-predikce-skoků-proč-se-používá-a-jaké-způsoby-predikce-se-využívají">Co
-to je predikce skoků, proč se používá a jaké způsoby predikce se
-využívají?</h3>
+<h3 id="co-to-je-predikce-skoků-proč-se-používá-a-jaké-způsoby-predikce-se-využívají">Co to je predikce skoků, proč se používá a jaké způsoby predikce se využívají?</h3>
 <ul>
 <li>Statická
 <ul>
-<li>Do instrukce se vkládají příslušné bity již při kompilaci (nebo
-programátorem při psaní programu)</li>
+<li>Do instrukce se vkládají příslušné bity již při kompilaci (nebo programátorem při psaní programu)</li>
 </ul></li>
 <li>Dynamická
 <ul>
-<li>Během běhu programu se zaznamenává, jestli se skok provedl, nebo
-ne</li>
+<li>Během běhu programu se zaznamenává, jestli se skok provedl, nebo ne</li>
 </ul></li>
 <li>Může být:
 <ul>
@@ -1030,29 +775,21 @@ ne</li>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="co-to-jsou-datové-a-strukturální-hazardy-v-risc-procesorech-co-je-způsobuje">Co
-to jsou datové a strukturální hazardy v RISC procesorech? Co je
-způsobuje?</h3>
+<h3 id="co-to-jsou-datové-a-strukturální-hazardy-v-risc-procesorech-co-je-způsobuje">Co to jsou datové a strukturální hazardy v RISC procesorech? Co je způsobuje?</h3>
 <ul>
 <li>uvedeno výše..</li>
 </ul>
 <hr>
-<h3
-id="jak-funguje-dvoubitová-dynamická-predikce-skoků-a-proč-se-využívá">Jak
-funguje dvoubitová dynamická predikce skoků a proč se využívá?</h3>
+<h3 id="jak-funguje-dvoubitová-dynamická-predikce-skoků-a-proč-se-využívá">Jak funguje dvoubitová dynamická predikce skoků a proč se využívá?</h3>
 <ul>
 <li>Jako čtyř stavový automat</li>
 </ul>
 <figure>
-<img src="assets/2bit_predikce.png" alt="2bitpredikce" />
-<figcaption aria-hidden="true">2bitpredikce</figcaption>
+<img src="assets/2bit_predikce.png" alt="" /><figcaption>2bitpredikce</figcaption>
 </figure>
 <ul>
-<li><code>A</code> predikuje provedení skoku, <code>N</code> říká, že
-skok provádět nebude</li>
-<li><code>a</code> a <code>n</code> přechody označují, zda se skok
-naposledy prováděl</li>
+<li><code>A</code> predikuje provedení skoku, <code>N</code> říká, že se skok provádět nebude</li>
+<li><code>a</code> a <code>n</code> přechody označují, zda se skok naposledy prováděl</li>
 </ul>
 <hr>
 <h1 id="x86-intel-historie">5. x86 Intel historie</h1>
@@ -1079,16 +816,14 @@ naposledy prováděl</li>
 <li><b>80286</b>
 <ul>
 <li>Lze přepnout do <b>Protected modu</b> (4 úrovně oprávnění)</li>
-<li><b>Real mode</b> (pro zpětnou kompatibilitu, RM programy nemůžou
-fungovat v novém PM)</li>
+<li><b>Real mode</b> (pro zpětnou kompatibilitu, RM programy nemůžou fungovat v novém PM)</li>
 <li>má MMU (memory management unit)</li>
 </ul></li>
 <li><b>80386dx a sx</b>
 <ul>
 <li>sx je downgrade dx</li>
 <li>První 32bit</li>
-<li>Přidán <b>Virtual Mode</b> (po přepnutí do PM, bylo možnost
-vykonávat RM programy)</li>
+<li>Přidán <b>Virtual Mode</b> (po přepnutí do PM, bylo možnost vykonávat RM programy)</li>
 </ul></li>
 <li><b>8087/287/387</b>
 <ul>
@@ -1102,30 +837,24 @@ vykonávat RM programy)</li>
 </ul></li>
 <li><b>Pentium</b>
 <ul>
-<li>První procesor v řadě x86, kde jsou uplatněna technická řešení
-typická pro <b>RISC</b></li>
+<li>První procesor v řadě x86, kde jsou uplatněna technická řešení typická pro <b>RISC</b></li>
 <li>L1 rozdělena na kod a data</li>
 <li>Predikce skoků</li>
 </ul></li>
 <li><b>Pentium Pro</b>
 <ul>
 <li><b>ZÁSADNÍ</b> technologický zlom</li>
-<li>Pro servery (=&gt; velký výkon(zhruba o 50% víc než pentium) a
-cena)</li>
+<li>Pro servery (=&gt; velký výkon(zhruba o 50% víc než pentium) a cena)</li>
 <li>L2 přímo na procesoru</li>
-<li>Fetch/Decode jednotka dekoduje x86 instrukce na 118bit RISC
-instrukce (které intel pojmenoval jako mikro-operace)</li>
-<li>Instrukce jsou po dekodování uloženy do banky instrukcí (Instruction
-pool), vejde se tam až 40 instrukcí</li>
-<li>Dispatch/Execute jednotka si může vybírat instrukce mimo pořadí z
-poolu (Out of order execute)</li>
+<li>Fetch/Decode jednotka dekoduje x86 instrukce na 118bit RISC instrukce (které intel pojmenoval jako mikro-operace)</li>
+<li>Instrukce jsou po dekodování uloženy do banky instrukcí (Instruction pool), vejde se tam až 40 instrukcí</li>
+<li>Dispatch/Execute jednotka si může vybírat instrukce mimo pořadí z poolu (Out of order execute)</li>
 <li>10 úrovňové zřetězení</li>
 <li>Predikce skoků si pamatuje 512 hodnot</li>
 </ul></li>
 </ul>
 <figure>
-<img src="assets/pentium_pro.png" alt="pentium_pro" />
-<figcaption aria-hidden="true">pentium_pro</figcaption>
+<img src="assets/pentium_pro.png" alt="" /><figcaption>pentium_pro</figcaption>
 </figure>
 <ul>
 <li><b>Pentium 2</b>
@@ -1140,8 +869,7 @@ poolu (Out of order execute)</li>
 <li><b>Pentium 4</b>
 <ul>
 <li>Mikroarchitektura <b>NetBurst</b></li>
-<li>Při stejné frekvenci jako P3 měl stejný výkon+-, ale více se
-zahříval</li>
+<li>Při stejné frekvenci jako P3 měl stejný výkon+-, ale více se zahříval</li>
 <li>20 úrovňové zřetězení</li>
 </ul></li>
 <li><b>Pentium EM64T</b>
@@ -1164,8 +892,7 @@ zahříval</li>
 <p>Následovník, obrázek ???</p>
 <hr>
 <h1 id="paměti">6. Paměti</h1>
-<h3 id="dle-jakých-kritérií-či-vlastností-se-dělí-paměti-počítačů">Dle
-jakých kritérií či vlastností se dělí paměti počítačů?</h3>
+<h3 id="dle-jakých-kritérií-či-vlastností-se-dělí-paměti-počítačů">Dle jakých kritérií či vlastností se dělí paměti počítačů?</h3>
 <ul>
 <li>Typu přístupu
 <ul>
@@ -1197,79 +924,64 @@ jakých kritérií či vlastností se dělí paměti počítačů?</h3>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="jak-je-v-dynamických-pamětech-ukládána-informace-a-jak-je-udržována">Jak
-je v dynamických pamětech ukládána informace a jak je udržována?</h3>
+<h3 id="jak-je-v-dynamických-pamětech-ukládána-informace-a-jak-je-udržována">Jak je v dynamických pamětech ukládána informace a jak je udržována?</h3>
 <ul>
 <li>Ve formě náboje v kondenzátoru</li>
 <li>Zapomenou svá data cca po 10ms</li>
 <li>Proto je nutné obnovovat napětí kondenzárorů - <b>Refresh</b></li>
 </ul>
 <hr>
-<h3 id="jaká-je-vnitřní-organizace-dynamických-pamětí">Jaká je vnitřní
-organizace dynamických pamětí?</h3>
+<h3 id="jaká-je-vnitřní-organizace-dynamických-pamětí">Jaká je vnitřní organizace dynamických pamětí?</h3>
 <ul>
 <li>Ve čtvercové matici v jedné, nebo více vrstvách</li>
 <li>Výběr buňky tak musí být proveden pomocí row a column dekodéru</li>
-<li>DRAM čte adresu po dvou částech (adresa řádku a sloupce) do
-adresového bufferu</li>
-<li><a href="https://poli.cs.vsb.cz/edu/apps/down/pameti.pdf">Organizace
-paměti, strana 5</a></li>
+<li>DRAM čte adresu po dvou částech (adresa řádku a sloupce) do adresového bufferu</li>
+<li><a href="https://poli.cs.vsb.cz/edu/apps/down/pameti.pdf">Organizace paměti, strana 5</a></li>
 </ul>
 <p>Stavba DRAM buňky:</p>
 <figure>
-<img src="assets/dram_bunka.png" alt="dram_bunka" />
-<figcaption aria-hidden="true">dram_bunka</figcaption>
+<img src="assets/dram_bunka.png" alt="" /><figcaption>dram_bunka</figcaption>
 </figure>
 <hr>
-<h3 id="popište-stručně-historii-vývoje-dynamických-pamětí.">Popište
-stručně historii vývoje dynamických pamětí.</h3>
+<h3 id="popište-stručně-historii-vývoje-dynamických-pamětí.">Popište stručně historii vývoje dynamických pamětí.</h3>
 <ul>
 <li>??? :c</li>
 </ul>
 <hr>
-<h3
-id="jak-je-ve-statických-pamětech-ukládána-informace-a-jak-je-udržována">Jak
-je ve statických pamětech ukládána informace a jak je udržována?</h3>
+<h3 id="jak-je-ve-statických-pamětech-ukládána-informace-a-jak-je-udržována">Jak je ve statických pamětech ukládána informace a jak je udržována?</h3>
 <ul>
 <li>Je uložená stavem klopného obvodu</li>
 <li>Lze realitovat pomocí 4 nebo 6 tranzistorů</li>
 <li>SRAM je dražší a pojme méně dat něž DRAM</li>
 </ul>
 <hr>
-<h3 id="jak-je-organizována-vnitřně-statická-paměť">Jak je organizována
-vnitřně statická paměť?</h3>
+<h3 id="jak-je-organizována-vnitřně-statická-paměť">Jak je organizována vnitřně statická paměť?</h3>
 <ul>
 <li>Jako 2D mřížka, kde jeden řádek tvoří jedno slovo</li>
 <li>SRAM paměti nevyužívají adresní multiplexing</li>
 </ul>
 <figure>
-<img src="assets/SRAM.png" alt="SRAM" />
-<figcaption aria-hidden="true">SRAM</figcaption>
+<img src="assets/SRAM.png" alt="" /><figcaption>SRAM</figcaption>
 </figure>
 <hr>
-<h3
-id="jaké-typy-pamětí-si-udržují-svůj-obsah-i-po-odpojení-napájení">Jaké
-typy pamětí si udržují svůj obsah i po odpojení napájení?</h3>
+<h3 id="jaké-typy-pamětí-si-udržují-svůj-obsah-i-po-odpojení-napájení">Jaké typy pamětí si udržují svůj obsah i po odpojení napájení?</h3>
 <ul>
 <li>(Nevolatilní)</li>
 <li>ROM (Read Only Memory)
 <ul>
-<li>Informace zapisuje výrobce (je složená z odporů, které výrobce
-přepálí.. neporušené prvky pak vedou proud a je v nich minimální
-napětí.. log. 0)</li>
+<li>Informace zapisuje výrobce (je složená z odporů, které výrobce přepálí.. neporušené prvky pak vedou proud a je v nich minimální napětí.. log. 0)</li>
 <li>Doba pamatování není ohraničená</li>
 </ul></li>
 <li>PROM
 <ul>
 <li>Programmable ROM</li>
-<li>Informace se vypalijí pomocí “programátoru”</li>
+<li>Informace se vypalují pomocí „programátoru“</li>
 <li>Lze zapsat jen jednou</li>
 </ul></li>
 <li>EPROM
 <ul>
 <li>Erasable PROM</li>
-<li>Uchovává informaci díky kvalitně izolovaném el. napětí</li>
+<li>Uchovává informaci díky kvalitně izolovanému el. napětí</li>
 <li>K naprogramování je potřeba až 50ms trvající pulz o 5V</li>
 <li>Lze vymazat pomocí UV záření</li>
 <li>Doba pamatování 10 až 20 let</li>
@@ -1285,37 +997,31 @@ napětí.. log. 0)</li>
 <ul>
 <li>Lze programovat rychle přímo v počítači</li>
 <li>Doba pamatování 10 až 100 let</li>
-<li>Struktura buněk je podobná EEPROM, ale pro programování a mazání
-stači pulz 10us</li>
+<li>Struktura buněk je podobná EEPROM, ale pro programování a mazání stačí pulz 10us</li>
 <li>Přes 10000 programovacích a mazacích cyklů</li>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="paměti-s-trvalým-obsahem-umožňují-svůj-obsah-přepsat.-jak-se-přepis-u-jednotlivých-typů-provádí">Paměti
-s trvalým obsahem umožňují svůj obsah přepsat. Jak se přepis u
-jednotlivých typů provádí?</h3>
+<h3 id="paměti-s-trvalým-obsahem-umožňují-svůj-obsah-přepsat.-jak-se-přepis-u-jednotlivých-typů-provádí">Paměti s trvalým obsahem umožňují svůj obsah přepsat. Jak se přepis u jednotlivých typů provádí?</h3>
 <ul>
 <li>EPROM - UV zářením</li>
 <li>EEPROM - Elektricky, až 50ms pulzem o 5V</li>
 <li>FLASH - Elektricky 10us pulzem</li>
 </ul>
 <hr>
-<h3 id="jaké-speciální-typy-pamětí-se-používají">Jaké speciální typy
-pamětí se používají?</h3>
+<h3 id="jaké-speciální-typy-pamětí-se-používají">Jaké speciální typy pamětí se používají?</h3>
 <ul>
 <li>VRAM (Video RAM)
 <ul>
 <li>Dvouportová</li>
 <li>Zvýšené přenosové pásmo</li>
 </ul></li>
-<li>WRAM (Window RAM (nemá nic společného s tím pseudo operačním
-systémem))
+<li>WRAM (Window RAM (nemá nic společného s tím pseudo operačním systémem))
 <ul>
 <li>O 25% větší přenosové pásmo než VRAM</li>
 <li>Nabízí double-buffering</li>
 </ul></li>
-<li>SGRAM (Synchroní Grafická RAM)
+<li>SGRAM (Synchronní Grafická RAM)
 <ul>
 <li>Funguje jako SDRAM</li>
 <li>Ale SDRAM je optimalizována pro kapacitu a SGRAM pro přenos dat</li>
@@ -1328,24 +1034,21 @@ systémem))
 <li>Cache paměti
 <ul>
 <li>Malé a rychlé</li>
-<li>Rychlé komponenty čtou data z cache a nemusí čekat na komponentu
-pomalejší</li>
+<li>Rychlé komponenty čtou data z cache a nemusí čekat na komponentu pomalejší</li>
 <li>L1,L2,..</li>
 </ul></li>
 </ul>
 <hr>
 <h3 id="hierarchie-pamětí-v-počítači">Hierarchie pamětí v počítači</h3>
 <figure>
-<img src="assets/memory_h.png" alt="memory_h" />
-<figcaption aria-hidden="true">memory_h</figcaption>
+<img src="assets/memory_h.png" alt="" /><figcaption>memory_h</figcaption>
 </figure>
 <hr>
-<h3 id="jak-se-u-pamětí-detekují-a-opravují-chyby">Jak se u pamětí
-detekují a opravují chyby?</h3>
+<h3 id="jak-se-u-pamětí-detekují-a-opravují-chyby">Jak se u pamětí detekují a opravují chyby?</h3>
 <ul>
 <li>SRAM je spolehlivější než DRAM</li>
 <li>Tvrdé chyby - opakující se</li>
-<li>Měkké chyby - Neopkající se .. těžší rozpoznat</li>
+<li>Měkké chyby - Neopakující se .. těžší rozpoznat</li>
 <li>Kontrola Parity
 <ul>
 <li>dorovnává se na lichý počet jedniček do 9. bitu</li>
@@ -1353,9 +1056,9 @@ detekují a opravují chyby?</h3>
 </ul></li>
 <li>ECC - Error Correction Code
 <ul>
-<li>Detekuje více bitové chyby</li>
+<li>Detekuje vícebitové chyby</li>
 <li>Schopen opravit 1 bitovou chybu</li>
-<li>Nutnost “Wait State” =&gt; zpomalení 2-3%</li>
+<li>Nutnost „Wait State“ =&gt; zpomalení 2-3%</li>
 </ul></li>
 </ul>
 <hr>
@@ -1365,8 +1068,7 @@ detekují a opravují chyby?</h3>
 <li>Používá se převážně Hardvardská architektura</li>
 <li>Kvůli jednoduchosti bývají převážně RISC</li>
 </ul>
-<h3 id="jaká-je-obvyklá-organizace-pamětí-v-mikropočítačích">Jaká je
-obvyklá organizace pamětí v mikropočítačích?</h3>
+<h3 id="jaká-je-obvyklá-organizace-pamětí-v-mikropočítačích">Jaká je obvyklá organizace pamětí v mikropočítačích?</h3>
 <ul>
 <li>Střádačové (pracovní registry)
 <ul>
@@ -1384,13 +1086,10 @@ obvyklá organizace pamětí v mikropočítačích?</h3>
 <li>Speciální - např. IP</li>
 <li>Zásobník pro návratové adresy (nutnost mít stack pointer)</li>
 </ul>
-<h3
-id="jaké-zdroje-hodinového-signálu-se-mikropočítačích-používají">Jaké
-zdroje hodinového signálu se mikropočítačích používají?</h3>
+<h3 id="jaké-zdroje-hodinového-signálu-se-mikropočítačích-používají">Jaké zdroje hodinového signálu se mikropočítačích používají?</h3>
 <ul>
 <li>(Zdroj synchronizace)</li>
-<li>Často je zdroj integrován přímo v počítači - nelze zajistit dobrou
-stabilitu (Vlivem teplot můžou být odchylky kmitočtu desítky %)</li>
+<li>Často je zdroj integrován přímo v počítači - nelze zajistit dobrou stabilitu (Vlivem teplot můžou být odchylky kmitočtu desítky %)</li>
 <li>Generátory:
 <ul>
 <li>Krystal (Dobrý pro stabilitu)</li>
@@ -1401,33 +1100,26 @@ stabilitu (Vlivem teplot můžou být odchylky kmitočtu desítky %)</li>
 </ul></li>
 </ul>
 <figure>
-<img src="assets/clock_gen.png" alt="clock_gen" />
-<figcaption aria-hidden="true">clock_gen</figcaption>
+<img src="assets/clock_gen.png" alt="" /><figcaption>clock_gen</figcaption>
 </figure>
 <hr>
-<h3 id="jak-probíhá-reset-mikropočítače">Jak probíhá RESET
-mikropočítače?</h3>
+<h3 id="jak-probíhá-reset-mikropočítače">Jak probíhá RESET mikropočítače?</h3>
 <ul>
 <li>Počáteční stav počítače</li>
-<li>Po provedení RESETu se u všech počítačů nastaví počáteční hodnota
-čítače instrukcí (0 nebo samé 1)</li>
+<li>Po provedení RESETu se u všech počítačů nastaví počáteční hodnota čítače instrukcí (0 nebo samé 1)</li>
 <li>Výrobce definuje jako dlouho RESET signál trvá</li>
 <li>Zdroj signálu může být vnější nebo vnitřní</li>
 </ul>
 <hr>
-<h3
-id="jakými-způsoby-se-řeší-ochrana-proti-rušení-v-mikropočítačích">Jakými
-způsoby se řeší ochrana proti rušení v mikropočítačích?</h3>
+<h3 id="jakými-způsoby-se-řeší-ochrana-proti-rušení-v-mikropočítačích">Jakými způsoby se řeší ochrana proti rušení v mikropočítačích?</h3>
 <ul>
-<li>Mechanická ochrana - musí odolávat nárazům, nebo trvalým
-vibracím</li>
+<li>Mechanická ochrana - musí odolávat nárazům, nebo trvalým vibracím</li>
 <li>Galvanické oddělení - proti elektromagnetickým vlivům</li>
 <li>WATCHDOG - aby nám program nezabloudil</li>
 <li>Větším rozsahem pracovního napětí</li>
 </ul>
 <hr>
-<h3 id="jaké-jsou-základní-vlastnosti-vv-bran">Jaké jsou základní
-vlastnosti V/V bran?</h3>
+<h3 id="jaké-jsou-základní-vlastnosti-vv-bran">Jaké jsou základní vlastnosti V/V bran?</h3>
 <ul>
 <li>Nejčastější a nejjednodušší je <code>Paralelní brána - port</code>
 <ul>
@@ -1435,19 +1127,15 @@ vlastnosti V/V bran?</h3>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="popište-obecný-princip-fungování-sériových-rozhraní-jaká-sériová-rozhraní-znáte">Popište
-obecný princip fungování sériových rozhraní? Jaká sériová rozhraní
-znáte?</h3>
+<h3 id="popište-obecný-princip-fungování-sériových-rozhraní.-jaká-sériová-rozhraní-znáte">Popište obecný princip fungování sériových rozhraní. Jaká sériová rozhraní znáte?</h3>
 <ul>
-<li>Dovoluje efektivním způsobem přenášet data na relativně velké
-vzdálenosti při použití minimálního počtu vodičů</li>
+<li>Dovoluje efektivním způsobem přenášet data na relativně velké vzdálenosti při použití minimálního počtu vodičů</li>
 <li>Je to celkem pomalá komunikace</li>
 <li>Dle vzdálenosti přenosu dělíme na:
 <ul>
 <li>Mezi elektronickými zařízeními (na delší vzdálenost)
 <ul>
-<li>Synchroní nebo asynchroní přenos</li>
+<li>Synchronní nebo asynchronní přenos</li>
 <li>Typicky pomocí RS232 nebo RS485</li>
 </ul></li>
 <li>Uvnitř el. zařízení
@@ -1458,28 +1146,22 @@ vzdálenosti při použití minimálního počtu vodičů</li>
 <li>Princip ???</li>
 </ul>
 <figure>
-<img src="assets/seriovy_prenos.png" alt="seriovy_prenos" />
-<figcaption aria-hidden="true">seriovy_prenos</figcaption>
+<img src="assets/seriovy_prenos.png" alt="" /><figcaption>seriovy_prenos</figcaption>
 </figure>
 <hr>
-<h3 id="k-čemu-slouží-v-mikropočítačích-čítače-a-časovače-jak-fungují">K
-čemu slouží v mikropočítačích čítače a časovače? Jak fungují?</h3>
+<h3 id="k-čemu-slouží-v-mikropočítačích-čítače-a-časovače-jak-fungují">K čemu slouží v mikropočítačích čítače a časovače? Jak fungují?</h3>
 <ul>
 <li>Čítač je registr o N bitech, který nejčastěji čítá vnější události
 <ul>
-<li>Při přetečení se obvykle automaticky předává výzva do přerušovacího
-podsystému.</li>
+<li>Při přetečení se obvykle automaticky předává výzva do přerušovacího podsystému.</li>
 </ul></li>
-<li>Časovač je podobný jako čítač, ale je inkrementován vnitřním
-hodinovým signálem
+<li>Časovač je podobný jako čítač, ale je inkrementován vnitřním hodinovým signálem
 <ul>
 <li>Zajišťuje řízení událostí v realném čase</li>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="popište-konstrukci-a-fungování-základních-ad-převodníků.">Popište
-konstrukci a fungování základních A/D převodníků.</h3>
+<h3 id="popište-konstrukci-a-fungování-základních-ad-převodníků.">Popište konstrukci a fungování základních A/D převodníků.</h3>
 <ul>
 <li>Převádí Analogový signál na Digitální
 <ul>
@@ -1490,8 +1172,7 @@ konstrukci a fungování základních A/D převodníků.</h3>
 <li>S počtem komparátorů roste rozlišovací schopnost</li>
 </ul>
 <figure>
-<img src="assets/komparacni_prevodnik.png" alt="komparacni_prevodnik" />
-<figcaption aria-hidden="true">komparacni_prevodnik</figcaption>
+<img src="assets/komparacni_prevodnik.png" alt="" /><figcaption>komparacni_prevodnik</figcaption>
 </figure></li>
 <li><p>A/D převodník s D/A převodem</p>
 <ul>
@@ -1517,17 +1198,14 @@ konstrukci a fungování základních A/D převodníků.</h3>
 </ul></li>
 </ul>
 <hr>
-<h3
-id="popište-konstrukci-a-fungování-základních-da-převodníků.">Popište
-konstrukci a fungování základních D/A převodníků.</h3>
+<h3 id="popište-konstrukci-a-fungování-základních-da-převodníků.">Popište konstrukci a fungování základních D/A převodníků.</h3>
 <ul>
 <li>Převádí digitální signál na analogový</li>
 <li>PWM (Pulse Width Modulation)
 <ul>
 <li>Převodníky mají velké zpoždění</li>
 <li>Pro převod slouží RC článek</li>
-<li>Hodnota Analog. signálu je “zakódována” jako poměr mezi stavy
-vypnuto a zapnuto</li>
+<li>Hodnota analog. signálu je „zakódována“ jako poměr mezi stavy vypnuto a zapnuto</li>
 </ul></li>
 <li>Paralelní převodníky
 <ul>
@@ -1535,8 +1213,7 @@ vypnuto a zapnuto</li>
 <li>Základem je většinou odporová síť</li>
 <li>Typy:
 <ul>
-<li>Váhově řazené hodnoty odporů (1:2:4:8..64:128) (náročné dodržet
-poměr kvůli přesnosti odporů)</li>
+<li>Váhově řazené hodnoty odporů (1:2:4:8..64:128) (náročné dodržet poměr kvůli přesnosti odporů)</li>
 <li>R-2R</li>
 </ul></li>
 </ul></li>
@@ -1544,12 +1221,10 @@ poměr kvůli přesnosti odporů)</li>
 <hr>
 <h3 id="nákres-da">NÁKRES D/A ?</h3>
 <figure>
-<img src="assets/pwm_prevodnik.png" alt="pwm_prevodnik" />
-<figcaption aria-hidden="true">pwm_prevodnik</figcaption>
+<img src="assets/pwm_prevodnik.png" alt="" /><figcaption>pwm_prevodnik</figcaption>
 </figure>
 <hr>
-<h3 id="jaké-speciální-periferie-mikropočítačů-znáte">Jaké speciální
-periferie mikropočítačů znáte?</h3>
+<h3 id="jaké-speciální-periferie-mikropočítačů-znáte">Jaké speciální periferie mikropočítačů znáte?</h3>
 <ul>
 <li>Řízení dobíjení baterií</li>
 <li>Vysílače a příjmače IR signálu</li>
@@ -1558,29 +1233,22 @@ periferie mikropočítačů znáte?</h3>
 </ul>
 <h1 id="monitory">8. Monitory</h1>
 <h3 id="jak-funguje-crt">Jak funguje CRT ???</h3>
-<h3 id="na-jakých-principech-fungují-lcd-monitory">Na jakých principech
-fungují LCD monitory?</h3>
+<h3 id="na-jakých-principech-fungují-lcd-monitory">Na jakých principech fungují LCD monitory?</h3>
 <ul>
-<li>Liquid crystal display</li>
-<li>Každý pixel se skládá z 3 sub pixelů</li>
-<li>Jádrem LCD je TN (twisted nematic) struktura, která je z obou stran
-obklopena polarizačními vrstvami</li>
+<li>zkratka LCD znamená Liquid crystal display</li>
+<li>Každý pixel se skládá ze 3 subpixelů</li>
+<li>Jádrem LCD je TN (twisted nematic) struktura, která je z obou stran obklopena polarizačními vrstvami</li>
 <li>Princip (TN):
 <ul>
 <li>Světlo projde prvním filtrem a polarizuje se</li>
-<li>Projde vrstvami pootočených tekutých krystalů, které světlo otočí o
-90stupnu</li>
-<li>Světlo projde i druhým polarizačním filtrem, které je otočeno o
-90stupnu proti prvnímu</li>
-<li>(TN-LCD, které v klidovém stavu bez přivedeného napětí propouští
-světlo)</li>
-<li>Po přivedení napětí nématická struktura přestane otáčet světlo, a
-druhý polarizační filtr ho nepustí</li>
+<li>Projde vrstvami pootočených tekutých krystalů, které světlo otočí o 90stupnu</li>
+<li>Světlo projde i druhým polarizačním filtrem, které je otočeno o 90stupnu proti prvnímu</li>
+<li>(TN-LCD, které v klidovém stavu bez přivedeného napětí propouští světlo)</li>
+<li>Po přivedení napětí nématická struktura přestane otáčet světlo, a druhý polarizační filtr ho nepustí</li>
 </ul></li>
 </ul>
 <figure>
-<img src="assets/lcd.png" alt="lcd" />
-<figcaption aria-hidden="true">lcd</figcaption>
+<img src="assets/lcd.png" alt="" /><figcaption>lcd</figcaption>
 </figure>
 <p>(tady světlo otáčí == pixely jsou zaplé)</p>
 <ul>
@@ -1591,8 +1259,7 @@ druhý polarizační filtr ho nepustí</li>
 </ul></li>
 </ul>
 <hr>
-<h3 id="jaké-jsou-základní-výhody-a-nevýhody-lcd-monitorů">Jaké jsou
-základní výhody a nevýhody LCD monitorů?</h3>
+<h3 id="jaké-jsou-základní-výhody-a-nevýhody-lcd-monitorů">Jaké jsou základní výhody a nevýhody LCD monitorů?</h3>
 <ul>
 <li>Výhody:
 <ul>
@@ -1612,25 +1279,20 @@ základní výhody a nevýhody LCD monitorů?</h3>
 </ul></li>
 </ul>
 <hr>
-<h3 id="jak-fungují-oled-zobrazovací-jednotky">Jak fungují OLED
-zobrazovací jednotky?</h3>
+<h3 id="jak-fungují-oled-zobrazovací-jednotky">Jak fungují OLED zobrazovací jednotky?</h3>
 <ul>
 <li>Organic Light Emmiting Diode</li>
 </ul>
 <figure>
-<img src="assets/oled.png" alt="OLED" />
-<figcaption aria-hidden="true">OLED</figcaption>
+<img src="assets/oled.png" alt="" /><figcaption>OLED</figcaption>
 </figure>
 <ul>
-<li>Při přivedení napětí, se elektrony(záporné částice) začnou hromadit
-v organické vrstvě, blíže k anodě</li>
+<li>Při přivedení napětí se elektrony (záporné částice) začnou hromadit v organické vrstvě, blíže k anodě</li>
 <li>Díry (kladné částice) se hromadí na opačné straně blíže katodě</li>
-<li>V organické vrstvě začne docházet ke srážkám a vzájemnou eliminací
-vzniká světlo</li>
+<li>V organické vrstvě začne docházet ke srážkám a vzájemnou eliminací vzniká světlo</li>
 </ul>
 <hr>
-<h3 id="jaké-jsou-výhody-a-nevýhody-oled-technologie">Jaké jsou výhody a
-nevýhody OLED technologie?</h3>
+<h3 id="jaké-jsou-výhody-a-nevýhody-oled-technologie">Jaké jsou výhody a nevýhody OLED technologie?</h3>
 <ul>
 <li>Výhody:
 <ul>
@@ -1649,24 +1311,19 @@ nevýhody OLED technologie?</h3>
 </ul></li>
 </ul>
 <hr>
-<h3 id="jak-funguje-zobrazovací-jednotka-s-technologií-e-ink">Jak
-funguje zobrazovací jednotka s technologií E-Ink?</h3>
+<h3 id="jak-funguje-zobrazovací-jednotka-s-technologií-e-ink">Jak funguje zobrazovací jednotka s technologií E-Ink?</h3>
 <ul>
-<li>Elektřina je potřeba jen pro refresh (malý proud, 5-15V)</li>
-<li>V čiré kapalině jsou jen dvě barvy, můzou tvořit gradient, pomocí
-rozdělení elektrod</li>
+<li>Elektřina je potřeba jen pro refresh (malý proud, 5-15 V)</li>
+<li>V čiré kapalině jsou jen dvě barvy, můžou tvořit gradient pomocí rozdělení elektrod</li>
 <li>Horní elektrody musí být průsvitné</li>
 <li>Princip:
 <ul>
-<li>V průhledných kapslích jsou obsaženy kladné a záporné částice
-různých barev (většinou černá a bílá)</li>
-<li>Po přivedení napětí se částice v čirém roztoku podle svého náboje
-přitáhnou k elektrodě opačné polarity</li>
+<li>V průhledných kapslích jsou obsaženy kladné a záporné částice různých barev (většinou černá a bílá)</li>
+<li>Po přivedení napětí se částice v čirém roztoku podle svého náboje přitáhnou k elektrodě opačné polarity</li>
 <li>Přes průhlednou horní elektrodu jde vidět barva</li>
 </ul></li>
 </ul>
-<h3 id="jaké-jsou-výhody-a-nevýhody-e-ink">Jaké jsou výhody a nevýhody
-E-Ink?</h3>
+<h3 id="jaké-jsou-výhody-a-nevýhody-e-ink">Jaké jsou výhody a nevýhody E-Ink?</h3>
 <ul>
 <li>Výhody:
 <ul>
@@ -1685,20 +1342,18 @@ E-Ink?</h3>
 </ul></li>
 </ul>
 <hr>
-<h3 id="jak-je-u-e-ink-řešena-podpora-více-barevných-úrovní">Jak je u
-E-Ink řešena podpora více barevných úrovní?</h3>
+<h3 id="jak-je-u-e-ink-řešena-podpora-více-barevných-úrovní">Jak je u E-Ink řešena podpora více barevných úrovní?</h3>
 <ul>
 <li>Rozdělením elektrod</li>
 <li>V případě barev:
 <ul>
 <li>Stejně jako u LCD =&gt; barevné filtry</li>
-<li>Nad každou kapslí je jeden barevný filtr z trojce RGB</li>
+<li>Nad každou kapslí je jeden barevný filtr z trojice RGB</li>
 <li>Špatné barvy.. barevá hloubka je 4096</li>
 </ul></li>
 </ul>
 <figure>
-<img src="assets/eink.png" alt="eink" />
-<figcaption aria-hidden="true">eink</figcaption>
+<img src="assets/eink.png" alt="" /><figcaption>eink</figcaption>
 </figure>
 <hr>
 <h1 id="disky">9. Disky</h1>
@@ -1717,23 +1372,15 @@ E-Ink řešena podpora více barevných úrovní?</h3>
 <li>Magnetooptické paměti</li>
 </ul>
 <hr>
-<h3 id="jaký-je-princip-ukládání-dat-u-magnetických-pamětí">Jaký je
-princip ukládání dat u magnetických pamětí ?</h3>
+<h3 id="jaký-je-princip-ukládání-dat-u-magnetických-pamětí">Jaký je princip ukládání dat u magnetických pamětí ?</h3>
 <ul>
-<li>Záznamové médium má tvar kruhové desky (disk,disketa), nebo dlouhé
-pásky</li>
-<li>Je pokryto magnetockou vrstvou a pohybuje se konstantní
-rychlostí</li>
-<li>V bodu dotyku s povrchem je štěrbina magnetického obvodu (štěrbina
-je díra v té hlavě(Magnetickém obvodu)).. štěrbina + mag. obvod tvoří
-jádro</li>
-<li><i>Pokud manetickým obvodem prochází proud, vzniká magnetický tok,
-který se díky štěrbině dostává do okolí, a ovlivňuje magnetickou vrstvu
-</i></li>
+<li>Záznamové médium má tvar kruhové desky (disk, disketa), nebo dlouhé pásky</li>
+<li>Je pokryto magnetickou vrstvou a pohybuje se konstantní rychlostí</li>
+<li>V bodu dotyku s povrchem je štěrbina magnetického obvodu (štěrbina je díra v té hlavě (Magnetickém obvodu)).. štěrbina + mag. obvod tvoří jádro</li>
+<li><i>Pokud magnetickým obvodem prochází proud, vzniká magnetický tok, který se díky štěrbině dostává do okolí, a ovlivňuje magnetickou vrstvu </i></li>
 </ul>
 <figure>
-<img src="assets/zapis_na_disk.png" alt="zapis_na_disk" />
-<figcaption aria-hidden="true">zapis_na_disk</figcaption>
+<img src="assets/zapis_na_disk.png" alt="" /><figcaption>zapis_na_disk</figcaption>
 </figure>
 <ul>
 <li>Podélný zápis:
@@ -1749,28 +1396,22 @@ který se díky štěrbině dostává do okolí, a ovlivňuje magnetickou vrstvu
 <hr>
 <h3 id="jak-funguje-pevný-disk">Jak funguje pevný disk ?</h3>
 <figure>
-<img src="assets/disk.png" alt="disk" />
-<figcaption aria-hidden="true">disk</figcaption>
+<img src="assets/disk.png" alt="" /><figcaption>disk</figcaption>
 </figure>
 <ul>
 <li>Proud je převeden na indukci</li>
-<li>Disk je vyroben z nemagnetického materiálu, který je pokryt
-fermagnetickou vrstvou</li>
-<li>Povrch je pokryt magnetickými doménami, které mají specifickou
-orientaci, při zápisu se mění jejich orientace</li>
+<li>Disk je vyroben z nemagnetického materiálu, který je pokryt fermagnetickou vrstvou</li>
+<li>Povrch je pokryt magnetickými doménami, které mají specifickou orientaci, při zápisu se mění jejich orientace</li>
 </ul>
 <hr>
-<h3 id="jaký-je-princip-ukládání-dat-u-optických-pamětí">Jaký je princip
-ukládání dat u optických pamětí ?</h3>
+<h3 id="jaký-je-princip-ukládání-dat-u-optických-pamětí">Jaký je princip ukládání dat u optických pamětí ?</h3>
 <figure>
-<img src="assets/optic.png" alt="optic" />
-<figcaption aria-hidden="true">optic</figcaption>
+<img src="assets/optic.png" alt="" /><figcaption>optic</figcaption>
 </figure>
 <ul>
 <li>Materiál - polykarbonát</li>
 <li>Záznam pomocí pitů a landu (jamky a pevniny)</li>
-<li>Čtecí senzor rozpozná změnu tak, že když světlo narazí na pit,
-rozptýlí se s posunutou peridodou</li>
+<li>Čtecí senzor rozpozná změnu tak, že když světlo narazí na pit, rozptýlí se s posunutou peridodou</li>
 <li>Zapisuje se laserem</li>
 <li>Většinou WORM - Write once read many time</li>
 </ul>
@@ -1793,26 +1434,23 @@ rozptýlí se s posunutou peridodou</li>
 <hr>
 <h1 id="cuda">10. CUDA</h1>
 <ul>
-<li>Rozšírení jazyka C/C++</li>
+<li>Rozšíření jazyka C/C++</li>
 <li>Funguje jen na Nvidia kartách</li>
 <li>Warp je skupina jader, která je ovládána schedulerem
 <ul>
-<li>Každý warp má svůj dekoder instrukcí a scheduler</li>
+<li>Každý warp má svůj dekodér instrukcí a scheduler</li>
 <li>Každé jádro má FP unit a INT unit</li>
 </ul></li>
 </ul>
-<h3 id="výhody-gpucudy">Výhody GPU/cudy?</h3>
+<h3 id="výhody-gpucudy">Výhody GPU/CUDY?</h3>
 <ul>
 <li><b>Masivní</b> Paralelizace</li>
-<li>GPU je navržena pro zpracování výpočetně náročného kódu s omezeným
-počtem podmíněných skoků (Nejlépe bez IFů)</li>
+<li>GPU je navržena pro zpracování výpočetně náročného kódu s omezeným počtem podmíněných skoků (nejlépe bez IFů)</li>
 </ul>
 <hr>
-<h3 id="čím-se-musí-řídit-programátor-při-práci-s-cuda">Čím se musí
-řídit programátor při práci s CUDA ?</h3>
+<h3 id="čím-se-musí-řídit-programátor-při-práci-s-cuda">Čím se musí řídit programátor při práci s CUDA ?</h3>
 <ul>
-<li>Jádra musí bý na sobě nezávislá (GPU negarantuje pořadí exekuce
-threadu)</li>
+<li>Jádra musí být na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)</li>
 <li>Musí určit správný počet bloků a vláken</li>
 <li>Nepoužívat IFy (a cykly)</li>
 <li>TODOOOO: Unified Memory ???</li>
@@ -1820,13 +1458,11 @@ threadu)</li>
 <hr>
 <h3 id="organizace-mřížky">Organizace mřížky ?</h3>
 <figure>
-<img src="assets/cuda_grid.png" alt="cuda_grid" />
-<figcaption aria-hidden="true">cuda_grid</figcaption>
+<img src="assets/cuda_grid.png" alt="" /><figcaption>cuda_grid</figcaption>
 </figure>
 <ul>
 <li>Kód kernelu musí bt přizpůsoben mřížce</li>
-<li>Pro určení pozice threadu v mřížce lze použít předdefinované
-proměnné (blockIdx, ..)
+<li>Pro určení pozice threadu v mřížce lze použít předdefinované proměnné (blockIdx, ..)
 <ul>
 <li><code>x = blockIdx.x * blockDim.x + threadIdx.x;</code></li>
 <li><code>y = blockIdx.y * blockDim.y + threadIdx.y;</code></li>
@@ -1846,10 +1482,8 @@ proměnné (blockIdx, ..)
 <ul>
 <li>Modifikátory funkcí:
 <ul>
-<li><code>__device__</code> - Pouze GPU (Vykonána na GPU, zavolána z
-GPU)</li>
-<li><code>__global__</code> - Pro oboje (Vykonána na grafické kartě, ale
-zavolána z procesoru)</li>
+<li><code>__device__</code> - Pouze GPU (vykonání i zavolání na GPU)</li>
+<li><code>__global__</code> - Pro oboje (vykonána na grafické kartě, ale zavolána z procesoru)</li>
 <li><code>__host__</code> - Pouze pro procesor</li>
 </ul></li>
 <li>Kvantifikátory (qualifier) proměnných (nikdy jsme je irl nepoužili):
@@ -1869,26 +1503,22 @@ zavolána z procesoru)</li>
 <li>long</li>
 <li>ulong</li>
 <li>float</li>
-<li>double (double1, double2) (off-topic fact.. float a double unsigned
-neexistují)</li>
+<li>double (double1, double2) (off-topic fact.. float a double unsigned neexistují)</li>
 </ul></li>
 <li>dim3 je uint3</li>
 <li><code>jmeno_funkce&lt;&lt;&lt;pocet_bloku, pocet_vlaken&gt;&gt;&gt;(parametry)</code></li>
 </ul>
 <figure>
-<img src="assets/fermi.png" alt="fermi" />
-<figcaption aria-hidden="true">fermi</figcaption>
+<img src="assets/fermi.png" alt="" /><figcaption>fermi</figcaption>
 </figure>
 <hr>
 <h1 id="rp2040-a-arm-cortex-a77">11. RP2040 a ARM Cortex-A77</h1>
 <h3 id="rp2040">RP2040</h3>
 <figure>
-<img src="assets/RP2040.png" alt="rp2040" />
-<figcaption aria-hidden="true">rp2040</figcaption>
+<img src="assets/RP2040.png" alt="" /><figcaption>rp2040</figcaption>
 </figure>
 <ul>
-<li>Levný mikrokontroler (kolem 50kč), používaný v R Picu, vydán v lednu
-2021</li>
+<li>Levný mikrokontrolér (kolem 50 Kč), používaný v R Picu, vydán v lednu 2021</li>
 <li>2 jádra ARM Cortex M0+ až 133MHz</li>
 <li>264kB SRAM (rozdělena do 6 banek)</li>
 <li>16MB flash paměti</li>
@@ -1898,7 +1528,7 @@ neexistují)</li>
 <li>2x UART controller</li>
 <li>2x SPI controller</li>
 <li>2x I2C controller</li>
-<li>PWM conroller</li>
+<li>PWM controller</li>
 <li>Watchdog</li>
 <li>RTC</li>
 </ul></li>
@@ -1910,38 +1540,30 @@ neexistují)</li>
 <li>ARMv8-A architektura (instrukční sada) - Harvard</li>
 <li>64bit</li>
 <li>Vydán v roce 2019</li>
-<li>13-ti úrovňové zřetězení</li>
+<li>13 úrovňové zřetězení</li>
 <li>8 Jader</li>
 <li>L1, L2 a L3 cache</li>
 <li>FPU</li>
 <li>Out of Order Zpracování instrukcí</li>
 <li>Primárně v mobilech s androidem =&gt; nízká spotřeba</li>
-<li><a
-href="https://www.cnews.cz/arm-cortex-a77cpu-jadro-architektura-velky-narust-vykonu-ipc/">TODO:
-přečíst</a></li>
+<li><a href="https://www.cnews.cz/arm-cortex-a77cpu-jadro-architektura-velky-narust-vykonu-ipc/">TODO: přečíst</a></li>
 </ul>
 <figure>
-<img src="assets/cortex-a77.png" alt="a77" />
-<figcaption aria-hidden="true">a77</figcaption>
+<img src="assets/cortex-a77.png" alt="" /><figcaption>a77</figcaption>
 </figure>
 <figure>
-<img src="assets/cortex-a77_full.png" alt="a77_full" />
-<figcaption aria-hidden="true">a77_full</figcaption>
+<img src="assets/cortex-a77_full.png" alt="" /><figcaption>a77_full</figcaption>
 </figure>
 <figure>
-<img src="assets/a77_simple.png" alt="a77_simple" />
-<figcaption aria-hidden="true">a77_simple</figcaption>
+<img src="assets/a77_simple.png" alt="" /><figcaption>a77_simple</figcaption>
 </figure>
 <p>https://en.wikichip.org/wiki/arm_holdings/microarchitectures/cortex-a77</p>
 <hr>
 <h3 id="následovník-pentia-pro">Následovník Pentia Pro ?</h3>
 <figure>
-<img src="assets/pentium_2.png" alt="pentium_2" />
-<figcaption aria-hidden="true">pentium_2</figcaption>
+<img src="assets/pentium_2.png" alt="" /><figcaption>pentium_2</figcaption>
 </figure>
-<p>Ano.. vypadá stejně jak Pentium Pro.. ale má navíc MMX jednotku (SIMD
-instrukce), větší frekvenci a o polovinu menší frekvenci L2 cache</p>
-<p><a href="https://www.lpthe.jussieu.fr/~talon/pentiumII.pdf">Strana
-21</a></p>
+<p>Ano.. vypadá stejně jak Pentium Pro.. ale má navíc MMX jednotku (SIMD instrukce), větší frekvenci a o polovinu menší frekvenci L2 cache</p>
+<p><a href="https://www.lpthe.jussieu.fr/~talon/pentiumII.pdf">Strana 21</a></p>
 </body>
 </html>
