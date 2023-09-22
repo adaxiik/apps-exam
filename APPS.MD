@@ -15,7 +15,7 @@
 ![princip_pocitace](assets/princip_pocitace.png)
 
 - Procesor si přes sběrnici vyžádá instrukci z paměti na adrese IP
-- Poté co instrukci získá ji provede
+- Poté, co instrukci získá, provede ji
 - Zvýší IP/PC 
 - Cyklus čtení a provedení se opakuje
 
@@ -24,11 +24,11 @@
 ### Kritéria a Principy dle von Neumanna:
 - Počítač je řízen obsahem paměti (struktura počítače je nezávislá na typu úlohy)
 - Strojové instrukce a Data jsou v jedné paměti (lze přistupovat jednotným způsobem)
-- Paměť je rozdělena do buněk stejné velikosti (Jejich pořadové číslo je jejich adresa)
-- Následující krok je závislý na tom přechozím
+- Paměť je rozdělena do buněk stejné velikosti (jejich pořadové číslo je jejich adresa)
+- Následující krok je závislý na tom předchozím
 - Program je sekvence instrukcí, ty jsou vykonávány sekvenčně, v pořadí v jakém jsou zapsány do paměti
 - Změna pořadí instrukcí je možná pomocí skoku
-- Pro reprezentaci čísel, adres, znaků.. se používá dvojková soustava
+- Pro reprezentaci čísel, adres, znaků... se používá dvojková soustava
 
 ![von_neumann](assets/von_neumann.png)
 
@@ -59,7 +59,7 @@
 <hr>
 
 ### Jaká je podpora paralelismu u obou architektur počítačů?
-- Žádná .. instrukce jsou vykonávány sekvenčně, následující krok je závislý na tom předchozím
+- Žádná, instrukce jsou vykonávány sekvenčně, následující krok je závislý na tom předchozím
 - Paralelizmy se musí simulovat až na úrovni OS
 
 <hr>
@@ -75,12 +75,12 @@
 <hr>
 
 ### Může fungovat počítač bez paměti či bez periferií?
-- NE.. jak pravil von Neumann .. je potřeba procesoru, paměti a periferii
+- NE! Jak pravil von Neumann: je potřeba procesoru, paměti a periferií
 
 <hr>
 
 ### K čemu se v počítači využívá dvojková soustava?
-- Pro reprezentaci čísel, adres, znaků..
+- Pro reprezentaci čísel, adres, znaků...
 
 <hr>
 
@@ -90,21 +90,21 @@
 <hr>
 
 ### Je možné, aby procesor prováděl instrukce jinak, než sekvenčně?
-- NE instrukce se provádějí sekvenčně 
+- NE! Instrukce se provádějí sekvenčně
 
 <hr>
 
 ### Jak je v počítači organizovaná paměť?
-- Je složená z za sebou jdoucích buňěk stejné velikosti (obvykle 8bit), jejich pořadové číslo se využívá jako jejich adresa 
+- Je složená ze za sebou jdoucích buňěk stejné velikosti (obvykle 8bit), jejich pořadové číslo se využívá jako jejich adresa 
 
 <hr>
 
 # 2. Jazyk symbolických instrukcí
 ### Registry procesoru
 - 64bit: RAX, RBX, RCX, RDX, RSI, RDI, RBP, RSP, R8 - R15
-- 32bit: začínají E, R8D - R15D	(Zápis vyresetuje horní část Rxx !)
+- 32bit: začínají E, R8D - R15D	(zápis vyresetuje horní část Rxx!)
 - 16bit: AX, BX ... , R8W - R15W
-- 8bit: AH (high), AL (low), BH, BL .. (Jen ABCD, jsou rozděleny na high a low)
+- 8bit: AH (high), AL (low), BH, BL .. (jen ABCD, jsou rozděleny na high a low)
 - RSP - stack pointer
 - RIP - instruction pointer
 
@@ -117,7 +117,7 @@
 - Datové typy:
     - BYTE, WORD, DWORD, QWORD (8, 16, 32, 64 bit)
 - Spojování:
-    - JSI: píšeme “global” před funkce a proměnné z C
+    - JSI: píšeme „global” před funkce a proměnné z jazyka C
 
 <hr>
 
@@ -167,7 +167,7 @@
 - Sběrnice dělíme na Adresovou, Řícicí, Datovou
 - Adresová
     - Přenáší adresy
-    - Zdroj adresy je mikroprocesor
+    - Zdrojem adresy je mikroprocesor
     - Počet bitů (vodičů) sběrnice odpovídá počtu bitů adresy
 - Řídicí
     - Některé signály jsou generovány mikroprocesorem, některé jinými bloky
@@ -217,7 +217,7 @@
         - lze řešit:
             - obvodově (bez vědomí počítače)
             - příznakovým bitem <b>(Programové řízení)</b>
-            - přerušením .. počítač se později vrátí tam, kde byl vyrušen <b>(Systém Přerušení)</b>
+            - přerušením: počítač se později vrátí tam, kde byl vyrušen <b>(Systém Přerušení)</b>
             - přímým přístupem <b>(DMA)</b>
 
 <hr>
@@ -227,7 +227,7 @@
 - Dělíme na
     - S pamětí
     - Bez paměti
-- Základem je záchytný registr s 3 stavovým vstupem
+- Základem je záchytný registr se 3 stavovým vstupem
 
 #### Nepodmíněný vstup a výstup dat:
 
@@ -240,7 +240,7 @@
 <hr>
 
 ### K čemu slouží u komunikace V/V bran indikátor a jaké přináší výhody?
--  Zajišťujě, že informace budou správně podány (další otázka)
+- Zajišťuje, že informace budou správně podány (další otázka)
 
 <hr>
 
@@ -265,11 +265,11 @@
 ### Jaký je rozdíl mezi programově řízenou komunikací s perifériemi a pomocí přerušení?
 - Programové:
     - Využívá instrukce pro vstup a výstup, ve spojení s instrukcemi pro testování logických proměnných a skoků
-    - Prostě testuje stavové bity ..
+    - Prostě testuje stavové bity ...
 - Přerušení:
-    - Periferie aktivuje přerušovací signál, procesor přeruší program, přejde do obslužného režimu, poté pokračuje v provádění hl. programu tam, kde byl přerušen 
+    - Periferie aktivuje přerušovací signál => procesor přeruší program, přejde do obslužného režimu, poté pokračuje v provádění hl. programu tam, kde byl přerušen 
 
-Obsluha???  
+- <b>TODO</b> Obsluha???  
 <hr>
 
 ### Jaké výhody přináší řízení komunikace s využitím přerušení?
@@ -281,7 +281,7 @@ Obsluha???
 ![blok_DMA](assets/blok_DMA.png)
 
 - Registr dat - Obsahuje slovo pro přesun
-- Registr adresy - Adresa hl. paměti kam bude slovo zapsány, nebo odkud bude přečteno
+- Registr adresy - Adresa hl. paměti kam bude slovo zapsáno, nebo odkud bude přečteno
 - Čítač přesunu - požadovaný počet slov, které mají být ještě přesunuty
 
 <hr>
@@ -289,8 +289,8 @@ Obsluha???
 ### Jak probíhá přenos dat s použitím DMA?
 1. Naprogramování procesorem bloku DMA
 2. blok DMA spustí periferní zařízení, a čeká než zařízení bude připraveno data příjmou nebo vyslat
-3. Procesor dokončí strojový cyklus a pak reaguje na žádost o DMA, přímý přístup se provadí během činosti procesoru.. blok DMA a procesor se střídají v používání paměti
-4. Procesor vyšle vybrané jednotce ACK a uvolní sběrnici, jednotka pak pošle obsah registru adresy na addr. sběrnici a obsah registru dat na dat. sběrnici a čeká na provedení cyklu paměti.. pak obsah registru adresy zvětší o jedničku a čítač přesunu zmenší o jedničku.. pokud není nulový, testuje zda bylo předáno nové slovo do registru dat.. když ne, dočasně se ukončí přesun dat a přestane se vysílat žádost o DMA.. řízení je předáno procesoru
+3. Procesor dokončí strojový cyklus a pak reaguje na žádost o DMA, přímý přístup se provádí během činnosti procesoru.. blok DMA a procesor se střídají v používání paměti
+4. Procesor vyšle vybrané jednotce ACK a uvolní sběrnici, jednotka pak pošle obsah registru adresy na adr. sběrnici a obsah registru dat na dat. sběrnici a čeká na provedení cyklu paměti... pak obsah registru adresy zvětší o jedničku a čítač přesunu zmenší o jedničku.. pokud není nulový, testuje zda bylo předáno nové slovo do registru dat... když ne, dočasně se ukončí přesun dat a přestane se vysílat žádost o DMA... řízení je předáno procesoru
 5. Procesor dále pokračuje v provádění svého programu do doby, než obrží další žádost o DMA
 6. Pokud je obsah čítače přesunu nulový, blok DMA ukončí celý přesun a uvolní sběrnici 
 
@@ -301,7 +301,8 @@ Obsluha???
 
 <hr>
 
-### I2C 
+### I2C
+- <b>TODO</b> schéma
 - Inter-Integrated Circuit
 - Dvou-vodičová Sběrnice
     - <b>SCL</b> => Synchronous Clock
@@ -317,15 +318,15 @@ Obsluha???
 - Komunikace:
     - V klidovém stavu je SCL a SDA na 1
     - Start:
-        - SCL = Sestupná Hrana
-        - SDA = Sestupná Hrana
+        - SCL = Sestupná hrana
+        - SDA = Sestupná hrana
     - Konec:
-        - SCL = Náběžná Hrana
-        - SDA = Náběžná Hrana
+        - SCL = Náběžná hrana
+        - SDA = Náběžná hrana
     - Po startu následuje 7bit adresa cílového zařízení (Slave) a 1 bit Read nebo Write z pohledu mastera
         - 0bAAAAAAAM (A je bit adresy a M je Read/Write)
     - Dále slave vygeneruje ACK
-        - Když je ACK 0, vše je Ok
+        - Když je ACK 0, vše je OK
         - Když je ACK 1, slave nereaguje
     - Na konci přenosu se posílá NACK
 
@@ -334,12 +335,12 @@ Obsluha???
 # 4. CISC A RISC
 
 ### Kdy a proč se začaly procesory dělit na RISC a CISC?
-- V 70. letech, kvůli narůstající složitosti procesorů .. 
+- V 70. letech, kvůli narůstající složitosti procesorů... 
 
 <hr>
 
 ### Jaké byly zásadní důvody, proč se začaly procesory RISC vyvíjet?
-- Výzkumy ukázaly, že programátoři a compilátory používají instrukce velmi nerovnoměrně  (v 50 % případů se vyskytují pouze 3 instrukce)
+- Výzkumy ukázaly, že programátoři a compilátory používají instrukce velmi nerovnoměrně (v 50 % případů se vyskytují pouze 3 instrukce)
 - Snahy o nalezení optimálního instrukčního souboru => vznik RISC
 
 <hr>
@@ -388,7 +389,7 @@ RISC:
 | PI |    |    |    |    | I1 | I2 | I3 | I4 | I5 | I6  | I7  |     |
 | UV |    |    |    |    |    | I1 | I2 | I3 | I4 | I5  | I6  | I7  |
 
-Legend:
+Legenda:
 
 | short name | full name           |
 |------------|---------------------|
@@ -401,18 +402,18 @@ Legend:
 
 <hr>
 
-### Jakého zrychlení lze zřetězeným zpracováním instrukcí dosáhnout?
+### Jakého zrychlení lze dosáhnout zřetězeným zpracováním instrukcí?
 - V ideáním světě, při délce zřetězení 6 instrukcí, udělá během 12 cyklů
     - <b>CISC:</b> 2 instrukce
     - <b>RISC:</b> 7 instrukcí 
-- viz. tabulky v minulé otázce
+- viz tabulky v minulé otázce
 
 <hr>
-
+### Co to jsou datové a strukturální hazardy v RISC procesorech? Co je způsobuje?
 ### Jaké problémy přináší zřetězené zpracování instrukcí v procesorech RISC?
 - Datové a strukturální hazardy 
     - Datové: Když instrukce potřebuje mít k dispozici data předchozí instrukce (a ta ještě nejsou k dispozici)
-    - Strukturální: Problém omezených prostředků procesoru (a počítače jako celku) .. např. jen jedna sběrnice
+    - Strukturální: Problém omezených prostředků procesoru (a počítače jako celku)... např. jen jedna sběrnice
 - Problémy plněním fronty instrukcí
     - Podmíněné skoky
     - Nepodmíněné skoky na adresu, která se musí vypočítat
@@ -425,18 +426,13 @@ Legend:
 - Dynamická
     - Během běhu programu se zaznamenává, jestli se skok provedl, nebo ne
 - Může být:
-    - Jedno bitová
-    - Dvou bitová
-
-<hr>
-
-### Co to jsou datové a strukturální hazardy v RISC procesorech? Co je způsobuje?
-- uvedeno výše..
+    - Jednobitová
+    - Dvoubitová
 
 <hr>
 
 ### Jak funguje dvoubitová dynamická predikce skoků a proč se využívá?
-- Jako čtyř stavový automat
+- Jako čtyřstavový automat
 
 ![2bitpredikce](assets/2bit_predikce.png)
 
@@ -467,7 +463,7 @@ Legend:
     - Přidán <b>Virtual Mode</b> (po přepnutí do PM, bylo možnost vykonávat RM programy)
 
 - <b>8087/287/387</b>
-    - Matematick koprocesor, pro práci s floaty, který byl zvlášt
+    - Matematický koprocesor pro práci s floaty, který byl zvlášť
 - <b>80486dx (později i sx verze)</b>
     - Dvojnásobný výkon při stejné frekvenci, než 386
     - L1 přímo v procesoru
@@ -478,7 +474,7 @@ Legend:
     - Predikce skoků
 - <b>Pentium Pro</b>
     - <b>ZÁSADNÍ</b> technologický zlom
-    - Pro servery (=> velký výkon(zhruba o 50% víc než pentium) a cena)
+    - Pro servery (=> velký výkon (zhruba o 50 % víc než Pentium) a cena)
     - L2 přímo na procesoru
     - Fetch/Decode jednotka dekoduje x86 instrukce na 118bit RISC instrukce (které intel pojmenoval jako mikro-operace)
     - Instrukce jsou po dekodování uloženy do banky instrukcí (Instruction pool), vejde se tam až 40 instrukcí
@@ -499,7 +495,7 @@ Legend:
     - 20 úrovňové zřetězení
 - <b>Pentium EM64T</b>
     - Extended Memory 64 Technology (Později jen Intel64)
-    - První 64bit procesor
+    - První 64bitový procesor
     - 30 úrovňové zřetězení
     - Velice se přehřívaly 
 - <b>Pentium M</b>
@@ -510,7 +506,7 @@ Legend:
 - <b>Core 2</b>
 - <b>Atom</b>
 
-Následovník, obrázek ???
+- <b>TODO</b> Následovník (Pentia), obrázek???
 
 <hr>
 
@@ -527,7 +523,7 @@ Následovník, obrázek ???
     - Kombinované
         - NVRAM (Non volatile RAM)
         - WOM (Write only memory)
-        - WORM (Write once - ready many times memory) - optické disky
+        - WORM (Write once - read many times memory) - optické disky
 - Principu elementární buňky
     - SRAM - statické paměti
     - DRAM - dynamické paměti
@@ -540,7 +536,7 @@ Následovník, obrázek ???
 
 ### Jak je v dynamických pamětech ukládána informace a jak je udržována?
 - Ve formě náboje v kondenzátoru
-- Zapomenou svá data cca po 10ms
+- Zapomenou svá data cca po 10 ms
 - Proto je nutné obnovovat napětí kondenzárorů - <b>Refresh</b> 
 
 <hr>
@@ -558,19 +554,20 @@ Stavba DRAM buňky:
 <hr>
 
 ### Popište stručně historii vývoje dynamických pamětí.
-- ??? :c
+- [TODO??? :c](https://letmegooglethat.com/?q=history+of+computer+memory)
 
 <hr>
 
 ### Jak je ve statických pamětech ukládána informace a jak je udržována?
 - Je uložená stavem klopného obvodu
-- Lze realitovat pomocí 4 nebo 6 tranzistorů
-- SRAM je dražší a pojme méně dat něž DRAM
+- Lze realizovat pomocí 4 nebo 6 tranzistorů
+- SRAM je dražší a pojme méně dat než DRAM
+- SRAM není třeba refreshovat jako DRAM
 
 <hr>
 
 ### Jak je organizována vnitřně statická paměť?
-- Jako 2D mřížka, kde jeden řádek tvoří jedno slovo
+- Jako 2D mřížka, kde 1 řádek tvoří 1 slovo
 - SRAM paměti nevyužívají adresní multiplexing
 
 ![SRAM](assets/SRAM.png)
@@ -580,12 +577,12 @@ Stavba DRAM buňky:
 ### Jaké typy pamětí si udržují svůj obsah i po odpojení napájení?
 - (Nevolatilní)
 - ROM (Read Only Memory)
-    - Informace zapisuje výrobce (je složená z odporů, které výrobce přepálí.. neporušené prvky pak vedou proud a je v nich minimální napětí.. log. 0)
+    - Informace zapisuje výrobce (je složena z odporů, které výrobce přepálí..., neporušené prvky pak vedou proud a je v nich minimální napětí... log 0)
     - Doba pamatování není ohraničená
 - PROM
     - Programmable ROM
     - Informace se vypalují pomocí „programátoru“
-    - Lze zapsat jen jednou
+    - Lze zapsat jen 1x
 - EPROM
     - Erasable PROM
     - Uchovává informaci díky kvalitně izolovanému el. napětí
@@ -594,21 +591,21 @@ Stavba DRAM buňky:
     - Doba pamatování 10 až 20 let
 - EEPROM
     - Electrically Erasable PROM
-    - Zápis stějně jak EPROM
-    - Mazální pomocí el. pulzu s obrácenou polaritou
+    - Zápis stejně jak EPROM
+    - Mazání pomocí el. pulzu s obrácenou polaritou
     - Doba pamatování 10 až 20 let
 - FLASH
     - Lze programovat rychle přímo v počítači
     - Doba pamatování 10 až 100 let
-    - Struktura buněk je podobná EEPROM, ale pro programování a mazání stačí pulz 10us
+    - Struktura buněk je podobná EEPROM, ale pro programování a mazání stačí 10μs pulz
     - Přes 10000 programovacích a mazacích cyklů
 
 <hr>
 
 ### Paměti s trvalým obsahem umožňují svůj obsah přepsat. Jak se přepis u jednotlivých typů provádí?
-- EPROM - UV zářením
+- EPROM  - UV zářením
 - EEPROM - Elektricky, až 50ms pulzem o 5V
-- FLASH - Elektricky 10us pulzem
+- FLASH  - Elektricky 10μs pulzem
 
 <hr>
 
@@ -617,9 +614,9 @@ Stavba DRAM buňky:
     - Dvouportová
     - Zvýšené přenosové pásmo
 - WRAM (Window RAM (nemá nic společného s tím pseudo operačním systémem))
-    - O 25% větší přenosové pásmo než VRAM
+    - O 25 % větší přenosové pásmo než VRAM
     - Nabízí double-buffering
-- SGRAM (Synchronní Grafická RAM)
+- SGRAM (Synchronní grafická RAM)
     - Funguje jako SDRAM
     - Ale SDRAM je optimalizována pro kapacitu a SGRAM pro přenos dat
 - FIFO paměti (fronta)
@@ -628,7 +625,7 @@ Stavba DRAM buňky:
 - Cache paměti
     - Malé a rychlé
     - Rychlé komponenty čtou data z cache a nemusí čekat na komponentu pomalejší
-    - L1,L2,..
+    - L1, L2, ...
 
 <hr>
 
@@ -641,8 +638,8 @@ Stavba DRAM buňky:
 ### Jak se u pamětí detekují a opravují chyby?
 - SRAM je spolehlivější než DRAM
 - Tvrdé chyby - opakující se 
-- Měkké chyby - Neopakující se .. těžší rozpoznat
-- Kontrola Parity
+- Měkké chyby - neopakující se je těžší rozpoznat
+- Kontrola parity
     - dorovnává se na lichý počet jedniček do 9. bitu
     - neopravuje, jen detekuje chybu (když je počet jedniček sudý)
 - ECC - Error Correction Code
@@ -653,14 +650,14 @@ Stavba DRAM buňky:
 <hr>
 
 # 7. Monolitické počítače
-- Monolit = Procesor, Paměť, Periferie v jednom pouzdře
+- Monolit = Procesor, Paměť, Periferie v 1 pouzdře
 - Používá se převážně Hardvardská architektura
 - Kvůli jednoduchosti bývají převážně RISC
 
 ### Jaká je obvyklá organizace pamětí v mikropočítačích?
-- Střádačové (pracovní registry)
-    - Většinou jen jeden, nebo dva
-    - Ukládájí se do nich aktuálně zpracovávaná data
+- Střadačové (pracovní registry)
+    - Většinou jen 1 nebo 2
+    - Ukládají se do nich aktuálně zpracovávaná data
 - Univerzální zápisníkové registry
     - Pro nejčastěji používaná data
 - Paměť dat RWM
@@ -670,12 +667,12 @@ Stavba DRAM buňky:
 
 ### Jaké zdroje hodinového signálu se mikropočítačích používají?
 - (Zdroj synchronizace)
-- Často je zdroj integrován přímo v počítači - nelze zajistit dobrou stabilitu (Vlivem teplot můžou být odchylky kmitočtu desítky %)
+- Často je zdroj integrován přímo v počítači, kde nelze zajistit dobrou stabilitu (vlivem teplot můžou být odchylky kmitočtu desítky %)
 - Generátory:
-    - Krystal (Dobrý pro stabilitu)
+    - Krystal (dobrý pro stabilitu)
     - Keramický rezonátor
     - Obvod LC
-    - Obvod RC (Pro minimalizaci ceny)
+    - Obvod RC (pro minimalizaci ceny)
     - Externí zdroj
 
 ![clock_gen](assets/clock_gen.png)
@@ -685,7 +682,7 @@ Stavba DRAM buňky:
 ### Jak probíhá RESET mikropočítače?
 - Počáteční stav počítače
 - Po provedení RESETu se u všech počítačů nastaví počáteční hodnota čítače instrukcí (0 nebo samé 1)
-- Výrobce definuje jako dlouho RESET signál trvá
+- Výrobce definuje, jak dlouho RESET signál trvá
 - Zdroj signálu může být vnější nebo vnitřní
 
 <hr>
@@ -700,7 +697,7 @@ Stavba DRAM buňky:
 
 ### Jaké jsou základní vlastnosti V/V bran?
 - Nejčastější a nejjednodušší je `Paralelní brána - port`
-    - Obvykle organizovaná jako skupina 4 nebo 8 jednobit vývodů
+    - Obvykle organizovaná jako skupina 4 nebo 8 jednobitových vývodů
 
 <hr>
 
@@ -713,7 +710,7 @@ Stavba DRAM buňky:
         - Typicky pomocí RS232 nebo RS485
     - Uvnitř el. zařízení
         - Typickým standardem je I2C 
-- Princip ???
+- <b>TODO</b> Princip?
 
 ![seriovy_prenos](assets/seriovy_prenos.png)
 
@@ -765,7 +762,7 @@ Stavba DRAM buňky:
 
 <hr>
 
-### NÁKRES D/A ?
+### NÁKRES D/A?
 
 ![pwm_prevodnik](assets/pwm_prevodnik.png)
 
@@ -778,7 +775,7 @@ Stavba DRAM buňky:
 - Řadiče LCD a LED
 
 # 8. Monitory
-### Jak funguje CRT ???
+### Jak funguje CRT???
 
 ### Na jakých principech fungují LCD monitory?
 - zkratka LCD znamená Liquid crystal display
@@ -845,7 +842,7 @@ Stavba DRAM buňky:
 
 ### Jak funguje zobrazovací jednotka s technologií E-Ink?
 - Elektřina je potřeba jen pro refresh (malý proud, 5-15 V)
-- V čiré kapalině jsou jen dvě barvy, můžou tvořit gradient pomocí rozdělení elektrod
+- V čiré kapalině jsou jen 2 barvy, můžou tvořit gradient pomocí rozdělení elektrod
 - Horní elektrody musí být průsvitné
 - Princip:
     - V průhledných kapslích jsou obsaženy kladné a záporné částice různých barev (většinou černá a bílá)
@@ -879,7 +876,7 @@ Stavba DRAM buňky:
 <hr>
 
 # 9. Disky
-### Typy pamětí (externích) ?
+### Typy pamětí (externích)?
 - Magnetické paměti
     - Pevný disk
     - Disketová mechanika
@@ -890,11 +887,13 @@ Stavba DRAM buňky:
 
 <hr>
 
-### Jaký je princip ukládání dat u magnetických pamětí ?
+### Jaký je princip ukládání dat u magnetických pamětí?
 - Záznamové médium má tvar kruhové desky (disk, disketa), nebo dlouhé pásky
 - Je pokryto magnetickou vrstvou a pohybuje se konstantní rychlostí
-- V bodu dotyku s povrchem je štěrbina magnetického obvodu (štěrbina je díra v té hlavě (Magnetickém obvodu)).. štěrbina + mag. obvod tvoří jádro
+- V bodu dotyku s povrchem je štěrbina magnetického obvodu (štěrbina je díra v té hlavě (magnetickém obvodu)).. štěrbina + mag. obvod tvoří jádro
 - <i>Pokud magnetickým obvodem prochází proud, vzniká magnetický tok, který se díky štěrbině dostává do okolí, a ovlivňuje magnetickou vrstvu </i>
+
+TODO: CHS vs LBA
 
 ![zapis_na_disk](assets/zapis_na_disk.png)
 
@@ -906,7 +905,7 @@ Stavba DRAM buňky:
 
 <hr>
 
-### Jak funguje pevný disk ?
+### Jak funguje pevný disk?
 ![disk](assets/disk.png)
 
 - Proud je převeden na indukci
@@ -915,14 +914,14 @@ Stavba DRAM buňky:
 
 <hr>
 
-### Jaký je princip ukládání dat u optických pamětí ?
+### Jaký je princip ukládání dat u optických pamětí?
 ![optic](assets/optic.png)
 
 - Materiál - polykarbonát
 - Záznam pomocí pitů a landu (jamky a pevniny)
 - Čtecí senzor rozpozná změnu tak, že když světlo narazí na pit, rozptýlí se s posunutou peridodou
 - Zapisuje se laserem
-- Většinou WORM - Write once read many time
+- Většinou WORM - Write once read many (times)
 
 <hr>
 
@@ -943,7 +942,7 @@ Stavba DRAM buňky:
 <hr>
 
 # 10. CUDA
-- Rozšíření jazyka C/C++
+- Rozšíření jazyka `C/C++`
 - Funguje jen na Nvidia kartách
 - Warp je skupina jader, která je ovládána schedulerem
     - Každý warp má svůj dekodér instrukcí a scheduler
@@ -955,26 +954,26 @@ Stavba DRAM buňky:
 
 <hr>
 
-### Čím se musí řídit programátor při práci s CUDA ?
+### Čím se musí řídit programátor při práci s CUDA?
 - Jádra musí být na sobě nezávislá (GPU negarantuje pořadí exekuce threadu)
 - Musí určit správný počet bloků a vláken 
 - Nepoužívat IFy (a cykly)
-- TODOOOO: Unified Memory ???
+- <b>TODO</b> Unified Memory???
 
 <hr>
 
-### Organizace mřížky ?
+### Organizace mřížky?
 
 ![cuda_grid](assets/cuda_grid.png)
 
-- Kód kernelu musí bt přizpůsoben mřížce
+- Kód kernelu musí být přizpůsoben mřížce
 - Pro určení pozice threadu v mřížce lze použít předdefinované proměnné (blockIdx, ..)
     - `x = blockIdx.x * blockDim.x + threadIdx.x;`
     - `y = blockIdx.y * blockDim.y + threadIdx.y;`
 
 <hr>
 
-### Jaký je postup ?
+### Jaký je postup?
 - (alokuje se místo na GPU)
 - překopírují se data z hostu do device
 - zapnou se thready v GPU multiprocesoru
@@ -983,7 +982,7 @@ Stavba DRAM buňky:
 
 <hr>
 
-### Rozšíření jazyka C/C++ ?
+### Rozšíření jazyka `C/C++`?
 - Modifikátory funkcí:
     - `__device__` - Pouze GPU (vykonání i zavolání na GPU)
     - `__global__` - Pro oboje (vykonána na grafické kartě, ale zavolána z procesoru)
@@ -1053,7 +1052,7 @@ https://en.wikichip.org/wiki/arm_holdings/microarchitectures/cortex-a77
 
 <hr>
 
-### Následovník Pentia Pro ?
+### Následovník Pentia Pro?
 
 ![pentium_2](assets/pentium_2.png)
 
