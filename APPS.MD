@@ -597,7 +597,7 @@ Stavba DRAM buňky:
 - FLASH
     - Lze programovat rychle přímo v počítači
     - Doba pamatování 10 až 100 let
-    - Struktura buněk je podobná EEPROM, ale pro programování a mazání stačí 10μs pulz
+    - Struktura buněk je podobná EEPROM, ale pro programování a mazání stačí 10us pulz
     - Přes 10000 programovacích a mazacích cyklů
 
 <hr>
@@ -605,7 +605,7 @@ Stavba DRAM buňky:
 ### Paměti s trvalým obsahem umožňují svůj obsah přepsat. Jak se přepis u jednotlivých typů provádí?
 - EPROM  - UV zářením
 - EEPROM - Elektricky, až 50ms pulzem o 5V
-- FLASH  - Elektricky 10μs pulzem
+- FLASH  - Elektricky 10us pulzem
 
 <hr>
 
